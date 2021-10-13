@@ -104,7 +104,7 @@ SuperSlicer has a built-in flow calibration tool, however I do not like this eit
 - It has ironing turned on by default.
 - The objects are too small. It's normal for smaller infill areas to look a bit more overextruded than larger infill areas.
 
-Both of the above methods I've found to have error of up to 5% - which may not sound like much, but it makes a *huge* difference on the appearance of your prints.
+Both of the above methods I've found to have error of up to 5% (sometimes even more) - which may not sound too bad but it makes a *huge* difference on the appearance of your prints.
 
 ### Method
 By far the best method I have found is purely visual. *Put the calipers down for now*.
@@ -126,15 +126,16 @@ We will print some 30x30x3mm cubes (see the Test_Prints folder).
 - <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
     This is simply a PA value on the lowest end of the normal range. 
 
-Print these cubes with variations of 2% flow, and narrow down further from there if desired.
+Print these cubes with variations of 2% EM, and narrow down further from there if desired. Most PIF providers tune down to the 0.5% range, some even less.
 
-Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will feel rough, and too little EM will have gaps between the lines.
+Once you are nearing the correct EM, the top should feel noticeably smoother. \
+Too much EM will look and feel rough, and too little EM will have gaps between the lines.
 
 This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light. The third cube was perfect.
 
 ![](Images/EMPrints-Fine.png) 
 
-Example of an actual print with tuned EM. 
+Example of an actual print with tuned EM:
 
 ![](Images/EMPrint-Example.jpg) 
 ## Determining Max Volumetric Flow
