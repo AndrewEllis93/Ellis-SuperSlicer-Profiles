@@ -126,10 +126,12 @@ We will print some 30x30x3mm cubes (see the Test_Prints folder).
 - <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
     This is simply a PA value on the lowest end of the normal range. 
 
-Print these cubes with variations of 2% EM, and narrow down further from there if desired. Most PIF providers tune down to the 0.5% range, some even less.
+Print these cubes with variations of 2% EM, and narrow down further from there if desired. Most PIF providers tune down to the 0.5% range, some even less. 
 
 Once you are nearing the correct EM, the top should feel noticeably smoother. \
 Too much EM will look and feel rough, and too little EM will have gaps between the lines.
+
+I have found that most ABS falls in the 91-94% range.
 
 This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light. The third cube was perfect.
 
