@@ -10,13 +10,16 @@ If you have the volumetric speed set too high, your extruder *will* skip and/or 
 ![](Images/VolumetricSpeed.png)  
 
 #### Approximate values:
-V6: <b>12</b>\
-Dragon SF: <b>15</b>\
-Dragon HF: <b>24</b>\
-Mosquito: <b>20</b>\
-Mosquito Magnum: <b>30</b>
 
-See the last section ("Determining Max Volumetric Flow") for more details.
+| Hotend     | Flow Rate |
+| :---        |    :----:   |
+| V6            | 12
+| Dragon SF| 15
+| Dragon HF| 24
+| Mosquito| 20
+| Mosquito Magnum| 30
+
+<i>See the last section ("Determining Max Volumetric Flow") for more details.</i>
 
 ## Acceleration Control
 
@@ -79,9 +82,13 @@ If you have not set up your `PRINT_START` based on my Discord pin, replace this 
 
 ## Determining Max Volumetric Flow
 
-Keep in mind this is a rough calculation - maximum volumetric flow rate can change with a number of factors like temperatures and material type. 
+### Background
 
-Once you find your maximum volumetric flow with the below method, you should still set it slightly lower for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material. Your hotend may also be able to manage a slightly higher rate for a short 100mm "burst" than it might for a full-blown print.
+This is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures and material. 
+
+Once you find your maximum volumetric flow with the below method, you should still set it slightly lower in the slicer for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material.
+
+### Formulas
 
 Volumetric flow is expressed in mm^3/sec (cubic millimeters per second)
 
@@ -93,6 +100,7 @@ Or, inversely,
 
 For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm^3/sec.</b> (5mm / 0.415)
 
+### The Process
 You will follow a similar process to extruder calibration. 
 
 <b>1)</b> Heat your hotend. \
