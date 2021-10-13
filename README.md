@@ -89,6 +89,54 @@ If you have not set up your `PRINT_START` based on my Discord pin, replace this 
 
 ![](Images/StartGcode.png)  
 
+## Calibrating Extrusion Multiplier (Flow %)
+This is a widely misunderstood and debated subject. Getting the perfect extrusion multiplier (EM) is *crucial* for good looking prints.
+
+![](Images/EM.png)  
+
+### Background
+
+Some guides you will find online mention printing a single or two-walled object and measuring the thickness with calipers. I find this method not to work very well at all, especially with ABS due to shrinkage.
+
+SuperSlicer has a built-in flow calibration tool, however I do not like this either, for a few reasons:
+- It is very reliant on first layer squish.
+- Because it uses 100% infill, the first layer squish carries through all the way to the top. 
+- It has ironing turned on by default.
+- The objects are too small. It's normal for smaller infill areas to look a bit more overextruded than larger infill areas.
+
+Both of the above methods I've found to have error of up to 5% - which may not sound like much, but it makes a *huge* difference on the appearance of your prints.
+
+### Method
+By far the best method I have found is purely visual. *Put the calipers down for now*.
+
+We will print some 30x30x3mm cubes (see the Test_Prints folder).
+
+<b>Print Settings:</b>
+- <b>40% Infill</b>\
+    It is important that we have some sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
+    We still need enough to adequately support the top layers.</i>
+- <b>120% Infill Line Width</b>\
+    This just increases infill density over my normal settings, which are thicker for reducting print times.
+- <b>100% Top Layer Line Width</b>\
+    This one is more subject to interpretation, but I find 100% to have good results.
+- <b>5 Top Layers</b>\
+    This ensures that we have adequate support for the surface layer.
+- <b>20mm/s Top Layer Speed</b>\
+    This helps to remove pressure advance as a variable. The faster we go, the more pressure advance will impact our results.
+- <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
+    This is simply a PA value on the lowest end of the normal range. 
+
+Print these cubes with variations of 2% flow, and narrow down further from there if desired.
+
+Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will feel rough, and too little EM will have gaps between the lines.
+
+This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light. The third cube was perfect.
+
+![](Images/EMPrints-Fine.png) 
+
+Example of an actual print with tuned EM. 
+
+![](Images/EMPrint-Example.jpg) 
 ## Determining Max Volumetric Flow
 
 ### Background
@@ -101,7 +149,7 @@ Once you find your maximum volumetric flow with the below method, you should sti
 
 Volumetric flow is expressed in mm^3/sec (cubic millimeters per second)
 
-- <b>Volume = mm divided by 0.415.</b>
+- <b>Volume = mm / 0.415.</b>
 
 Or, inversely, 
 
@@ -109,7 +157,7 @@ Or, inversely,
 
 For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm^3/sec.</b> (5mm / 0.415)
 
-### The Process
+### Method
 You will follow a similar process to extruder calibration. 
 
 <b>1)</b> Heat your hotend. \
