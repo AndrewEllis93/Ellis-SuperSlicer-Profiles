@@ -1,11 +1,11 @@
 ## Volumetric Speed / Auto Speed
 <b>It is very important that you update the volumetric speed setting.</b>
 
-These two setting serve as a universal "speed limit". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed the maximum flow rate or of your hotend, or the maximum print speed.
+These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
 
-This is important because I keep my infill speed set to 0. This means it will print infill as fast as the hotend will allow, or up to the 300mm/sec max print speed limit, whichever comes first.
+This is important because I keep my infill speed set to 0. This means it will print infill <b>as fast as the hotend will allow</b>, or up to the 300mm/sec, whichever comes first.
 
-If you have this set too high, your extruder *will* skip and/or grind.
+If you have the volumetric speed set too high, your extruder *will* skip and/or grind.
 
 ![](Images/VolumetricSpeed.png)  
 
@@ -40,7 +40,7 @@ The sole purpose of this post processing script is to set accels/square corner v
 
 I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/blob/master/superslicer/pp.py
 
-Install Python on your computer and swap the two python exe path and the script path accordingly. 
+Install Python on your computer and swap the python exe path and the script path accordingly. 
 
 Adjust your desired accel, accel to decel, and square corner velocity at the top of the scipt file.
 
@@ -75,7 +75,7 @@ My start gcode follows the convention I laid out in my Discord pin: https://disc
 
 This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that I can control exactly when they happen during my start gcode.
 
-If you are have not set up your `PRINT_START` based on my pin, you may just want `PRINT_START` here without the other stuff, or you may get heating errors.
+If you are have not set up your `PRINT_START` based on my Dicsord pin, replace this whole block with `PRINT_START` on its own.
 
 ![](Images/StartGcode.png)  
 
