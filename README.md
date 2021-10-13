@@ -40,7 +40,7 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 
 
 ## Post Processing (Travel Accels)
-This is optional, in fact I would start with it disabled and come back to it later.
+This is optional, <i>in fact I would start with it disabled and come back to it later.</i>
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
 
@@ -48,9 +48,13 @@ I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/b
 
 Install Python on your computer. Swap the python exe path and the script path accordingly. 
 
-Adjust your desired accel, accel to decel, and square corner velocity at the top of the script file.
+
 
 ![](Images/PostProcessing.png)  
+
+Adjust your desired accel, accel to decel, and square corner velocity at the top of the script file:
+
+![](Images/PostProcessing-Tweak.png)  
 
 ## Cooling
 
