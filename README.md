@@ -75,7 +75,7 @@ My start gcode follows the convention I laid out in my Discord pin: https://disc
 
 This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that I can control exactly when they happen during my start gcode.
 
-If you are have not set up your `PRINT_START` based on my Dicsord pin, replace this whole block with `PRINT_START` on its own.
+If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.
 
 ![](Images/StartGcode.png)  
 
