@@ -99,6 +99,13 @@ You will follow a similar process to extruder calibration.
 <b>2)</b> Extrude a little bit to ensure your E motor is energized and holding.\
 <b>3)</b> Mark a 120mm length of filament going into your extruder.\
 <b>4)</b> Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.\
-<b>5)</b> Keep going until it starts dropping below 100m/sec. This is your max flow rate. \
+<b>5)</b> Keep going until it starts dropping below 100mm. This is your max flow rate. \
 <b>6)</b> Convert your extrusion speed to volumetric speed using the above formulas. \
 <b>7)</b> Enter a slightly lower volumetric speed into the slicer.
+
+For example, the gcode to extrude at 5mm/sec is:
+```
+M83 ; Relative extrusion mode
+G0 E100 F300 ; Extrude 100mm at 5mm/sec
+```
+Remember the the F speed is in mm/min, <b>not</b> mm/sec, so multiply your desired speed by 60.
