@@ -16,7 +16,7 @@ Dragon HF: <b>24</b>\
 Mosquito: <b>20</b>\
 Mosquito Magnum: <b>30</b>
 
-See the last section ("determining volumetric flow") for more details.
+See the last section ("Determining Max Volumetric Flow") for more details.
 
 ## Acceleration Control
 
@@ -79,9 +79,11 @@ If you are have not set up your `PRINT_START` based on my pin, you may just want
 
 ![](Images/StartGcode.png)  
 
-## Determining volumetric flow
+## Determining Max Volumetric Flow
 
-Keep in mind this is a rough calculation - maximum volumetric flow rate can change with a number of factors like temperatures and material type. Once you find your maximum with the below method, I would still advise setting it slightly lower for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material.
+Keep in mind this is a rough calculation - maximum volumetric flow rate can change with a number of factors like temperatures and material type. 
+
+Once you find your maximum volumetric flow with the below method, you should still set it slightly lower for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material. Your hotend may also be able to manage a slightly higher rate for a short 100mm "burst" than it might for a full-blown print.
 
 Volumetric flow is expressed in mm^3/sec (cubic millimeters per second)
 
@@ -91,17 +93,14 @@ Or, inversely,
 
 - <b>mm = volume * 0.415.</b>
 
-For example, if you extrude at 5mm/sec, that is a flow rate of ~12mm^3/sec (5mm / 0.415).
+For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm^3/sec.</b> (5mm / 0.415)
 
 You will follow a similar process to extruder calibration. 
 
 <b>1)</b> Heat your hotend. \
 <b>2)</b> Extrude a little bit to ensure your E motor is energized and holding.\
 <b>3)</b> Mark a 120mm length of filament going into your extruder.\
-<b>4)</b> Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.\
-<b>5)</b> Keep going until it starts dropping below 100mm. This is your max flow rate. \
-<b>6)</b> Convert your extrusion speed to volumetric speed using the above formulas. \
-<b>7)</b> Enter a slightly lower volumetric speed into the slicer.
+<b>4)</b> Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.
 
 For example, the gcode to extrude at 5mm/sec is:
 ```
@@ -109,3 +108,8 @@ M83 ; Relative extrusion mode
 G0 E100 F300 ; Extrude 100mm at 5mm/sec
 ```
 Remember the the F speed is in mm/min, <b>not</b> mm/sec, so multiply your desired speed by 60.
+
+<b>5)</b> Keep going until it starts dropping below 100mm. This is your max flow rate. \
+<b>6)</b> Convert your extrusion speed to volumetric speed using the above formulas. \
+<b>7)</b> Enter a slightly lower volumetric speed into the slicer.
+
