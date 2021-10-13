@@ -22,13 +22,11 @@ See the last section ("Determining Max Volumetric Flow") for more details.
 
 This profile uses a custom acceleration control setup. Acceleration would typically be done directly in the speed settings, but currently SuperSlicer does not allow setting accelerations for every extrusion type (for example internal vs external perimeters).
 
-I advise leaving the accelerations conservative for anything visible, but especially for perimeters. While you can push the accels quite high with input shaper, I have found that it can still cause bizarre bulging issues. 
-
-I now only push accelerations for things like infill and travels.
+I advise leaving the accelerations conservative for anything visible, particularly for perimeters. While you *can* push the accels higher, even with input shaper I have found that it can still cause bizarre bulging issues. I now only push high accelerations for things like infill and travels.
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
 
-If you use these advanced acceleration controls, ensure that you have the normal acceleration controls under speed settings completely disabled.
+<b>If you have not yet tuned input shaper, consider reducing these accelerations to 4000 and below.</b>
 
 ![](Images/AccelControls.png)  
 
@@ -42,7 +40,7 @@ I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/b
 
 Install Python on your computer. Swap the python exe path and the script path accordingly. 
 
-Adjust your desired accel, accel to decel, and square corner velocity at the top of the scipt file.
+Adjust your desired accel, accel to decel, and square corner velocity at the top of the script file.
 
 ![](Images/PostProcessing.png)  
 
