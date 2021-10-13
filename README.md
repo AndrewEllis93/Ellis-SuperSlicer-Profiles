@@ -152,7 +152,7 @@ Once you find your maximum volumetric flow with the below method, you should sti
 
 Volumetric flow is expressed in mm^3/sec (cubic millimeters per second)
 
-- <b>Volume = mm / 0.415.</b>
+- <b>volume = mm / 0.415.</b>
 
 Or, inversely, 
 
