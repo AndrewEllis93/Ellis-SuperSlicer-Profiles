@@ -64,9 +64,9 @@ This makes it much easier to align the seams where I want them, as otherwise Sup
 
 The differences with the "45 degree" profile are:
 - <b>Print Settings > Perimeters & Shell > Seam:</b> \
-    Set to "rear" (rather than cost-based)
+Rear <i>(rather than cost-based)</i>
 - <b>Print Settings > Infill > Angle > Fill:</b> \
-0 degrees (rather than 45 degrees)
+0 degrees <i>(rather than 45 degrees)</i>
 
 ![](Images/45DegreePlate.png)  
 
