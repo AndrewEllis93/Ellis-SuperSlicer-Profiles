@@ -22,7 +22,9 @@ If you have the volumetric speed set too high, your extruder *will* skip and/or 
 | Mosquito| 20
 | Mosquito Magnum| 30
 
-<i>See the last section ("Determining Max Volumetric Flow") for more details.</i>
+You should be okay using an approximate value and just lowering it if you have any issues. 
+
+<i>If you want to get more scientific, or your hotend isn't listed, see the last section ("Determining Max Volumetric Flow") for more details.</i>
 
 ## Acceleration Control
 
@@ -87,7 +89,7 @@ If you have not set up your `PRINT_START` based on my Discord pin, replace this 
 
 ### Background
 
-This is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures and material. 
+This is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type.
 
 Once you find your maximum volumetric flow with the below method, you should still set it slightly lower in the slicer for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material.
 
