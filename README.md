@@ -40,7 +40,7 @@ The sole purpose of this post processing script is to set accels/square corner v
 
 I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/blob/master/superslicer/pp.py
 
-Install Python on your computer and swap the python exe path and the script path accordingly. 
+Install Python on your computer. Swap the python exe path and the script path accordingly. 
 
 Adjust your desired accel, accel to decel, and square corner velocity at the top of the scipt file.
 
