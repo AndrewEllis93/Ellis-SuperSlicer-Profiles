@@ -1,5 +1,8 @@
+## How to Import
+![](Images/Import.png)  
+
 ## Volumetric Speed / Auto Speed
-<b>It is very important that you update the volumetric speed setting.</b>
+<b>!! It is very important that you update the volumetric speed setting !!</b>
 
 These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
 
