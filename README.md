@@ -100,6 +100,9 @@ This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that
 ![](Images/StartGcode.png)  
 
 # Calibrating Extrusion Multiplier (Flow %)
+
+Now we are getting more into general tuning territory than information specific to this profile, but I thought this needed sharing.
+
 This is a widely misunderstood and debated subject. Getting the perfect extrusion multiplier (EM) is *crucial* for good looking prints.
 
 ![](Images/EM.png)  
@@ -119,7 +122,7 @@ Both of the above methods I've found to have error of up to 5% (sometimes even m
 ## Method
 By far the best method I have found is purely visual. *Put the calipers down for now*.
 
-We will print some 30x30x3mm cubes (see the Test_Prints folder).
+We will print some 30x30x3mm cubes. <i>(see the Test_Prints folder)</i>
 
 <b>Print Settings:</b>
 - <b>40% Infill</b>\
@@ -136,14 +139,17 @@ We will print some 30x30x3mm cubes (see the Test_Prints folder).
 - <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
     This is simply a PA value on the lowest end of the normal range. 
 
-Print these cubes with variations of 2% EM, and narrow down further from there if desired. Most PIF providers tune down to the 0.5% range, some even less. 
+<b>Steps:</b>
 
-Once you are nearing the correct EM, the top should feel noticeably smoother. \
-Too much EM will look and feel rough, and too little EM will have gaps between the lines.
+<b>1)</b> Print multiple test cubes with variations of 2% EM. You can do this all in once plate by adjusting settings for each object. Save it as a .3mf file for reuse later.
+
+<b>2)</b> Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rough, and too little EM will have gaps between the lines.
+
+<b>3)</b> If desired, run the process again but with 0.5% intervals. Most PIF providers tune down to the 0.5% range, some even less. 
 
 I have found that most ABS falls in the 91-94% range.
 
-This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light. The third cube was perfect.
+This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light - #3 was the best.
 
 ![](Images/EMPrints-Fine.png) 
 
