@@ -8,6 +8,16 @@ If you adjust speeds, accels, etc, and you should get good results on most other
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
+# Table of Contents
+- [How to Import](#how-to-import)
+- [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed)
+- [Acceleration Control](#acceleration-control)
+- [Post Processing (Travel Accels)](#post-processing-travel-accels)
+- [Cooling](#cooling)
+- ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
+- [Start G-code](#start-g-code)
+- [Calibrating Extrusion Multiplier (Flow %)](#calibrating-extrusion-multiplier-flow-)
+- [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
 # How to Import
 ![](Images/Import.png)  
 
@@ -34,7 +44,7 @@ If you have the volumetric speed set too high, your extruder *will* skip and/or 
 
 You should be okay using an approximate value and just lowering it if you have any issues. 
 
-<i>If you want to get more scientific, or your hotend isn't listed, see the last section ("Determining Max Volumetric Flow") for more details.</i>
+<i>If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow"](#determining-max-volumetric-flow)) for more details.</i>
 
 # Acceleration Control
 
@@ -47,8 +57,6 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 <b>If you have not yet tuned input shaper, consider reducing these accelerations to 4000 and below.</b>
 
 ![](Images/AccelControls.png)  
-
-
 # Post Processing (Travel Accels)
 <b>This is optional, in fact I would suggest starting with it disabled and come back to it later.</b>
 
