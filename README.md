@@ -2,7 +2,7 @@
 <b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. 
+This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
 If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same print settings on my Ender 3, just slowed down.
 
@@ -49,6 +49,8 @@ You should be okay using an approximate value and just lowering it if you have a
 
 This profile uses a custom acceleration control setup. Acceleration would typically be done directly in the speed settings, but currently SuperSlicer does not allow setting accelerations for every extrusion type (for example internal vs external perimeters).
 
+This should be coming natively to SuperSlicer soon.
+
 I advise leaving the accelerations conservative for anything visible, particularly for perimeters. While you *can* push the accels higher, even with input shaper I have found that it can still cause bizarre bulging issues. I now only push high accelerations for things like infill and travels.
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
@@ -60,6 +62,8 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 <b>(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.</b>
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
+
+This should be coming natively to SuperSlicer soon.
 
 I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/blob/master/superslicer/pp.py
 
