@@ -1,6 +1,6 @@
 # Important Notes
-<b>Please read each section fully</b>, especially anything bolded. \
-There are important warnings in some of them that may cause you some headaches or confusion if missed.
+<b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
+These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
 This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. 
 
@@ -23,13 +23,11 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 ![](Images/Import.png)  
 
 # Volumetric Speed / Auto Speed
-<b>!! It is very important that you update the volumetric speed setting !!</b>
+<b>(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.</b>
 
 These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
 
 This is important because I keep my infill speed set to 0. This means it will print infill <b>as fast as the hotend will allow</b>, or up to the 300mm/sec, whichever comes first.
-
-If you have the volumetric speed set too high, your extruder *will* skip and/or grind.
 
 ![](Images/VolumetricSpeed.png)  
 
@@ -55,11 +53,11 @@ I advise leaving the accelerations conservative for anything visible, particular
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
 
-<b>If you have not yet tuned input shaper, consider reducing these accelerations to 4000 and below.</b>
+<b>(!) If you have not yet tuned input shaper, consider reducing these accelerations to 4000 and below.</b>
 
 ![](Images/AccelControls.png)  
 # Post Processing (Travel Accels)
-<b>This is optional, in fact I would suggest starting with it disabled and come back to it later.</b>
+<b>(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.</b>
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
 
@@ -104,7 +102,7 @@ My start gcode follows the convention I laid out in my Discord pin: https://disc
 
 This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that I can control exactly when they happen during my start gcode.
 
-<b>If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.</b>
+<b>(!) If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.</b>
 
 ![](Images/StartGcode.png)  
 
