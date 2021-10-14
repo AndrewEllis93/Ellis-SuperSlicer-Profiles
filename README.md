@@ -1,3 +1,10 @@
+# Important Notes
+<b>Please read each section fully.</b> There are important warnings in some of them that may cause you some headaches if missed.
+
+This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. 
+
+If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same profiles on my Ender 3, just slowed down.
+
 # How to Import
 ![](Images/Import.png)  
 
@@ -121,7 +128,7 @@ We will print some 30x30x3mm cubes (see the Test_Prints folder).
     This one is more subject to interpretation, but I find 100% to have good results.
 - <b>5 Top Layers</b>\
     This ensures that we have adequate support for the surface layer.
-- <b>20mm/s Top Layer Speed</b>\
+- <b>20-30mm/s Top Layer Speed</b>\
     This helps to remove pressure advance as a variable. The faster we go, the more pressure advance will impact our results.
 - <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
     This is simply a PA value on the lowest end of the normal range. 
