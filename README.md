@@ -137,13 +137,13 @@ By far the best method I have found is purely visual. *Put the calipers down for
 We will print some 30x30x3mm cubes. <i>(see the Test_Prints folder)</i>
 
 <b>Print Settings:</b>
-- <b>40% Infill</b>\
+- <b>40+% Infill</b>\
     We need sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
     We still need enough to adequately support the top layers.</i>
 - <b>120% Infill Line Width</b>\
     This just increases infill density over my normal settings, which are thicker for reducing print times.
 - <b>100% Top Layer Line Width</b>\
-    This one is more subject to interpretation, but I find 100% to have good results.
+    This is more subject to interpretation, but I find 100% to have good results.
 - <b>5 Top Layers</b>\
     This ensures that we have adequate support for the surface layer.
 - <b>20-30mm/s Top Layer Speed</b>\
@@ -199,7 +199,7 @@ You will follow a similar process to extruder calibration.
 For example, the gcode to extrude at 5mm/sec is:
 ```
 M83 ; Relative extrusion mode
-G0 E100 F300 ; Extrude 100mm at 5mm/sec
+G1 E100 F300 ; Extrude 100mm at 5mm/sec
 ```
 Remember the the F speed is in mm/min, <b>not</b> mm/sec, so multiply your desired speed by 60.
 
