@@ -9,13 +9,14 @@ If you adjust speeds, accels, etc, and you should get good results on most other
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
 # Table of Contents
+<b>(!)</b> = has important warning
 - [How to Import](#how-to-import)
-- [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed)
-- [Acceleration Control](#acceleration-control)
-- [Post Processing (Travel Accels)](#post-processing-travel-accels)
+- [Volumetric Speed / Auto Speed <b>(!)</b>](#volumetric-speed--auto-speed)
+- [Acceleration Control <b>(!)</b>](#acceleration-control)
+- [Post Processing (Travel Accels) <b>(!)</b>](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Start G-code](#start-g-code)
+- [Start G-code <b>(!)</b>](#start-g-code)
 - [Calibrating Extrusion Multiplier (Flow %)](#calibrating-extrusion-multiplier-flow-)
 - [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
 # How to Import
