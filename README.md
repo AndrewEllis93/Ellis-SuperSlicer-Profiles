@@ -109,7 +109,7 @@ This is a widely misunderstood and debated subject. Getting the perfect extrusio
 
 ## Background
 
-Some guides you will find online mention printing a single or two-walled object and measuring the thickness with calipers. I find this method not to work very well at all, especially with ABS due to shrinkage.
+Some guides you will find online mention printing a single or two-walled object and measuring the thickness with calipers. I find this method not to work very well at all, especially with ABS, presumably due to shrinkage.
 
 SuperSlicer has a built-in flow calibration tool, however I do not like this either, for a few reasons:
 - It is very reliant on first layer squish.
@@ -143,13 +143,13 @@ We will print some 30x30x3mm cubes. <i>(see the Test_Prints folder)</i>
 
 <b>1)</b> Print multiple test cubes with variations of 2% EM. You can do this all in once plate by adjusting settings for each object. Save it as a .3mf file for reuse later.
 
-<b>2)</b> Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rough, and too little EM will have gaps between the lines.
+<b>2)</b> Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rougher, and too little EM will have gaps between the lines.
 
 <b>3)</b> If desired, run the process again but with 0.5% intervals. Most PIF providers tune down to the 0.5% range, some even less. 
 
-I have found that most ABS falls in the 91-94% range.
+I have found that most ABS falls within the 91-94% range.
 
-This image shows 0.5% intervals, and how the print becomes noticeably more shiny and glass-like around perfect EM. This is not just a trick of the light - #3 was the best.
+This image shows 0.5% intervals. Notice how the print becomes noticeably more shiny and glass-like around perfect EM (cube #3). This is not just a trick of the light. Shininess is not always the best indicator, but it makes a good visual example.
 
 ![](Images/EMPrints-Fine.png) 
 
@@ -159,6 +159,8 @@ Example of an actual print with tuned EM:
 # Determining Max Volumetric Flow
 
 ## Background
+
+As mentioned at the beginning, this probably isn't necessary if you can find a "safe" value that others are using for your particular hotend.
 
 This is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type.
 
