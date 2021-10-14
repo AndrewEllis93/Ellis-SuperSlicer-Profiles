@@ -1,9 +1,9 @@
 # Important Notes
-<b>Please read each section fully.</b> There are important warnings in some of them that may cause you some headaches if missed.
+<b>Please read each section fully.</b> There are important warnings in some of them that may cause you some headaches or confusion if missed.
 
 This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. 
 
-If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same profiles on my Ender 3, just slowed down.
+If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same print settings on my Ender 3, just slowed down.
 
 # How to Import
 ![](Images/Import.png)  
@@ -120,7 +120,7 @@ We will print some 30x30x3mm cubes (see the Test_Prints folder).
 
 <b>Print Settings:</b>
 - <b>40% Infill</b>\
-    It is important that we have some sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
+    We need sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
     We still need enough to adequately support the top layers.</i>
 - <b>120% Infill Line Width</b>\
     This just increases infill density over my normal settings, which are thicker for reducing print times.
