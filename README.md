@@ -101,13 +101,14 @@ This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that
 
 # Calibrating Extrusion Multiplier (Flow %)
 
-Now we are getting more into general tuning territory than information specific to this profile, but I thought this needed sharing.
-
-This is a widely misunderstood and debated subject. Getting the perfect extrusion multiplier (EM) is *crucial* for good looking prints.
+Now we are getting more into general tuning territory.
 
 ![](Images/EM.png)  
 
 ## Background
+
+
+This is a widely misunderstood and debated subject. Getting the perfect extrusion multiplier (EM) is *crucial* for good looking prints.
 
 Some guides you will find online mention printing a single or two-walled object and measuring the thickness with calipers. I find this method not to work very well at all, especially with ABS, presumably due to shrinkage.
 
@@ -160,11 +161,9 @@ Example of an actual print with tuned EM:
 
 ## Background
 
-As mentioned at the beginning, this probably isn't necessary if you can find a "safe" value that others are using for your particular hotend.
+As mentioned at the beginning, this probably isn't necessary if you can find a "safe" value that others are using for your particular hotend. If you have a different setup affecting flow, such as a CHT nozzle or unlisted hotend, or if you just want to take the scientific approach, here is the process.
 
-This is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type.
-
-Once you find your maximum volumetric flow with the below method, you should still set it slightly lower in the slicer for margin of safety. I set mine slightly on the low side so that I don't have to tune it per filament/material.
+Remember - this is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type. You should set your limit slightly lower in the slicer for margin of safety, and to avoid having to tune for different filaments that don't flow as nicely.
 
 ## Formulas
 
