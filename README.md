@@ -1,9 +1,12 @@
 # Important Notes
-<b>Please read each section fully.</b> There are important warnings in some of them that may cause you some headaches or confusion if missed.
+<b>Please read each section fully</b>, especially anything bolded. \
+There are important warnings in some of them that may cause you some headaches or confusion if missed.
 
 This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. 
 
 If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same print settings on my Ender 3, just slowed down.
+
+Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
 # How to Import
 ![](Images/Import.png)  
@@ -21,7 +24,7 @@ If you have the volumetric speed set too high, your extruder *will* skip and/or 
 
 ## Approximate values:
 
-| Hotend     | Flow Rate |
+| Hotend     | Flow Rate (mm<sup>3</sup>/sec) |
 | :---        |    :----:   |
 | V6            | 12
 | Dragon SF| 15
@@ -47,7 +50,7 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 
 
 # Post Processing (Travel Accels)
-This is optional, <i>in fact I would start with it disabled and come back to it later.</i>
+<b>This is optional, in fact I would suggest starting with it disabled and come back to it later.</b>
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
 
@@ -92,7 +95,7 @@ My start gcode follows the convention I laid out in my Discord pin: https://disc
 
 This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that I can control exactly when they happen during my start gcode.
 
-If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.
+<b>If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.</b>
 
 ![](Images/StartGcode.png)  
 
@@ -157,7 +160,7 @@ Once you find your maximum volumetric flow with the below method, you should sti
 
 ## Formulas
 
-Volumetric flow is expressed in mm^3/sec (cubic millimeters per second)
+Volumetric flow is expressed in mm<sup>3</sup>/sec (cubic millimeters per second)
 
 - <b>volume = mm / 0.415.</b>
 
@@ -165,7 +168,7 @@ Or, inversely,
 
 - <b>mm = volume * 0.415.</b>
 
-For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm^3/sec.</b> (5mm / 0.415)
+For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm<sup>3</sup>/sec.</b> (5mm / 0.415)
 
 ## Method
 You will follow a similar process to extruder calibration. 
