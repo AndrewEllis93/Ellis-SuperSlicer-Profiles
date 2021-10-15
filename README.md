@@ -20,7 +20,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [Post Processing (Travel Accels) <b>(!)</b>](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Calibrating Extrusion Multiplier (Flow)](#calibrating-extrusion-multiplier-flow)
+- [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
 # How to Import
@@ -111,7 +111,7 @@ Rear <i>(rather than cost-based)</i>
 0 degrees <i>(rather than 45 degrees)</i>
 
 ![](Images/45DegreePlate.png)  
-# Calibrating Extrusion Multiplier (Flow)
+# Calibrating Extrusion Multiplier
 
 Now we are getting more into general tuning territory.
 
