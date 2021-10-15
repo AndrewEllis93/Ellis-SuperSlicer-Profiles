@@ -21,6 +21,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Start G-code <b>(!)</b>](#start-g-code)
 - [Calibrating Extrusion Multiplier (Flow %)](#calibrating-extrusion-multiplier-flow-)
+- [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
 # How to Import
 ![](Images/Import.png)  
@@ -108,14 +109,9 @@ Rear <i>(rather than cost-based)</i>
 ![](Images/45DegreePlate.png)  
 
 # Start G-code
-My start gcode follows the convention I laid out in my Discord pin: https://discord.com/channels/460117602945990666/460172848565190667/866045862782304326
-
-This passes the bed, hotend, and chamber temps to my `PRINT_START` macro so that I can control exactly when they happen during my start gcode.
-
-<b>(!) If you have not set up your `PRINT_START` based on my Discord pin, replace this whole block with `PRINT_START` on its own.</b>
+<b>(!) If you have not yet set up your `PRINT_START` based on my instructions [below](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
 
 ![](Images/StartGcode.png)  
-
 # Calibrating Extrusion Multiplier (Flow %)
 
 Now we are getting more into general tuning territory.
@@ -174,6 +170,58 @@ This image shows 0.5% intervals. Notice how the print becomes noticeably more sh
 Example of an actual print with tuned EM:
 
 ![](Images/EMPrint-Example.jpg) 
+
+## Passing Variables to PRINT_START
+<b>I would recommend starting with a standard PRINT_START and setting this up later.</b>
+
+By default, slicers will put heating commands either entirely before or after `PRINT_START`. You have to pass the temps TO `PRINT_START` in order to control when they happen. 
+For example I don’t want my nozzle to heat until the very end so it’s not oozing during QGL, mesh etc.
+
+If you don’t use a chamber thermistor, just remove the chamber stuff. 
+
+### Example macro:
+```
+[gcode_macro PRINT_START]
+gcode:        
+    # Parameters
+    {% set bedtemp = params.BED|int %}
+    {% set hotendtemp = params.HOTEND|int %}
+    {% set chambertemp = params.CHAMBER|default(0)|int %}
+    
+    # <insert routines>
+    M190 S{bedtemp}                                                              ; wait for bed temp
+    TEMPERATURE_WAIT SENSOR="temperature_sensor chamber" MINIMUM={chambertemp}   ; wait for chamber temp
+    # <insert routines>
+    M109 S{hotendtemp}                                                           ; wait for hotend temp
+    # <insert routines / nozzle clean>
+    G28 Z                                                                        ; final z homing with hot nozzle
+```
+
+This would now be run like `PRINT_START BED=110 HOTEND=240 CHAMBER=50`. 
+Chamber defaults to 0 if not specified.
+### Slicer Start G-code
+
+#### SuperSlicer
+ ```    
+M104 S0 ; Stops PS/SS from sending temp waits separately
+M140 S0
+PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature] CHAMBER=[chamber_temperature]
+```
+
+#### Prusa Slicer 
+<i>(doesn’t support chamber temp)</i>
+    
+```
+M104 S0 ; Stops PS/SS from sending temp waits separately
+M140 S0
+PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature]
+```
+
+
+#### Cura
+```
+PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
+```
 # Determining Max Volumetric Flow
 
 ## Background
