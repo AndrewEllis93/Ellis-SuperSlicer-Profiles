@@ -2,11 +2,11 @@
 <b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile was created for V2/V1/Trident/V0. For non-coreXY printers (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
+This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
+
+<b>(!) This profile was created for CoreXY (V2/V1/Trident/V0)</b>. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
 
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down <i>(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)</i> with good results.
-
-This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
@@ -58,7 +58,7 @@ I advise leaving the accelerations conservative for anything visible, particular
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
 
-<b>(!) If you have not yet tuned input shaper, consider reducing these accelerations to 4000 and below.</b>
+<b>(!) If you have not yet tuned input shaper, consider reducing these accelerations to 5000 and below.</b>
 
 ![](Images/AccelControls.png)  
 # Post Processing (Travel Accels)
