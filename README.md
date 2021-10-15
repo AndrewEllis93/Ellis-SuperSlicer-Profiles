@@ -4,8 +4,7 @@ These are important warnings in some of them that may cause you some headaches o
 
 This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
-<b>(!) This profile was created for CoreXY (V2/V1/Trident/V0)</b>. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
-
+<b>(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)</b>. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down <i>(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)</i> with good results.
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
