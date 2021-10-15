@@ -1,23 +1,23 @@
 # Important Notes
-<b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
+**Please read each section fully**, especially anything bolded and marked with "**(!)**". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
 This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
-<b>(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)</b>. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
-I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down <i>(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)</i> with good results.
+**(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
+I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)* with good results.
 
 There are some features in this profile (notably single bottom perimeters) that are only available on the latest pre-releases of SuperSlicer.
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
 # Table of Contents
-<b>(!)</b> = has important warning
+**(!)** = has important warning
 - [How to Import](#how-to-import)
-- [Start G-code <b>(!)</b>](#start-g-code)
-- [Volumetric Speed / Auto Speed <b>(!)</b>](#volumetric-speed--auto-speed)
-- [Acceleration Control <b>(!)</b>](#acceleration-control)
-- [Post Processing (Travel Accels) <b>(!)</b>](#post-processing-travel-accels)
+- [Start G-code **(!)**](#start-g-code)
+- [Volumetric Speed / Auto Speed **(!)**](#volumetric-speed--auto-speed)
+- [Acceleration Control **(!)**](#acceleration-control)
+- [Post Processing (Travel Accels) **(!)**](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
@@ -27,15 +27,15 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 ![](Images/Import.png)  
 
 # Start G-code
-<b>(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
+**(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.**
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
-<b>(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.</b>
+**(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.**
 
 These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
 
-This is important because I keep my infill speed set to 0. This means it will print infill <b>as fast as the hotend will allow</b>, or up to the 300mm/sec, whichever comes first.
+This is important because I keep my infill speed set to 0. This means it will print infill **as fast as the hotend will allow**, or up to the 300mm/sec, whichever comes first.
 
 ![](Images/VolumetricSpeed.png)  
 
@@ -52,7 +52,7 @@ This is important because I keep my infill speed set to 0. This means it will pr
 
 You should be okay using an approximate value and just lowering it if you have any issues. 
 
-<i>If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow"](#determining-max-volumetric-flow)) for more details.</i>
+*If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow"](#determining-max-volumetric-flow)) for more details.*
 
 # Acceleration Control
 
@@ -64,13 +64,13 @@ I advise leaving the accelerations conservative for anything visible, particular
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
 
-<b>(!) If you have not yet tuned input shaper, consider reducing these accelerations to 5000 and below.</b>
+**(!) If you have not yet tuned input shaper, consider reducing these accelerations to 5000 and below.**
 
-<b>(!) These gcodes *override* the maximum values in your printer.cfg.</b>
+**(!) These gcodes *override* the maximum values in your printer.cfg.**
 
 ![](Images/AccelControls.png)  
 # Post Processing (Travel Accels)
-<b>(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.</b>
+**(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.**
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
 
@@ -90,7 +90,7 @@ Adjust your desired accel, accel to decel, and square corner velocity at the top
 
 # Cooling
 
-This profile uses <b>static fan speeds</b>. The community has found that varying fan speeds, particularly with high-shrinkage materials, can cause layer inconsistencies. Essentially some areas will cool and contract faster than others.
+This profile uses **static fan speeds**. The community has found that varying fan speeds, particularly with high-shrinkage materials, can cause layer inconsistencies. Essentially some areas will cool and contract faster than others.
 
 The exact fan speed will vary based on your fan, material, layer times, and chamber temps. You may need to play with this. 
 
@@ -105,10 +105,10 @@ My primary profile is the "45 degree" profile. This means that I print all of my
 This makes it much easier to align the seams where I want them, as otherwise SuperSlicer tends to place them oddly.
 
 The differences with the "45 degree" profile are:
-- <b>Print Settings > Perimeters & Shell > Seam:</b> \
-Rear <i>(rather than cost-based)</i>
-- <b>Print Settings > Infill > Angle > Fill:</b> \
-0 degrees <i>(rather than 45 degrees)</i>
+- **Print Settings > Perimeters & Shell > Seam:** \
+Rear *(rather than cost-based)*
+- **Print Settings > Infill > Angle > Fill:** \
+0 degrees *(rather than 45 degrees)*
 
 ![](Images/45DegreePlate.png)  
 # Calibrating Extrusion Multiplier
@@ -135,30 +135,30 @@ Both of the above methods I've found to have error of up to 5% (sometimes even m
 ## Method
 By far the best method I have found is purely visual. *Put the calipers down for now*.
 
-We will print some 30x30x3mm cubes. <i>(see the Test_Prints folder)</i>
+We will print some 30x30x3mm cubes. *(see the Test_Prints folder)*
 
-<b>Print Settings:</b>
-- <b>40+% Infill</b>\
+**Print Settings:**
+- **40+% Infill**\
     We need sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
-    We still need enough to adequately support the top layers.</i>
-- <b>120% Infill Line Width</b>\
+    We still need enough to adequately support the top layers.*
+- **120% Infill Line Width**\
     This just increases infill density over my normal settings, which are thicker for reducing print times.
-- <b>100% Top Layer Line Width</b>\
+- **100% Top Layer Line Width**\
     This is more subject to interpretation, but I find 100% to have good results.
-- <b>5 Top Layers</b>\
+- **5 Top Layers**\
     This ensures that we have adequate support for the surface layer.
-- <b>20-30mm/s Top Layer Speed</b>\
+- **20-30mm/s Top Layer Speed**\
     This helps to remove pressure advance as a variable. The faster we go, the more pressure advance will impact our results.
-- <b>0.03 Pressure Advance</b> (only if you have not yet tuned it)\
+- **0.03 Pressure Advance** (only if you have not yet tuned it)\
     This is simply a PA value on the lowest end of the normal range. 
 
-<b>Steps:</b>
+**Steps:**
 
-<b>1)</b> Print multiple test cubes with variations of 2% EM. You can do this all in once plate by adjusting settings for each object. Save it as a .3mf file for reuse later.
+**1)** Print multiple test cubes with variations of 2% EM. You can do this all in once plate by adjusting settings for each object. Save it as a .3mf file for reuse later.
 
-<b>2)</b> Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rougher, and too little EM will have gaps between the lines.
+**2)** Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rougher, and too little EM will have gaps between the lines.
 
-<b>3)</b> If desired, run the process again but with 0.5% intervals. Most PIF providers tune down to the 0.5% range, some even less. 
+**3)** If desired, run the process again but with 0.5% intervals. Most PIF providers tune down to the 0.5% range, some even less. 
 
 I have found that most ABS falls within the 91-94% range.
 
@@ -171,7 +171,7 @@ Example of an actual print with tuned EM:
 ![](Images/EMPrint-Example.jpg) 
 
 ## Passing Variables to PRINT_START
-<b>I would recommend starting with a standard PRINT_START and setting this up later.</b>
+**I would recommend starting with a standard PRINT_START and setting this up later.**
 
 By default, slicers will put heating commands either entirely before or after `PRINT_START`. You have to pass the temps TO `PRINT_START` in order to control when they happen. 
 For example I don’t want my nozzle to heat until the very end so it’s not oozing during QGL, mesh etc.
@@ -208,7 +208,7 @@ PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature] C
 ```
 
 #### Prusa Slicer 
-<i>(doesn’t support chamber temp)</i>
+*(doesn’t support chamber temp)*
     
 ```
 M104 S0 ; Stops PS/SS from sending temp waits separately
@@ -233,30 +233,30 @@ Remember - this is a rough calculation. Maximum volumetric flow rate can change 
 
 Volumetric flow is expressed in mm<sup>3</sup>/sec (cubic millimeters per second)
 
-- <b>volume = mm / 0.415.</b>
+- **volume = mm / 0.415.**
 
 Or, inversely, 
 
-- <b>mm = volume * 0.415.</b>
+- **mm = volume * 0.415.**
 
-For example, if you extrude at <b>5mm/sec</b>, that comes out to <b>~12mm<sup>3</sup>/sec.</b> (5mm / 0.415)
+For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.415)
 
 ## Method
 You will follow a similar process to extruder calibration. 
 
-<b>1)</b> Heat your hotend. \
-<b>2)</b> Extrude a little bit to ensure your E motor is energized and holding.\
-<b>3)</b> Mark a 120mm length of filament going into your extruder.\
-<b>4)</b> Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.
+**1)** Heat your hotend. \
+**2)** Extrude a little bit to ensure your E motor is energized and holding.\
+**3)** Mark a 120mm length of filament going into your extruder.\
+**4)** Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.
 
 For example, the gcode to extrude at 5mm/sec is:
 ```
 M83 ; Relative extrusion mode
 G1 E100 F300 ; Extrude 100mm at 5mm/sec
 ```
-Remember the the F speed is in mm/min, <b>not</b> mm/sec, so multiply your desired speed by 60.
+Remember the the F speed is in mm/min, **not** mm/sec, so multiply your desired speed by 60.
 
-<b>5)</b> Keep going until it starts dropping below 100mm. This is your max flow rate. \
-<b>6)</b> Convert your extrusion speed to volumetric speed using the above formulas. \
-<b>7)</b> Enter a slightly lower volumetric speed into the slicer.
+**5)** Keep going until it starts dropping below 100mm. This is your max flow rate. \
+**6)** Convert your extrusion speed to volumetric speed using the above formulas. \
+**7)** Enter a slightly lower volumetric speed into the slicer.
 
