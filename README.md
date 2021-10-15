@@ -7,6 +7,8 @@ This profile is more aggressive than most stock profiles, and some things may al
 <b>(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)</b>. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down <i>(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)</i> with good results.
 
+There are some features in this profile (notably single bottom perimeters) that are only available on the latest pre-releases of SuperSlicer.
+
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
 # Table of Contents
