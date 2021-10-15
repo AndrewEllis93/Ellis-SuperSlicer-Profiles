@@ -2,7 +2,7 @@
 <b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile was created for V1/Trident and V2. It should also work on V0 with printer dimensions changed. 
+This profile was created for V2/V1/Trident/V0.
 
 For non-coreXY printers (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. I use the same print settings on my Ender 3, just with speeds and accelerations toned down.
 
