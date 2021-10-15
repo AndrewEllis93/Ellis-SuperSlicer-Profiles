@@ -27,7 +27,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 ![](Images/Import.png)  
 
 # Start G-code
-<b>(!) If you have not yet set up your `PRINT_START` based on [my instructions below](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
+<b>(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
