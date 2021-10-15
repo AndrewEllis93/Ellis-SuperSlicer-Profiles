@@ -60,6 +60,8 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 
 <b>(!) If you have not yet tuned input shaper, consider reducing these accelerations to 5000 and below.</b>
 
+<b>(!) These gcodes *override* the maximum values in your printer.cfg.</b>
+
 ![](Images/AccelControls.png)  
 # Post Processing (Travel Accels)
 <b>(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.</b>
