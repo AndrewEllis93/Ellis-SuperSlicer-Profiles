@@ -2,9 +2,11 @@
 <b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
+This profile was created for V1/Trident and V2. It should also work on V0 with printer dimensions changed. 
 
-If you adjust speeds, accels, etc, and you should get good results on most other printers too. I use the same print settings on my Ender 3, just slowed down.
+For non-coreXY printers (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. I use the same print settings on my Ender 3, just with speeds and accelerations toned down.
+
+This profile is more aggressive than most stock profiles, and some things may need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
@@ -31,11 +33,12 @@ This is important because I keep my infill speed set to 0. This means it will pr
 
 ![](Images/VolumetricSpeed.png)  
 
-## Approximate values:
+## Approximate Values:
 
 | Hotend     | Flow Rate (mm<sup>3</sup>/sec) |
 | :---        |    :----:   |
-| V6            | 12
+| E3D V6            | 11
+| E3D Revo            | 15
 | Dragon SF| 15
 | Dragon HF| 24
 | Mosquito| 20
