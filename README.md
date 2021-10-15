@@ -2,9 +2,9 @@
 <b>Please read each section fully</b>, especially anything bolded and marked with "<b>(!)</b>". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile was created for V2/V1/Trident/V0.
+This profile was created for V2/V1/Trident/V0. For non-coreXY printers (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
 
-For non-coreXY printers (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. I use the same print settings on my Ender 3, just with speeds and accelerations toned down.
+I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down <i>(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)</i> with good results.
 
 This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
