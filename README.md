@@ -14,18 +14,22 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 # Table of Contents
 <b>(!)</b> = has important warning
 - [How to Import](#how-to-import)
+- [Start G-code <b>(!)</b>](#start-g-code)
 - [Volumetric Speed / Auto Speed <b>(!)</b>](#volumetric-speed--auto-speed)
 - [Acceleration Control <b>(!)</b>](#acceleration-control)
 - [Post Processing (Travel Accels) <b>(!)</b>](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Start G-code <b>(!)</b>](#start-g-code)
 - [Calibrating Extrusion Multiplier (Flow %)](#calibrating-extrusion-multiplier-flow-)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
 # How to Import
 ![](Images/Import.png)  
 
+# Start G-code
+<b>(!) If you have not yet set up your `PRINT_START` based on [my instructions below](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
+
+![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
 <b>(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.</b>
 
@@ -107,11 +111,6 @@ Rear <i>(rather than cost-based)</i>
 0 degrees <i>(rather than 45 degrees)</i>
 
 ![](Images/45DegreePlate.png)  
-
-# Start G-code
-<b>(!) If you have not yet set up your `PRINT_START` based on my instructions [below](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.</b>
-
-![](Images/StartGcode.png)  
 # Calibrating Extrusion Multiplier (Flow %)
 
 Now we are getting more into general tuning territory.
