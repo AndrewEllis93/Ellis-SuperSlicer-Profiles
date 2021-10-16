@@ -60,7 +60,7 @@ This profile uses a custom acceleration control setup. Acceleration would typica
 
 This should be coming natively to SuperSlicer soon.
 
-I advise leaving the accelerations conservative for anything visible, particularly for perimeters. While you *can* push the accels higher, even with input shaper I have found that it can still cause bizarre bulging issues. I now only push high accelerations for things like infill and travels.
+I advise leaving the accelerations conservative for anything visible, particularly for perimeters. While you *can* push the accels higher, even with input shaper I have found that it can cause [bizarre bulging](#bulging-from-high-accelerations) issues, at least for me. I now only push high accelerations for things like infill and travels.
 
 I use 8 square corner velocity because I have found it to make corners slightly crisper.
 
@@ -69,6 +69,11 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 **(!) These gcodes *override* the maximum values in your printer.cfg.**
 
 ![](Images/AccelControls.png)  
+
+## Bulging from High Accelerations
+
+![](Images/Bulging.png)  
+![](Images/Bulging2.png)  
 # Post Processing (Travel Accels)
 **(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.**
 
