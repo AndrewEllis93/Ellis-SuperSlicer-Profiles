@@ -117,64 +117,7 @@ Rear *(rather than cost-based)*
 
 ![](Images/45DegreePlate.png)  
 # Calibrating Extrusion Multiplier
-
-Now we are getting more into general tuning territory.
-
-![](Images/EM.png)  
-
-## Background
-
-
-This is a widely misunderstood and debated subject. Getting the perfect extrusion multiplier (EM) is *crucial* for good looking prints.
-
-Some guides you will find online mention printing a single or two-walled object and measuring the thickness with calipers. I find this method not to work very well at all, especially with ABS, presumably due to shrinkage.
-
-SuperSlicer has a built-in flow calibration tool, however I do not like this either, for a few reasons:
-- It is very reliant on first layer squish.
-- Because it uses 100% infill, the first layer squish carries through all the way to the top. 
-- It has ironing turned on by default.
-- The objects are too small. It's normal for smaller infill areas to look a bit more overextruded than larger infill areas.
-
-Both of the above methods I've found to have error of up to 5% (sometimes even more) - which may not sound too bad but it makes a *huge* difference on the appearance of your prints.
-
-## Method
-By far the best method I have found is purely visual. *Put the calipers down for now*.
-
-We will print some 30x30x3mm cubes. *(see the Test_Prints folder)*
-
-**Print Settings:**
-- **40+% Infill**\
-    We need sparse infill rather than 100% solid infill, to remove the first layer squish from impacting the top layer. 
-    We still need enough to adequately support the top layers.*
-- **120% Infill Line Width**\
-    This just increases infill density over my normal settings, which are thicker for reducing print times.
-- **100% Top Layer Line Width**\
-    This is more subject to interpretation, but I find 100% to have good results.
-- **5 Top Layers**\
-    This ensures that we have adequate support for the surface layer.
-- **20-30mm/s Top Layer Speed**\
-    This helps to remove pressure advance as a variable. The faster we go, the more pressure advance will impact our results.
-- **0.03 Pressure Advance** (only if you have not yet tuned it)\
-    This is simply a PA value on the lowest end of the normal range. 
-
-**Steps:**
-
-**1)** Print multiple test cubes with variations of 2% EM. You can do this all in once plate by adjusting settings for each object. Save it as a .3mf file for reuse later.
-
-**2)** Inspect each cube. Once you are nearing the correct EM, the top should feel noticeably smoother. Too much EM will look and feel rougher, and too little EM will have gaps between the lines.
-
-**3)** If desired, run the process again but with 0.5% intervals. Most PIF providers tune down to the 0.5% range, some even less. 
-
-I have found that most ABS falls within the 91-94% range.
-
-This image shows 0.5% intervals. Notice how the print becomes noticeably more shiny and glass-like around perfect EM (cube #3). This is not just a trick of the light. Shininess is not always the best indicator, but it makes a good visual example.
-
-![](Images/EMPrints-Fine.png) 
-
-Example of an actual print with tuned EM:
-
-![](Images/EMPrint-Example.jpg) 
-
+This section has [moved](https://github.com/AndrewEllis93/Print-Tuning-Guide#extrusion-multiplier) to my print tuning guide.
 ## Passing Variables to PRINT_START
 **I would recommend starting with a standard PRINT_START and setting this up later.**
 
