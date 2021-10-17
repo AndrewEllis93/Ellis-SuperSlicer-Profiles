@@ -23,6 +23,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
+- [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
 # How to Import
 ![](Images/Import.png)  
 
