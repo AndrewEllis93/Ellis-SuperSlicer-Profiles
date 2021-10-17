@@ -208,3 +208,15 @@ Remember the the F speed is in mm/min, **not** mm/sec, so multiply your desired 
 **6)** Convert your extrusion speed to volumetric speed using the above formulas. \
 **7)** Enter a slightly lower volumetric speed into the slicer.
 
+# How Volumetric Flow Rate Relates to Print Speed
+
+Working out how quickly you can print at a given volumetric flow rate is quite simple:
+
+- **speed = volumetric flow / layer height / line width**
+
+Or, inversely,
+- **volumetric flow = speed * line width * layer height**
+
+For example, if your hotend is capable of 24mm<sup>3</sup>/sec, and you are printing with 0.4mm line width, at 0.2mm layer height:
+
+- **24 / 0.4 / 0.2 = Maximum print speed of 300mm/sec**
