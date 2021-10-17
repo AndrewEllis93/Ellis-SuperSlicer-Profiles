@@ -118,7 +118,7 @@ Rear *(rather than cost-based)*
 
 ![](Images/45DegreePlate.png)  
 # Calibrating Extrusion Multiplier
-This section has [moved](https://github.com/AndrewEllis93/Print-Tuning-Guide#extrusion-multiplier) to my print tuning guide.
+This section has moved to my [print tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide#extrusion-multiplier).
 ## Passing Variables to PRINT_START
 **I would recommend starting with a standard PRINT_START and setting this up later.**
 
