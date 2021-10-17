@@ -190,6 +190,8 @@ Or, inversely,
 
 For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.415)
 
+For 2.85mm filament, use 0.157 instead of 0.415.
+
 ## Method
 You will follow a similar process to extruder calibration. 
 
