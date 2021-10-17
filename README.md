@@ -73,6 +73,10 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 
 ## Bulging from High Accelerations
 
+I am still not 100% sure if this was only a "me" problem, but thought I would include it anyway.
+
+I spent ages trying to fix these bulges, and the only thing that fixed it was to lower my perimeter accelerations to 2k internal / 1k external.
+
 ![](Images/Bulging.png)  
 ![](Images/Bulging2.png)  
 # Post Processing (Travel Accels)
