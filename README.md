@@ -13,6 +13,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 # Table of Contents
 **(!)** = has important warning
+- [How to Download](#how-to-download)
 - [How to Import](#how-to-import)
 - [Start G-code **(!)**](#start-g-code)
 - [Volumetric Speed / Auto Speed **(!)**](#volumetric-speed--auto-speed)
@@ -24,7 +25,22 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
 - [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
+
+# How to Download
+**1)** Navigate to the .ini file.
+
+**2)** Right click "Raw" and click "Save link as"
+
+![](Images/Download.png) 
+
+Alternatively, download the whole repository as .zip:
+
+![](Images/DownloadRepo.png) 
 # How to Import
+If you downloaded the whole repository as .zip, you will have to unzip it first.
+
+Select the .ini file.
+
 ![](Images/Import.png)  
 
 # Start G-code
