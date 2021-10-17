@@ -22,7 +22,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
-- [Determining Max Volumetric Flow](#determining-max-volumetric-flow)
+- [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
 - [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
 # How to Import
 ![](Images/Import.png)  
@@ -53,7 +53,7 @@ This is important because I keep my infill speed set to 0. This means it will pr
 
 You should be okay using an approximate value and just lowering it if you have any issues. 
 
-*If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow"](#determining-max-volumetric-flow)) for more details.*
+*If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow Rate"](#determining-max-volumetric-flow-rate)) for more details.*
 
 # Acceleration Control
 
@@ -170,7 +170,7 @@ PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature]
 ```
 PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
 ```
-# Determining Max Volumetric Flow
+# Determining Max Volumetric Flow Rate
 
 ## Background
 
