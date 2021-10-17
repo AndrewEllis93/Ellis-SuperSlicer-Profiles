@@ -31,6 +31,8 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 **2)** Right click "Raw" and click "Save link as"
 
+**If you do not use the "Raw" button, you will get errors trying to import.**
+
 ![](Images/Download.png) 
 
 Alternatively, download the whole repository as .zip:
@@ -39,9 +41,9 @@ Alternatively, download the whole repository as .zip:
 # How to Import
 If you downloaded the whole repository as .zip, you will have to unzip it first.
 
-Select the .ini file.
-
 ![](Images/Import.png)  
+
+Select the **\.ini** file.
 
 # Start G-code
 **(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace this whole block with `PRINT_START` on its own.**
