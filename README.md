@@ -11,6 +11,8 @@ There are some features in this profile (notably single bottom perimeters) that 
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
+See my [tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) for more generalized tuning information (primarily for Vorons running Klipper).
+
 # Table of Contents
 **(!)** = has important warning
 - [How to Download](#how-to-download)
