@@ -54,7 +54,7 @@ If you downloaded the whole repository as .zip, you will have to unzip it first.
 Select the **\.ini** file.
 
 # Start G-code
-**(!) If you have are not [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
+**(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
