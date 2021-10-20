@@ -2,12 +2,15 @@
 **Please read each section fully**, especially anything bolded and marked with "**(!)**". \
 These are important warnings in some of them that may cause you some headaches or confusion if missed.
 
-This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
+- This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
-**(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
+- **(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)* with good results.
 
-There are some features in this profile (notably single bottom perimeters) that are only available on the latest pre-releases of SuperSlicer.
+- There are some features in this profile (notably single bottom perimeters) that are only available on the latest pre-releases of SuperSlicer.
+
+- Unfortunately, using the [custom accleration controls](#acceleration-control) in this profile can make the predicted print times inaccurate. Hopefully these accleration controls we be coming natively to SuperSlicer soon. \
+For now you will just have to play with "time estimation compensation" setting under *printer settings -> machine limits*.
 
 **See my [tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) for more generalized tuning information (primarily for Vorons running Klipper).**
 
