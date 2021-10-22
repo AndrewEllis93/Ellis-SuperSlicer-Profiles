@@ -19,6 +19,8 @@ You can find bed models and textures from [Hartk's GitHub repo](https://github.c
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
+[Support my work](https://www.paypal.com/donate?business=U6F2FZMXXSBSW&no_recurring=0&currency_code=USD)
+
 
 # Table of Contents
 **(!)** = has important warning
