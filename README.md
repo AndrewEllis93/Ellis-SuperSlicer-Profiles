@@ -34,9 +34,9 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
+- [Tips and Tricks](#tips-and-tricks)
 - [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
 - [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
-
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -203,8 +203,22 @@ PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature]
 ```
 PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
 ```
-# Determining Max Volumetric Flow Rate
 
+# Tips and Tricks
+## Rotating All Parts
+
+Press ctrl+a to select all objects. \
+Type the rotation amount in "Z" the box at the bottom right:
+
+![](Images/Misc/Rotation.png) 
+
+## Part Spacing / Plating
+Right click the "arrange" button to change part spacing. 
+
+![](Images/Misc/Spacing.png) 
+
+Then click the arrange button (or press A), to automatically arrange everything.
+# Determining Max Volumetric Flow Rate
 ## Background
 
 As mentioned at the beginning, this probably isn't necessary if you can find a "safe" value that others are using for your particular hotend. If you have a different setup affecting flow, such as a CHT nozzle or unlisted hotend, or if you just want to take the scientific approach, here is the process.
