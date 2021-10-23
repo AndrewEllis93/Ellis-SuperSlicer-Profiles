@@ -150,6 +150,13 @@ Rear *(rather than cost-based)*
 0 degrees *(rather than 45 degrees)*
 
 ![](Images/45DegreePlate.png)  
+
+## Rotating All Parts
+
+Press ctrl+a to select all objects. \
+Type the rotation amount in "Z" the box at the bottom right:
+
+![](Images/Misc/Rotation.png) 
 # Calibrating Extrusion Multiplier
 This section has moved to my [print tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide#extrusion-multiplier).
 ## Passing Variables to PRINT_START
@@ -205,13 +212,6 @@ PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temper
 ```
 
 # Tips and Tricks
-## Rotating All Parts
-
-Press ctrl+a to select all objects. \
-Type the rotation amount in "Z" the box at the bottom right:
-
-![](Images/Misc/Rotation.png) 
-
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
 
