@@ -8,8 +8,6 @@ These are important warnings in some of them that may cause you some headaches o
 - **(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)* with good results.
 
-- There are some features in this profile (notably single bottom perimeters) that are only available on the latest pre-releases of SuperSlicer.
-
 - Unfortunately, using the [custom accleration controls](#acceleration-control) in this profile can make the predicted print times inaccurate. Hopefully these accleration controls we be coming natively to SuperSlicer soon. \
 For now you will just have to play with "time estimation compensation" setting under *printer settings -> machine limits*.
 
