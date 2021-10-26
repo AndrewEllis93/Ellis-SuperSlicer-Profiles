@@ -30,7 +30,6 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [Post Processing (Travel Accels) **(!)**](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Calibrating Extrusion Multiplier](#calibrating-extrusion-multiplier)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
 - [Tips and Tricks](#tips-and-tricks)
 - [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
@@ -155,8 +154,7 @@ Press ctrl+a to select all objects. \
 Type the rotation amount in "Z" the box at the bottom right:
 
 ![](Images/Misc/Rotation.png) 
-# Calibrating Extrusion Multiplier
-This section has moved to my [print tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide#extrusion-multiplier).
+
 ## Passing Variables to PRINT_START
 **I would recommend starting with a standard PRINT_START and setting this up later.**
 
