@@ -221,20 +221,20 @@ As mentioned at the beginning, this probably isn't necessary if you can find a "
 
 Remember - this is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type. You should set your limit slightly lower in the slicer for margin of safety, and to avoid having to tune for different filaments that don't flow as nicely.
 
-## Formulas
+## Formulas*
 
 Volumetric flow is expressed in mm<sup>3</sup>/sec (cubic millimeters per second)
 
-- **volume = mm / 0.415.**
+- **volume = mm / 0.416**
 
 Or, inversely, 
 
-- **mm = volume * 0.415.**
+- **mm = volume * 0.416**
 
-For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.415)
+For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.416)
 
-For 2.85mm filament, use 0.157 instead of 0.415.
-
+\* <sup>*For 2.85mm filament, use 0.157 instead of 0.416.*</sup>\
+\* <sup>*These fomulas are simplified versions of the cylinder volume equation (V=πr<sup>2</sup>h) given r (radius) and h (height), rounded to 3 significant figures. This is more than enough accuracy for our purposes (down to the thousandths). [Calculator](https://www.calculatorsoup.com/calculators/geometry-solids/cylinder.php)*</sup>
 ## Method
 You will follow a similar process to extruder calibration. 
 
