@@ -195,8 +195,9 @@ PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[in
 ```
 
 #### Prusa Slicer 
-(3 lines)\
-Prusa Slicer doesn’t support chamber temp.
+(3 lines)
+
+*Prusa Slicer doesn’t support chamber temp.*
     
 ```
 M104 S0 ; Stops PS/SS from sending temp waits separately
