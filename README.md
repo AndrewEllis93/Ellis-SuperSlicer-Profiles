@@ -8,7 +8,7 @@ These are important warnings in some of them that may cause you some headaches o
 - **(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
 I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)* with good results.
 
-- Unfortunately, using the [custom accleration controls](#acceleration-control) in this profile can make the predicted print times inaccurate. Hopefully these accleration controls we be coming natively to SuperSlicer soon. \
+- Unfortunately, using the [custom accleration controls](#acceleration-control) in this profile can make the predicted print times less accurate. Hopefully these accleration controls we be coming natively to SuperSlicer soon. \
 For now you will just have to play with "time estimation compensation" setting under *printer settings -> machine limits*.
 
 **See my [tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) for more generalized tuning information (primarily for Vorons running Klipper).**
@@ -185,24 +185,28 @@ This would now be run like `PRINT_START BED=110 HOTEND=240 CHAMBER=50`.
 Chamber defaults to 0 if not specified.
 ### Slicer Start G-code
 
+Don't split any of these gcodes to separate lines.
 #### SuperSlicer
+(3 lines)
  ```    
 M104 S0 ; Stops PS/SS from sending temp waits separately
 M140 S0
-PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature] CHAMBER=[chamber_temperature]
+PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} CHAMBER=[chamber_temperature]
 ```
 
 #### Prusa Slicer 
-*(doesn’t support chamber temp)*
+(3 lines)\
+Prusa Slicer doesn’t support chamber temp.
     
 ```
 M104 S0 ; Stops PS/SS from sending temp waits separately
 M140 S0
-PRINT_START BED=[first_layer_bed_temperature] HOTEND=[first_layer_temperature]
+PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder] + extruder_temperature_offset[initial_extruder]}
 ```
 
 
 #### Cura
+(1 line)
 ```
 PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
 ```
@@ -234,7 +238,7 @@ Or, inversely,
 For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.416)
 
 \* <sup>*For 2.85mm filament, use 0.157 instead of 0.416.*</sup>\
-\* <sup>*These fomulas are simplified versions of the cylinder volume equation (V=πr<sup>2</sup>h) given r (radius) and h (height) or V (volume), rounded to 3 significant figures. This is more than enough accuracy for our purposes (down to the thousandths). [Calculator](https://www.calculatorsoup.com/calculators/geometry-solids/cylinder.php)*</sup>
+\* <sup>*These fomulas are simplified versions of the cylinder volume equation (V=πr<sup>2</sup>h) given r and h or V, rounded to 3 significant figures. This is more than enough accuracy for our purposes (down to the thousandths). [Calculator](https://www.calculatorsoup.com/calculators/geometry-solids/cylinder.php)*</sup>
 ## Method
 You will follow a similar process to extruder calibration. 
 
