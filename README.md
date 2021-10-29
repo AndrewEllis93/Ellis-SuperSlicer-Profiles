@@ -31,6 +31,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Passing Variables to PRINT_START](#passing-variables-to-print_start)
+    - [Controlling When Temperatures G-codes Are Sent *Without* Passing Variables](#controlling-when-temperature-g-codes-are-sent-without-passing-variables)
 - [Tips and Tricks](#tips-and-tricks)
 - [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
 - [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
@@ -205,12 +206,36 @@ M140 S0
 PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]}
 ```
 
-
 #### Cura
 (1 line)
 ```
 PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
 ```
+
+### Controlling When Temperature G-codes Are Sent *Without* Passing Variables
+
+T**he [above section](#passing-variables-to-print_start) is the preferable way to set it up**, as it allows you the most control. 
+
+If your slicer is putting heating g-codes AFTER `PRINT_START` and you want them to happen before (or the inverse, or you want to split it), this would be a simpler way to control the ordering. This method only allows you to send temperature g-codes before or after `PRINT_START`, but at least allows you to control the order.
+
+To force the g-code ordering, place any of the following g-codes from the following lists in your start gcode where you desire.
+
+- Note, each bullet point is only **ONE** line. Do not split them into multiple lines.
+
+- **These are just lists of available commands**, they don't have to be in this order, nor do you have to use all of them.
+#### Prusa Slicer / SuperSlicer
+- `M140 S[first_layer_bed_temperature] ; set bed temp`
+- `M190 S[first_layer_bed_temperature] ; wait for bed`
+- `M104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set hotend temp`
+- `M109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for hotend `
+#### Cura
+- `M140 S{material_bed_temperature_layer_0} ; set bed temp`
+- `M190 S{material_bed_temperature_layer_0} ; wait for bed`
+- `M104 S{material_print_temperature_layer_0} ; set hotend temp`
+- `M109 S{material_print_temperature_layer_0} ; wait for hotend `
+
+#### Example
+- ![](Images/StartGcode-CustomOrder.png) 
 
 # Tips and Tricks
 ## Part Spacing / Plating
