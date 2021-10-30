@@ -1,12 +1,12 @@
 # Important Notes
 
-**Please [read each section fully](https://c.tenor.com/32RTX6NMyKcAAAAC/read-the-instructions-mad.gif)**, especially anything bolded and marked with "**(!)**". \
-These are important warnings in some of them that may cause you some headaches or confusion if missed.
+## **Please [read each section fully](https://c.tenor.com/32RTX6NMyKcAAAAC/read-the-instructions-mad.gif)**, especially anything bolded and marked with "**(!)**". 
+### **These are important warnings in some of them that may cause you some headaches or confusion if missed.**
 
 - This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
 - **(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
-I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 1500mm/s<sup>2</sup> without input shaper)* with good results.
+I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down *(max 180mm/sec, max 2500mm/s<sup>2</sup> without input shaper)* with good results.
 
 - Unfortunately, using the [custom accleration controls](#acceleration-control) in this profile can make the predicted print times less accurate. Hopefully these accleration controls we be coming natively to SuperSlicer soon. \
 For now you will just have to play with "time estimation compensation" setting under *printer settings -> machine limits*.
@@ -235,7 +235,7 @@ To force the g-code ordering, place any of the following g-codes from the follow
 - Each bullet point is only **ONE** line. Do not split them into multiple lines.
 - There are many other variables available in each slicer, and you can pass whatever variables you like to whatever g-codes you like. The available variables are not always documented.
 #### Example
-Forces both bed and hotend to heat up fully before executing `PRINT_START`:
+Forces both bed and hotend to heat up fully before executing `PRINT_START` (SS):
 - ![](Images/StartGcode-CustomOrder.png) 
 
 # Tips and Tricks
