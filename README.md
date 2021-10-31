@@ -18,6 +18,22 @@ You can find bed the models and textures I am using in [Hartk's GitHub repo](htt
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?business=U6F2FZMXXSBSW&no_recurring=0&currency_code=USD)
+# Table of Contents
+**(!)** = has important warning
+- [**(!)** Profile Change Log](#profile-change-log)
+- [How to Download](#how-to-download)
+- [How to Import](#how-to-import)
+- [**(!)** Start G-code](#start-g-code)
+- [**(!)** Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed)
+- [**(!)** Acceleration Control](#acceleration-control)
+- [**(!)** Post Processing (Travel Accels)](#post-processing-travel-accels)
+- [Cooling](#cooling)
+- ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
+- [Passing Variables to PRINT_START](#passing-variables-to-print_start)
+    - [Controlling When Temperatures G-codes Are Sent *Without* Passing Variables](#controlling-when-temperature-g-codes-are-sent-without-passing-variables)
+- [Tips and Tricks](#tips-and-tricks)
+- [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
+- [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
 
 # (!) Profile Change Log
 
@@ -35,21 +51,6 @@ Rather than having to re-import the profiles when updates are made, I am now goi
 - **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.3mm**
     - It was previously set to 1mm.
     - 1mm was a bit too aggressive to start with.
-# Table of Contents
-**(!)** = has important warning
-- [How to Download](#how-to-download)
-- [How to Import](#how-to-import)
-- [Start G-code **(!)**](#start-g-code)
-- [Volumetric Speed / Auto Speed **(!)**](#volumetric-speed--auto-speed)
-- [Acceleration Control **(!)**](#acceleration-control)
-- [Post Processing (Travel Accels) **(!)**](#post-processing-travel-accels)
-- [Cooling](#cooling)
-- ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Passing Variables to PRINT_START](#passing-variables-to-print_start)
-    - [Controlling When Temperatures G-codes Are Sent *Without* Passing Variables](#controlling-when-temperature-g-codes-are-sent-without-passing-variables)
-- [Tips and Tricks](#tips-and-tricks)
-- [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
-- [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
 # How to Download
 **1)** Navigate to the .ini file.
 
