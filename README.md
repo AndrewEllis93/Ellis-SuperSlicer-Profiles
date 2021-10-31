@@ -23,15 +23,15 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 Rather than having to re-import the profiles when updates are made, I am now going to keep a change log so that you can update your personal modified profiles with these settings.
 
-- **2021-10-24:** Change **printer settings > machine limits > time estimation compensation** to  **133%.**
+- **2021-10-24:** Change ***printer settings > machine limits > time estimation compensation*** to  **133%.**
     - It was previously set to 87%. 
     - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
-- **2021-10-24:** Disable **print settings > perimeters & shell > quality > only one perimeter on first layer**.
+- **2021-10-24:** Disable ***print settings > perimeters & shell > quality > only one perimeter on first layer***.
     - This was causing SS to crash when slicing first layer test patches.
     - I also just changed my mind about the aesthetics.
-- **2021-10-31:** Change **print settings > perimeters & shell > overhangs > threshold for bridge speed and fan** to **0**.
+- **2021-10-31:** Change ***print settings > perimeters & shell > overhangs > threshold for bridge speed and fan*** to **0**.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds. This completely disables applying bridge settings to overhangs.
-- **2021-10-31:** Reduce **printer settings > extruder 1 > retraction length** to **0.3mm**
+- **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.3mm**
     - It was previously set to 1mm.
     - 1mm was a bit too aggressive to start with.
 # Table of Contents
