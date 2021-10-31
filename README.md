@@ -37,7 +37,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 # (!) Profile Change Log
 
-Rather than having to re-import the profiles when updates are made, I am now going to keep a change log so that you can update your personal modified profiles with these settings.
+Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
 
 - **2021-10-24:** Change ***printer settings > machine limits > time estimation compensation*** to  **133%.**
     - It was previously set to 87%. 
@@ -49,8 +49,7 @@ Rather than having to re-import the profiles when updates are made, I am now goi
     - This completely disables applying bridge settings to overhangs.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
 - **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.3mm**
-    - It was previously set to 1mm.
-    - 1mm was a bit too aggressive to start with.
+    - It was previously set to 1mm, which was a bit too aggressive to start with.
 # How to Download
 **1)** Navigate to the .ini file.
 
