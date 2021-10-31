@@ -70,11 +70,11 @@ If you downloaded the whole repository as .zip, you will have to unzip it first.
 
 Select the **\.ini** file.
 
-# Start G-code
+# **(!)** Start G-code
 **(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
 
 ![](Images/StartGcode.png)  
-# Volumetric Speed / Auto Speed
+# **(!)** Volumetric Speed / Auto Speed
 **(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.**
 
 These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
@@ -98,7 +98,7 @@ You should be okay using an approximate value and just lowering it if you have a
 
 *If you want to get more scientific, or your hotend isn't listed, see the last section (["Determining Max Volumetric Flow Rate"](#determining-max-volumetric-flow-rate)) for more details.*
 
-# Acceleration Control
+# **(!)** Acceleration Control
 
 This profile uses a custom acceleration control setup. Acceleration would typically be done directly in the speed settings, but currently SuperSlicer does not allow setting accelerations for every extrusion type (for example internal vs external perimeters).
 
@@ -122,7 +122,7 @@ I spent ages trying to fix these bulges, and the only thing that fixed it was to
 
 ![](Images/Bulging.png)  
 ![](Images/Bulging2.png)  
-# Post Processing (Travel Accels)
+# **(!)** Post Processing (Travel Accels)
 **(!) This is optional and will error if you don't set it up or remove it. In fact I would suggest starting with it disabled and come back to it later.**
 
 The sole purpose of this post processing script is to set accels/square corner velocity for travel moves, as it is not supported by the above accel controls.
