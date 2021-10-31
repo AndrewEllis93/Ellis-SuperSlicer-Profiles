@@ -19,7 +19,7 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?business=U6F2FZMXXSBSW&no_recurring=0&currency_code=USD)
 
-# Profile Change Log
+# (!) Profile Change Log
 
 Rather than having to re-import the profiles when updates are made, I am now going to keep a change log so that you can update your personal modified profiles with these settings.
 
@@ -29,8 +29,9 @@ Rather than having to re-import the profiles when updates are made, I am now goi
 - **2021-10-24:** Disable ***print settings > perimeters & shell > quality > only one perimeter on first layer***.
     - This was causing SS to crash when slicing first layer test patches.
     - I also just changed my mind about the aesthetics.
-- **2021-10-31:** Change ***print settings > perimeters & shell > overhangs > threshold for bridge speed and fan*** to **0**.
-    - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds. This completely disables applying bridge settings to overhangs.
+- **(!) 2021-10-31:** Change ***print settings > perimeters & shell > overhangs > threshold for bridge speed and fan*** to **0**.
+    - This completely disables applying bridge settings to overhangs.
+    - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
 - **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.3mm**
     - It was previously set to 1mm.
     - 1mm was a bit too aggressive to start with.
