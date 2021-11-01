@@ -48,7 +48,7 @@ Rather than having to re-import the profiles when updates are made, please check
 - **(!) 2021-10-31:** Change ***print settings > perimeters & shell > overhangs > threshold for bridge speed and fan*** to **0**.
     - This completely disables applying bridge settings to overhangs.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
-- **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.3mm**
+- **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.4mm**
     - It was previously set to 1mm, which was a bit too aggressive to start with.
 # How to Download
 **1)** Navigate to the .ini file.
