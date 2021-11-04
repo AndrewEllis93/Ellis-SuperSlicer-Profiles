@@ -97,9 +97,10 @@ You should be okay using an approximate value and just lowering it if you have a
 
 These are approximate values **assuming a standard brass 0.4mm nozzle.** 
 
-You will get higher flow rates with larger nozzles, and more or less depending on the material and type of nozzle. For example:
-- Hardened steel has a lower thermal conductivity than brass, and you may get lower flow rates unless you compensate with higher temperatures. 
-- Plated copper and tungsten carbide, on the other hand, have higher thermal conductivity and might allow a bit more flow. 
+Nozzle properties may affect these numbers. For example:
+- Larger diameter nozzles will have higher flow rates
+- Hardened steel has a lower thermal conductivity and you may get lower flow rates unless you compensate with higher temperatures. 
+- Plated copper and tungsten carbide have higher thermal conductivity and might allow a bit higher flow rate. 
 - Bondtech CHT nozzles use a different internal geometry that allows higher flow rates.
 
 *If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the last section (["Determining Max Volumetric Flow Rate"](#determining-max-volumetric-flow-rate)) for more details.*
