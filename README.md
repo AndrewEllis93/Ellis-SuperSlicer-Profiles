@@ -50,6 +50,8 @@ Rather than having to re-import the profiles when updates are made, please check
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
 - **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.4mm**
     - It was previously set to 1mm, which was a bit too aggressive to start with.
+- **2021-11-07:** Added quotes around post processing paths.
+    - This fixes an issue where it would error if trying to use a path with a space.
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -136,17 +138,17 @@ The sole purpose of this post processing script is to set accels/square corner v
 
 This should be coming natively to SuperSlicer soon.
 
-I use the script from Stephan: https://github.com/Stephan3/Schnitzelslicerrepo/blob/master/superslicer/pp.py
+I use the script from Stephan*: https://github.com/Stephan3/Schnitzelslicerrepo/blob/master/superslicer/pp.py
 
 Install Python on your computer. Swap the python exe path and the script path accordingly. 
-
-
 
 ![](Images/PostProcessing.png)  
 
 Adjust your desired accel, accel to decel, and square corner velocity at the top of the script file:
 
 ![](Images/PostProcessing-Tweak.png)  
+
+\* *Some people have been reported issues getting this script working, even though they appear to have it set up correctly. VintageGriffin (yak#0417) on Discord has posted a version that some are reporting better success with, but I have not yet tried it myself: [**Link**.](https://discord.com/channels/460117602945990666/460172848565190667/890777697989566594) His version moves all of the accel controls outside of the slicer, and supports travel accels. The instructions are in the comments of the macros.*
 
 # Cooling
 
