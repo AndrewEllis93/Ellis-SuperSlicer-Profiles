@@ -1,6 +1,8 @@
 # Important Notes
 
-## **Please [read each section fully](https://c.tenor.com/32RTX6NMyKcAAAAC/read-the-instructions-mad.gif)**, especially anything bolded and marked with "**(!)**". 
+## **Please [read each section fully](https://c.tenor.com/32RTX6NMyKcAAAAC/read-the-instructions-mad.gif)**, especially anything bolded and marked with "**(!)**".
+
+Grab a cup of tea, relax, and read through the whole thing.
 ### **These are important warnings in some of them that may cause you some headaches or confusion if missed.**
 
 - This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
@@ -52,6 +54,8 @@ Rather than having to re-import the profiles when updates are made, please check
     - It was previously set to 1mm, which was a bit too aggressive to start with.
 - **2021-11-07:** Added quotes around post processing paths.
     - This fixes an issue where it would error if trying to use a path with a space.
+- **2021-11-07:** Fix various support material settings
+    - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
 # How to Download
 **1)** Navigate to the .ini file.
 
