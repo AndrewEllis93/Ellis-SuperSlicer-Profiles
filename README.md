@@ -41,21 +41,27 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
 
-- **2021-10-24:** Change ***printer settings > machine limits > time estimation compensation*** to  **133%.**
+Use ctrl + f in SuperSlicer to find these settings by their names below.
+
+- **2021-10-24:** Change ***time_estimation_compensation*** to  **133%.**
     - It was previously set to 87%. 
     - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
-- **2021-10-24:** Disable ***print settings > perimeters & shell > quality > only one perimeter on first layer***.
+- **2021-10-24:** Disable ***only_one_perimeter_first_layer***.
     - This was causing SS to crash when slicing first layer test patches.
     - I also just changed my mind about the aesthetics.
-- **(!) 2021-10-31:** Change ***print settings > perimeters & shell > overhangs > threshold for bridge speed and fan*** to **0**.
+- **(!) 2021-10-31:** Change ***overhangs_width_speed*** to **0**.
     - This completely disables applying bridge settings to overhangs.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
-- **2021-10-31:** Reduce ***printer settings > extruder 1 > retraction length*** to **0.4mm**
+- **2021-10-31:** Reduce ***retract_length[0]*** to **0.4mm**
     - It was previously set to 1mm, which was a bit too aggressive to start with.
-- **2021-11-07:** Added quotes around post processing paths.
+- **2021-11-07:** Added quotes around ***post_process*** paths.
     - This fixes an issue where it would error if trying to use a path with a space.
-- **2021-11-07:** Fix various support material settings
+- **2021-11-07:** Fix various support material settings.
     - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
+- **2021-11-11:** Reduce **seam_gap** to **5%**
+    - It was previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
+- **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
+    - It was previously 0.3mm. Support for nozzle size based percentages was added.
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -310,7 +316,7 @@ G1 E100 F300 ; Extrude 100mm at 5mm/sec
 ```
 Remember the the F speed is in mm/min, **not** mm/sec, so multiply your desired speed by 60.
 
-**5)** Keep going until it starts dropping below 100mm. This is your max flow rate. \
+**5)** Keep increasing speeds and extruding until it starts dropping below 100mm. This is your max flow rate. \
 **6)** Convert your extrusion speed to volumetric speed using the above formulas. \
 **7)** Enter a slightly lower volumetric speed into the slicer.
 
