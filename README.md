@@ -41,10 +41,10 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
 
-Use ctrl + f in SuperSlicer to find these settings by their names below.
+Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
 - **2021-10-24:** Change ***time_estimation_compensation*** to  **133%.**
-    - It was previously set to 87%. 
+    - Previously set to 87%. 
     - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
 - **2021-10-24:** Disable ***only_one_perimeter_first_layer***.
     - This was causing SS to crash when slicing first layer test patches.
@@ -53,15 +53,17 @@ Use ctrl + f in SuperSlicer to find these settings by their names below.
     - This completely disables applying bridge settings to overhangs.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
 - **2021-10-31:** Reduce ***retract_length[0]*** to **0.4mm**
-    - It was previously set to 1mm, which was a bit too aggressive to start with.
+    - Previously set to 1mm, which was a bit too aggressive to start with.
 - **2021-11-07:** Added quotes around ***post_process*** paths.
     - This fixes an issue where it would error if trying to use a path with a space.
 - **2021-11-07:** Fix various support material settings.
     - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
 - **2021-11-11:** Reduce **seam_gap** to **5%**
-    - It was previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
+    - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
 - **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
-    - It was previously 0.3mm. Support for nozzle size based percentages was added.
+    - Previously 0.3mm. Support for nozzle size based percentages was added.
+- **2021-11-11:** Change ***fill_pattern*** to **grid**.
+    - Previously adaptive cubic. Caused occasional pillowing.
 # How to Download
 **1)** Navigate to the .ini file.
 
