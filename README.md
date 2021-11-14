@@ -15,7 +15,7 @@ For now you will just have to play with "time estimation compensation" setting u
 
 **See my [tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) for more generalized tuning information (primarily for Vorons running Klipper).**
 
-You can find bed the models and textures I am using in [Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer). The bed texture I am using is an older one from him in [VoronUsers.](https://github.com/VoronDesign/VoronUsers/tree/master/slicer_configurations/PrusaSlicer/hartk1213/V0/Bed_Shape) 
+You can find the bed models and textures I am using in [Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer). The bed texture I am using is an older one from him in [VoronUsers.](https://github.com/VoronDesign/VoronUsers/tree/master/slicer_configurations/PrusaSlicer/hartk1213/V0/Bed_Shape) 
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
@@ -43,27 +43,28 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
-- **2021-10-24:** Change ***time_estimation_compensation*** to  **133%.**
-    - Previously set to 87%. 
-    - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
-- **2021-10-24:** Disable ***only_one_perimeter_first_layer***.
-    - This was causing SS to crash when slicing first layer test patches.
-    - I also just changed my mind about the aesthetics.
+- **2021-11-11:** Change ***fill_pattern*** to **grid**.
+    - Previously adaptive cubic. Caused occasional pillowing.
+- **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
+    - Previously 0.3mm. Support for nozzle size based percentages was added.
+- **2021-11-11:** Reduce **seam_gap** to **5%**
+    - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
+- **2021-11-07:** Fix various support material settings.
+    - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
+- **2021-11-07:** Added quotes around ***post_process*** paths.
+    - This fixes an issue where it would error if trying to use a path with a space.
+- **2021-10-31:** Reduce ***retract_length[0]*** to **0.4mm**
+    - Previously set to 1mm, which was a bit too aggressive to start with.
 - **(!) 2021-10-31:** Change ***overhangs_width_speed*** to **0**.
     - This completely disables applying bridge settings to overhangs.
     - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
-- **2021-10-31:** Reduce ***retract_length[0]*** to **0.4mm**
-    - Previously set to 1mm, which was a bit too aggressive to start with.
-- **2021-11-07:** Added quotes around ***post_process*** paths.
-    - This fixes an issue where it would error if trying to use a path with a space.
-- **2021-11-07:** Fix various support material settings.
-    - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
-- **2021-11-11:** Reduce **seam_gap** to **5%**
-    - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
-- **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
-    - Previously 0.3mm. Support for nozzle size based percentages was added.
-- **2021-11-11:** Change ***fill_pattern*** to **grid**.
-    - Previously adaptive cubic. Caused occasional pillowing.
+- **2021-10-24:** Disable ***only_one_perimeter_first_layer***.
+    - This was causing SS to crash when slicing first layer test patches.
+    - I also just changed my mind about the aesthetics.
+- **2021-10-24:** Change ***time_estimation_compensation*** to  **133%.**
+    - Previously set to 87%. 
+    - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
+
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -84,7 +85,7 @@ If you downloaded the whole repository as .zip, you will have to unzip it first.
 Select the **\.ini** file.
 
 # Start G-code
-**(!) If you have are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
+**(!) If you are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
