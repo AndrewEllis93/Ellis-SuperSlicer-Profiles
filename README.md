@@ -192,7 +192,7 @@ Rear *(rather than cost-based)*
 Press ctrl+a to select all objects. \
 Type the rotation amount in "Z" the box at the bottom right:
 
-![](Images/Misc/Rotation.png) 
+![](Images/Rotation.png) 
 
 ## Passing Variables to PRINT_START
 **I would recommend starting with a standard PRINT_START and setting this up later.**
@@ -232,6 +232,7 @@ M104 S0 ; Stops PS/SS from sending temp waits separately
 M140 S0
 PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} CHAMBER=[chamber_temperature]
 ```
+![](Images/PassingVariables-SS.png) 
 
 #### Prusa Slicer 
 (3 lines)
@@ -243,12 +244,14 @@ M104 S0 ; Stops PS/SS from sending temp waits separately
 M140 S0
 PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]}
 ```
+![](Images/PassingVariables-PS.png) 
 
 #### Cura
 (1 line)
 ```
 PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
 ```
+![](Images/PassingVariables-Cura.png) 
 
 ### Controlling When Temperature G-codes Are Sent *Without* Passing Variables
 
@@ -280,7 +283,7 @@ Forces both bed and hotend to heat up fully before executing `PRINT_START` (SS):
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
 
-![](Images/Misc/Spacing.png) 
+![](Images/Spacing.png) 
 
 Then click the arrange button (or press A), to automatically arrange everything.
 # Determining Max Volumetric Flow Rate
