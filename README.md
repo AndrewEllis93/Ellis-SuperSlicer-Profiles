@@ -203,6 +203,10 @@ For example I don’t want my nozzle to heat until the very end so it’s not oo
 If you don’t use a chamber thermistor, just remove the chamber stuff. 
 
 ### Example macro:
+
+This macro is a **template**. \
+You will have to add things like `G32`,`QUAD_GANTRY_LEVEL`,`BED_MESH_CALIBRATE`, or whatever other routines that you need to run during your `PRINT_START`.
+
 ```
 [gcode_macro PRINT_START]
 gcode:        
@@ -211,13 +215,14 @@ gcode:
     {% set hotendtemp = params.HOTEND|int %}
     {% set chambertemp = params.CHAMBER|default(0)|int %}
     
-    # <insert routines>
-    M190 S{bedtemp}                                                              ; wait for bed temp
+    G28
+    # <insert your routines here>
+    M190 S{bedtemp}                                                              ; set & wait for bed temp
     TEMPERATURE_WAIT SENSOR="temperature_sensor chamber" MINIMUM={chambertemp}   ; wait for chamber temp
-    # <insert routines>
-    M109 S{hotendtemp}                                                           ; wait for hotend temp
-    # <insert routines / nozzle clean>
-    G28 Z                                                                        ; final z homing with hot nozzle
+    # <insert your routines here>
+    M109 S{hotendtemp}                                                           ; set & wait for hotend temp
+    # <insert your routines here>
+    G28 Z                                                                        ; final z homing
 ```
 
 This would now be run like `PRINT_START BED=110 HOTEND=240 CHAMBER=50`. 
