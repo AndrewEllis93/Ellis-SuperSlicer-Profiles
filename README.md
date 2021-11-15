@@ -84,6 +84,7 @@ Select the **\.ini** file.
 # Start G-code
 **(!) Replace everything in this box with just `PRINT_START` if you are not yet passing variables to `PRINT_START`.**
 - See the "Passing Slicer Variables to `PRINT_START`" section in my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#passing-slicer-variables-to-print_start)
+- **I would recommend starting with a standard PRINT_START and setting this up later.**
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
