@@ -31,11 +31,8 @@ Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the 
 - [**(!)** Post Processing (Travel Accels)](#post-processing-travel-accels)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
-- [Passing Variables to PRINT_START](#passing-variables-to-print_start)
-    - [Controlling When Temperatures G-codes Are Sent *Without* Passing Variables](#controlling-when-temperature-g-codes-are-sent-without-passing-variables)
 - [Tips and Tricks](#tips-and-tricks)
-- [Determining Max Volumetric Flow Rate](#determining-max-volumetric-flow-rate)
-- [How Volumetric Flow Rate Relates to Print Speed](#how-volumetric-flow-rate-relates-to-print-speed)
+
 
 # Profile Change Log
 
@@ -85,7 +82,8 @@ If you downloaded the whole repository as .zip, you will have to unzip it first.
 Select the **\.ini** file.
 
 # Start G-code
-**(!) If you are not yet [passing variables to `PRINT_START`](#passing-variables-to-print_start), replace everything in this box with `PRINT_START` on its own.**
+**(!) Replace everything in this box with just `PRINT_START` if you are not yet passing variables to `PRINT_START`.**
+- See the "Passing Variables to `PRINT_START`" section in my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#passing-variables-to-print_start)
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed / Auto Speed
@@ -99,26 +97,9 @@ This is important because I keep my infill speed set to 0. This means it will pr
 
 ## Approximate Values
 
-| Hotend     | Flow Rate (mm<sup>3</sup>/sec) |
-| :---        |    :----:   |
-| E3D V6            | 11
-| E3D Revo            | 15
-| Dragon SF| 15
-| Dragon HF| 24
-| Mosquito| 20
-| Mosquito Magnum| 30
+See the "approximate values" section of my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#approximate-values)
 
-You should be okay using an approximate value and just lowering it if you have any issues. 
-
-These are approximate values **assuming a standard brass 0.4mm nozzle.** 
-
-Nozzle properties may affect these numbers. For example:
-- Larger diameter nozzles will have higher flow rates
-- Hardened steel has a lower thermal conductivity and you may get lower flow rates unless you compensate with higher temperatures. 
-- Plated copper and tungsten carbide have higher thermal conductivity and might allow a bit higher flow rate. 
-- Bondtech CHT nozzles use a different internal geometry that allows higher flow rates.
-
-*If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the last section (["Determining Max Volumetric Flow Rate"](#determining-max-volumetric-flow-rate)) for more details.*
+If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the section titled "Determining Max Volumetric Flow Rate" in my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#determining-maximum-volumetric-flow-rate)
 
 # Acceleration Control
 
@@ -193,97 +174,6 @@ Press ctrl+a to select all objects. \
 Type the rotation amount in "Z" the box at the bottom right:
 
 ![](Images/Rotation.png) 
-
-## Passing Variables to PRINT_START
-**I would recommend starting with a standard PRINT_START and setting this up later.**
-
-By default, slicers will put heating commands either entirely before or after `PRINT_START`. You have to pass the temps TO `PRINT_START` in order to control when they happen. 
-For example I don’t want my nozzle to heat until the very end so it’s not oozing during QGL, mesh etc.
-
-If you don’t use a chamber thermistor, just remove the chamber stuff. 
-
-### Example macro:
-
-This macro is a **template**. \
-You will have to add things like `G32`,`QUAD_GANTRY_LEVEL`,`BED_MESH_CALIBRATE`, or whatever other routines that you need to run during your `PRINT_START`.
-
-```
-[gcode_macro PRINT_START]
-gcode:        
-    # Parameters
-    {% set bedtemp = params.BED|int %}
-    {% set hotendtemp = params.HOTEND|int %}
-    {% set chambertemp = params.CHAMBER|default(0)|int %}
-    
-    G28
-    # <insert your routines here>
-    M190 S{bedtemp}                                                              ; set & wait for bed temp
-    TEMPERATURE_WAIT SENSOR="temperature_sensor chamber" MINIMUM={chambertemp}   ; wait for chamber temp
-    # <insert your routines here>
-    M109 S{hotendtemp}                                                           ; set & wait for hotend temp
-    # <insert your routines here>
-    G28 Z                                                                        ; final z homing
-```
-
-This would now be run like `PRINT_START BED=110 HOTEND=240 CHAMBER=50`. 
-Chamber defaults to 0 if not specified.
-### Slicer Start G-code
-
-Don't split any of these gcodes to separate lines.
-#### SuperSlicer
-(3 lines)
- ```    
-M104 S0 ; Stops PS/SS from sending temp waits separately
-M140 S0
-PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} CHAMBER=[chamber_temperature]
-```
-![](Images/PassingVariables-SS.png) 
-
-#### Prusa Slicer 
-(3 lines)
-
-*Prusa Slicer doesn’t support chamber temp.*
-    
-```
-M104 S0 ; Stops PS/SS from sending temp waits separately
-M140 S0
-PRINT_START BED=[first_layer_bed_temperature] HOTEND={first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]}
-```
-![](Images/PassingVariables-PS.png) 
-
-#### Cura
-(1 line)
-```
-PRINT_START BED={material_bed_temperature_layer_0} HOTEND={material_print_temperature_layer_0} CHAMBER={build_volume_temperature}
-```
-![](Images/PassingVariables-Cura.png) 
-
-### Controlling When Temperature G-codes Are Sent *Without* Passing Variables
-
-T**he [above section](#passing-variables-to-print_start) is the preferable way to set it up**, as it allows you the most control. 
-
-If your slicer is putting heating g-codes AFTER `PRINT_START` and you want them to happen before (or the inverse, or you want to split it), this would be a simpler way to control the ordering. This method only allows you to send temperature g-codes before or after `PRINT_START`, but at least allows you to control the order.
-
-To force the g-code ordering, place any of the following g-codes from the following lists in your start gcode where you desire:
-#### Prusa Slicer / SuperSlicer
-- `M140 S[first_layer_bed_temperature] ; set bed temp`
-- `M190 S[first_layer_bed_temperature] ; wait for bed`
-- `M104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set hotend temp`
-- `M109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for hotend `
-#### Cura
-- `M140 S{material_bed_temperature_layer_0} ; set bed temp`
-- `M190 S{material_bed_temperature_layer_0} ; wait for bed`
-- `M104 S{material_print_temperature_layer_0} ; set hotend temp`
-- `M109 S{material_print_temperature_layer_0} ; wait for hotend `
-
-#### Warnings
-- **These are just lists** of available commands, they don't have to be in this order, nor do you have to use all of them. Place them as you like.
-- Each bullet point is only **ONE** line. Do not split them into multiple lines.
-- There are many other variables available in each slicer, and you can pass whatever variables you like to whatever g-codes you like. The available variables are not always documented.
-#### Example
-Forces both bed and hotend to heat up fully before executing `PRINT_START` (SS):
-- ![](Images/StartGcode-CustomOrder.png) 
-
 # Tips and Tricks
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
@@ -291,55 +181,3 @@ Right click the "arrange" button to change part spacing.
 ![](Images/Spacing.png) 
 
 Then click the arrange button (or press A), to automatically arrange everything.
-# Determining Max Volumetric Flow Rate
-## Background
-
-As mentioned at the beginning, this probably isn't necessary if you can find a "safe" value that others are using for your particular hotend. If you have a different setup affecting flow, such as a CHT nozzle or unlisted hotend, or if you just want to take the scientific approach, here is the process.
-
-Remember - this is a rough calculation. Maximum volumetric flow rate can change with a number of factors, like temperatures, material, and nozzle type. You should set your limit slightly lower in the slicer for margin of safety, and to avoid having to tune for different filaments that don't flow as nicely.
-
-## Formulas*
-
-Volumetric flow is expressed in mm<sup>3</sup>/sec (cubic millimeters per second)
-
-- **volume = mm / 0.416**
-
-Or, inversely, 
-
-- **mm = volume * 0.416**
-
-For example, if you extrude at **5mm/sec**, that comes out to **~12mm<sup>3</sup>/sec.** (5mm / 0.416)
-
-\* <sup>*For 2.85mm filament, use 0.157 instead of 0.416.*</sup>\
-\* <sup>*These fomulas are simplified versions of the cylinder volume equation (V=πr<sup>2</sup>h) given r and h or V, rounded to 3 significant figures. This is more than enough accuracy for our purposes (down to the thousandths). [Calculator](https://www.calculatorsoup.com/calculators/geometry-solids/cylinder.php)*</sup>
-## Method
-You will follow a similar process to extruder calibration. 
-
-**1)** Heat your hotend. \
-**2)** Extrude a little bit to ensure your E motor is energized and holding.\
-**3)** Mark a 120mm length of filament going into your extruder.\
-**4)** Extrude at increasing speeds. At each interval, measure to ensure that exactly 100mm entered the extruder.
-
-For example, the gcode to extrude at 5mm/sec is:
-```
-M83 ; Relative extrusion mode
-G1 E100 F300 ; Extrude 100mm at 5mm/sec
-```
-Remember the the F speed is in mm/min, **not** mm/sec, so multiply your desired speed by 60.
-
-**5)** Keep increasing speeds and extruding until it starts dropping below 100mm. This is your max flow rate. \
-**6)** Convert your extrusion speed to volumetric speed using the above formulas. \
-**7)** Enter a slightly lower volumetric speed into the slicer.
-
-# How Volumetric Flow Rate Relates to Print Speed
-
-Working out how quickly you can print at a given volumetric flow rate is quite simple:
-
-- **speed = volumetric flow / layer height / line width**
-
-Or, inversely,
-- **volumetric flow = speed * line width * layer height**
-
-For example, if your hotend is capable of 24mm<sup>3</sup>/sec, and you are printing with 0.4mm line width, at 0.2mm layer height:
-
-- **24 / 0.4 / 0.2 = Maximum print speed of 300mm/sec**
