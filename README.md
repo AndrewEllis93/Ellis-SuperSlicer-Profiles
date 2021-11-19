@@ -4,7 +4,7 @@
 
 Grab a cup of tea, relax, and read through the whole thing.
 ### **These are important warnings in some of them that may cause you some headaches or confusion if missed.**
-
+- **(!) These profiles require SuperSlicer [version 2.3.57.6](https://github.com/supermerill/SuperSlicer/releases/tag/2.3.57.6) or newer.**
 - This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. My printer has a handful of mods that may make it more capable of slightly higher speeds and accels, so your mileage may vary. There are certainly more aggressive profiles out there, but I've found this to be a good balance.
 
 - **(!) This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. \
@@ -14,6 +14,8 @@ I actually use the same print settings on my Ender 3, just with speeds and accel
 For now you will just have to play with "time estimation compensation" setting under *printer settings -> machine limits*.
 
 **See my [tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) for more generalized tuning information (primarily for Vorons running Klipper).**
+
+
 
 You can find the bed models and textures I am using in [Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer). The bed texture I am using is an older one from him in [VoronUsers.](https://github.com/VoronDesign/VoronUsers/tree/master/slicer_configurations/PrusaSlicer/hartk1213/V0/Bed_Shape) 
 
@@ -40,17 +42,19 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
+- **2021-11-19:** Fix overlap settings for new SuperSlicer version (2.3.57.6).
 - **2021-11-11:** Change ***fill_pattern*** to **grid**.
     - Previously adaptive cubic. Caused occasional pillowing.
 - **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
     - Previously 0.3mm. Support for nozzle size based percentages was added.
-- **2021-11-11:** Reduce **seam_gap** to **5%**
+- **2021-11-11:** Reduce **seam_gap** to **0.**
     - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
 - **2021-11-07:** Fix various support material settings.
     - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
 - **2021-11-07:** Added quotes around ***post_process*** paths.
     - This fixes an issue where it would error if trying to use a path with a space.
-- **2021-10-31:** Reduce ***retract_length[0]*** to **0.4mm**
+- **2021-10-31:** Reduce ***retract_length[0]*** to **0.5mm**
     - Previously set to 1mm, which was a bit too aggressive to start with.
 - **(!) 2021-10-31:** Change ***overhangs_width_speed*** to **0**.
     - This completely disables applying bridge settings to overhangs.
