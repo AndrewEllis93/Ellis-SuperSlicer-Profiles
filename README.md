@@ -43,7 +43,9 @@ Rather than having to re-import the profiles when updates are made, please check
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
 - **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
-- **2021-11-19:** Fix overlap settings for new SuperSlicer version (2.3.57.6).
+    - Previously accel and accel_to_decel were the same value.
+- **2021-11-19:** Set new ***bridge_overlap_min*** setting to **50%**
+    - Fixes 50% bridge density in new SuperSlicer version (2.3.57.6).
 - **2021-11-11:** Change ***fill_pattern*** to **grid**.
     - Previously adaptive cubic. Caused occasional pillowing.
 - **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
