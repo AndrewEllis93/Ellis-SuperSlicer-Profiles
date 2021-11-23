@@ -163,9 +163,28 @@ I use BadNoob's AB-BN-30 duct with the Sunon fan, and my chamber temp is around 
 
 # "45 Degree" Profile vs Standard Profile
 
-My primary profile is the "45 degree" profile. This means that I print all of my parts at 45 degrees, with the seams set to "rear". I orient my desired seam edge towards the rear of the plate.
+My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 degree angle.
 
-This makes it much easier to align the seams where I want them, as otherwise SuperSlicer tends to place them oddly.
+
+
+## Pros
+- Easier seam placement for large numbers of parts using "rear" seams.
+    - Orient the desired seam edge towards the rear of the plate (preferably the sharpest edge).
+
+    - The alternative is "cost based" *(similar to "sharpest corner" in Cura)*. Cost based does a good job of placing the seams in corners, but does not align them. They tend to be scattered around the print at random corners.
+
+- With CoreXY, 45 degree motions only use one motor. 
+    - This can sometimes lead to better surface quality. Patterns can sometimes occur when both motors are in use.
+## Cons
+- Rear seams *don't tend to align nicely on rounded corners*, so it's a compromise. 
+
+    - ![](Images/ScatteredSeam.png)  
+    - I usually try to orient the sharpest corner to the rear of the place. 
+    - For objects with only rounded corners, I will sometimes manually place the seam.
+
+Manual seam placement will **always** have the best results. This method is a compromise to save myself a lot of manual work for plates with large numbers of parts.
+
+## Config Differences
 
 The differences with the "45 degree" profile are:
 - **Print Settings > Perimeters & Shell > Seam:** \
@@ -174,6 +193,8 @@ Rear *(rather than cost-based)*
 0 degrees *(rather than 45 degrees)*
 
 ![](Images/45DegreePlate.png)  
+
+
 
 ## Rotating All Parts
 
