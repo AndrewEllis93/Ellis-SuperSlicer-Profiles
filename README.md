@@ -40,7 +40,7 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
-- **2021-12-01:** Enable ***ensure_vertical_shell_thickess***
+- **2021-12-01:** Enable ***ensure_vertical_shell_thickess*** and revert ***solid_over_perimeters*** to default (2)
     - This can prevent occasional perimeter gapping on steep angles.
 - **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
     - Previously accel and accel_to_decel were the same value.
