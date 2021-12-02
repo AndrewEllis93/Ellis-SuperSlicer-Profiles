@@ -40,6 +40,8 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2021-12-01:** Enable ***ensure_vertical_shell_thickess***
+    - This can prevent occasional perimeter gapping on steep angles.
 - **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
     - Previously accel and accel_to_decel were the same value.
 - **2021-11-19:** Set new ***bridge_overlap_min*** setting to **50%**
@@ -174,11 +176,13 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 - With CoreXY, 45 degree motions only use one motor. 
     - This can sometimes lead to better surface quality. Patterns can sometimes occur when both motors are in use.
 ## Cons
-- Rear seams *don't tend to align nicely on rounded corners*, so it's a compromise. 
+- Rear seams *don't tend to align nicely on rounded corners.*
 
     - ![](Images/ScatteredSeam.png)  
     - I usually try to orient the sharpest corner to the rear of the place. 
     - For objects with only rounded corners, I will sometimes manually place the seam.
+
+- Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
 
 Manual seam placement will **always** have the best results. This method is a compromise to save myself a lot of manual work for plates with large numbers of parts.
 
