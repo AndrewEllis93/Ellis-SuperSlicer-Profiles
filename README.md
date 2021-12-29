@@ -19,7 +19,7 @@ You can find the bed models and textures I am using in [Hartk's GitHub repo](htt
 
 Thank you to [Stephan](https://github.com/Stephan3/Schnitzelslicerrepo) for the acceleration controls and post-processing script. Those are both adapted from his profile.
 
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?business=U6F2FZMXXSBSW&no_recurring=0&currency_code=USD)
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/paypalme/AndrewEllis93)
 # Table of Contents
 **(!)** = has important warning
 - [**(!)** Profile Change Log](#profile-change-log)
