@@ -40,6 +40,9 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2021-12-29:** Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
+    - Some have reported "move out of range" errors with the old resolution setting of 0.002, likely a bug in SS.
+    - The feature_gcode change is purely stylistic. 
 - **2021-12-01:** Enable ***ensure_vertical_shell_thickess*** and revert ***solid_over_perimeters*** to default (2)
     - This can prevent occasional perimeter gapping on steep angles.
 - **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
