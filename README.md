@@ -2,7 +2,7 @@
 
 ## **Please [read each section fully](https://c.tenor.com/32RTX6NMyKcAAAAC/read-the-instructions-mad.gif)**, especially anything bolded and marked with "**(!)**".
 ### **These are important warnings in some of them that may cause you some headaches or confusion if missed.**
-- **(!) I am currently using SuperSlicer [version 2.3.57.6](https://github.com/supermerill/SuperSlicer/releases/tag/2.3.57.6).** Use different SS versions at your own peril. 
+- **(!) I am currently using SuperSlicer [version 2.3.57.8](https://github.com/supermerill/SuperSlicer/releases/tag/2.3.57.8).** Use different SS versions at your own peril. 
     - Newer versions often introduce new bugs, and older versions may not be compatible with certain settings.
     - I will update this as I test newer versions.
 
