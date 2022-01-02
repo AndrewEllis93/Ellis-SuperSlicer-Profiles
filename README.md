@@ -43,6 +43,8 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-01-02:** Change ***first_layer_height*** to **0.24**.
+    - SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯
 - **2021-12-29:** Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
     - Some have reported "move out of range" errors with the old resolution setting of 0.002, likely a bug in SS.
     - The feature_gcode change is purely stylistic. 
