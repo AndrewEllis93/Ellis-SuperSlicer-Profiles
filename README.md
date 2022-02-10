@@ -44,6 +44,15 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-02-10:** 
+    - Change ***infill_speed*** to **300** and set **max_print_speed** back to default.
+        - ***infill_speed*** was previously **0**. 
+            - This was not always reaching maximum volumetric speed, partly due to a misunderstanding on my part of [how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
+            - Setting it to a maximum speed value instead of 0 better accomplishes my intended goal (maxing out the hotend's capability for infill). See the [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
+        - **max_print_speed** was previously 300.
+    - Change ***support_material_speed*** to **150**.
+        - Was previously **240**. This could cause supports to not adhere properly or get knocked over (though supports are disabled by default in this profile).
+    - Reverted the ***feature_gcode*** change from **2021-11-19**. It simply wasn't doing much.
 - **2022-01-02:** Change ***first_layer_height*** to **0.24**.
     - SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯
 - **2021-12-29:** Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
@@ -51,8 +60,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - The feature_gcode change is purely stylistic. 
 - **2021-12-01:** Enable ***ensure_vertical_shell_thickess*** and revert ***solid_over_perimeters*** to default (2)
     - This can prevent occasional perimeter gapping on steep angles.
-- **2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.
-    - Previously accel and accel_to_decel were the same value.
+- ~~**2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.~~
+    - ~~Previously accel and accel_to_decel were the same value.~~
 - **2021-11-19:** Set new ***bridge_overlap_min*** setting to **50%**
     - Fixes 50% bridge density in new SuperSlicer version (2.3.57.6).
 - **2021-11-11:** Change ***fill_pattern*** to **grid**.
@@ -105,9 +114,13 @@ Select the **\.ini** file.
 # Volumetric Speed / Auto Speed
 **(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.**
 
-These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
+The volumetric speed setting at the bottom of this screenshot serves as a universal "flow limit". 
 
-This is important because I keep my infill speed set to 0. This means it will print infill **as fast as the hotend will allow**, or up to the 300mm/sec, whichever comes first.
+No matter how much you push speeds, layer heights, or line widths, **it will never allow you to outrun your hotend.**
+
+This is important because I keep my infill speed set to **300**. This is the absolute max I want my infill to print, but in reality it will usually print more slowly due to this limit. This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**.
+
+Even when not pushing for speeds, I **highly advise putting an appropriate value for your hotend** in the volumetric speed box. This prevents you from accidentlly outrunning your hotend when playing with layer heights, line widths, speeds, etc. See the next section to determine this value.
 
 ![](Images/VolumetricSpeed.png)  
 
