@@ -47,8 +47,9 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
 - **2022-02-10:** 
     - Change ***infill_speed*** to **300** and set **max_print_speed** back to default.
         - ***infill_speed*** was previously **0**. 
-            - This was not always reaching maximum volumetric speed, partly due to a misunderstanding on my part of [how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
-            - Setting it to a maximum speed value instead of 0 better accomplishes my intended goal (maxing out the hotend's capability for infill). See the [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
+            - This was not always reaching maximum volumetric speed, due to a misunderstanding on my part of [how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
+            - Setting it to a maximum speed value (instead of 0) better accomplishes my intended goal (maxing out the hotend's capability for infill). 
+                - See the [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
         - **max_print_speed** was previously 300.
     - Change ***support_material_speed*** to **150**.
         - Was previously **240**. This could cause supports to not adhere properly or get knocked over (though supports are disabled by default in this profile).
