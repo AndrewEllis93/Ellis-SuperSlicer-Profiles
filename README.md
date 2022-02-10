@@ -128,7 +128,26 @@ Even when not pushing for speeds, I **highly advise putting an appropriate value
 
 ## Approximate Values
 
-See the "approximate values" section of my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#approximate-values)
+| Hotend     | Flow Rate (mm<sup>3</sup>/sec) |
+| :---        |    :----:   |
+| E3D V6            | 11
+| E3D Revo            | 15
+| Dragon SF| 15
+| Dragon HF| 24
+| Mosquito| 20
+| Mosquito Magnum| 30
+
+You should be okay using an approximate value and just lowering it if you have any issues. 
+
+These are approximate values **assuming a standard brass 0.4mm nozzle.** 
+
+Nozzle properties may affect these numbers. For example:
+- Larger diameter nozzles will have higher flow rates
+- Hardened steel has a lower thermal conductivity and you may get lower flow rates unless you compensate with higher temperatures. 
+- Plated copper and tungsten carbide have higher thermal conductivity and might allow a bit higher flow rate. 
+- Bondtech CHT nozzles use a different internal geometry that allows higher flow rates.
+
+*If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see [here](#method-4) for a testing method.*
 
 If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the section titled "Determining Max Volumetric Flow Rate" in my [print tuning guide.](https://github.com/AndrewEllis93/Print-Tuning-Guide#determining-maximum-volumetric-flow-rate)
 
