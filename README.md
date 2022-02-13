@@ -76,7 +76,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
 - **2021-11-07:** Added quotes around ***post_process*** paths.
     - This fixes an issue where it would error if trying to use a path with a space.
-- **2021-10-31:** Reduce ***retract_length[0]*** to **0.5mm**
+- **2021-10-31:** Reduce ***retract_length[0]*** to **0.75mm**
     - Previously set to 1mm, which was a bit too aggressive to start with.
 - **(!) 2021-10-31:** Change ***overhangs_width_speed*** to **0**.
     - This completely disables applying bridge settings to overhangs.
