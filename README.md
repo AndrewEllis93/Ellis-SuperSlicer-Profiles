@@ -219,7 +219,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 - Can result in better overhangs. It seems that airflow prefers 45 degree prints.
 ## Cons
-- Rear seams *don't tend to align nicely on rounded corners.*
+- Rear seams don't tend to align nicely on rounded corners.
 
     - ![](Images/ScatteredSeam.png)  
     - I usually try to orient the sharpest corner to the rear of the place. 
