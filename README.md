@@ -224,6 +224,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
     - ![](Images/ScatteredSeam.png)  
     - I usually try to orient the sharpest corner to the rear of the place. 
     - For objects with only rounded corners, I will sometimes manually place the seam.
+    - For some plates, I may also set the seam to "cost-based" for certain objects.
 
 - Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
 
