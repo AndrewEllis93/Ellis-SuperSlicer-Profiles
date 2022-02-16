@@ -216,6 +216,8 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 - With CoreXY, 45 degree motions only use one motor. 
     - This can sometimes lead to better surface quality. Patterns can sometimes occur when both motors are in use.
+
+- Can result in better overhangs. It seems that airflow prefers 45 degree prints.
 ## Cons
 - Rear seams *don't tend to align nicely on rounded corners.*
 
