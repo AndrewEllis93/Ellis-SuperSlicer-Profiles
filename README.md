@@ -44,6 +44,12 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-02-19:**  
+    - Set accel_to_decel values to half of accel values in ***feature_gcode***.
+        - Previously accel and accel_to_decel were the same value.
+        - (Sorry, changed this multiple times now, keep flip-flopping on it)
+    - Disable **external_perimeter_cut_corners**
+        - This could contribute VERY minorly to gapping between perimeters on corners. You would probably never notice without a magnifying glass.
 - **2022-02-10:** 
     - Change ***infill_speed*** to **300** and set **max_print_speed** back to default.
         - ***infill_speed*** was previously **0**. 
@@ -54,39 +60,44 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
             - This setting does not universally limit in the same way that the volumetric speed limit does (for some reason), so it's redundant and confusing to leave it on.
     - Change ***support_material_speed*** to **150**.
         - Was previously **240**. This could cause supports to not adhere properly or get knocked over (though supports are disabled by default in this profile).
-    - Reverted the ***feature_gcode*** change from **2021-11-19**. It simply wasn't doing much.
-- **2022-01-02:** Change ***first_layer_height*** to **0.24**.
-    - SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯
-- **2021-12-29:** Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
-    - Some have reported "move out of range" errors with the old resolution setting of 0.002, likely a bug in SS.
-    - The feature_gcode change is purely stylistic. 
-- **2021-12-01:** Enable ***ensure_vertical_shell_thickess*** and revert ***solid_over_perimeters*** to default (2)
-    - This can prevent occasional perimeter gapping on steep angles.
-- ~~**2021-11-19:** Set accel_to_decel values to half of accel values in ***feature_gcode***.~~
-    - ~~Previously accel and accel_to_decel were the same value.~~
-- **2021-11-19:** Set new ***bridge_overlap_min*** setting to **50%**
-    - Fixes 50% bridge density in new SuperSlicer version (2.3.57.6).
-- **2021-11-11:** Change ***fill_pattern*** to **grid**.
-    - Previously adaptive cubic. Caused occasional pillowing.
-- **2021-11-11:** Change ***max_layer_height[0]*** to **75%**.
-    - Previously 0.3mm. Support for nozzle size based percentages was added.
-- **2021-11-11:** Reduce **seam_gap** to **0.**
-    - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
-- **2021-11-07:** Fix various support material settings.
-    - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
-- **2021-11-07:** Added quotes around ***post_process*** paths.
-    - This fixes an issue where it would error if trying to use a path with a space.
-- **2021-10-31:** Reduce ***retract_length[0]*** to **0.75mm**
-    - Previously set to 1mm, which was a bit too aggressive to start with.
-- **(!) 2021-10-31:** Change ***overhangs_width_speed*** to **0**.
-    - This completely disables applying bridge settings to overhangs.
-    - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
-- **2021-10-24:** Disable ***only_one_perimeter_first_layer***.
-    - This was causing SS to crash when slicing first layer test patches.
-    - I also just changed my mind about the aesthetics.
-- **2021-10-24:** Change ***time_estimation_compensation*** to  **133%.**
-    - Previously set to 87%. 
-    - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
+- **2022-01-02:** 
+    - Change ***first_layer_height*** to **0.24**.
+        - SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯
+- **2021-12-29:** 
+    - Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
+        - Some have reported "move out of range" errors with the old resolution setting of 0.002, likely a bug in SS.
+        - The feature_gcode change is purely stylistic. 
+- **2021-12-01:** 
+    - Enable ***ensure_vertical_shell_thickess*** and revert ***solid_over_perimeters*** to default (2)
+        - This can prevent occasional perimeter gapping on steep angles.
+- **2021-11-19:** 
+    - Set new ***bridge_overlap_min*** setting to **50%**
+        - Fixes 50% bridge density in new SuperSlicer version (2.3.57.6).
+- **2021-11-11:** 
+    - Change ***fill_pattern*** to **grid**.
+        - Previously adaptive cubic. Caused occasional pillowing.
+    - Change ***max_layer_height[0]*** to **75%**.
+        - Previously 0.3mm. Support for nozzle size based percentages was added.
+    - Reduce **seam_gap** to **0.**
+        - Previously 15% internally. A new SS update now allows control over it. This should prevent seam gaps that occasionally cropped up previously.
+- **2021-11-07:** 
+    - Fix various support material settings.
+        - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
+    - Added quotes around ***post_process*** paths.
+        - This fixes an issue where it would error if trying to use a path with a space.
+- **2021-10-31:** 
+    - Reduce ***retract_length[0]*** to **0.5mm**
+        - Previously set to 1mm, which was a bit too aggressive to start with.
+    - Change ***overhangs_width_speed*** to **0**.
+        - This completely disables applying bridge settings to overhangs.
+        - This setting was causing issues for some people, essentially setting overhangs to use 85% flow and high speeds.
+- **2021-10-24:** 
+    - Disable ***only_one_perimeter_first_layer***.
+        - This was causing SS to crash when slicing first layer test patches.
+        - I also just changed my mind about the aesthetics.
+    - Change ***time_estimation_compensation*** to  **133%.**
+        - Previously set to 87%. 
+        - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
 
 # How to Download
 **1)** Navigate to the .ini file.
