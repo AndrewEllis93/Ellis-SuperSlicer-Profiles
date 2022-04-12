@@ -52,7 +52,7 @@ Select **file -> import -> import config** or press ctrl+L.
 
 Select the **\.ini** file of the profile you want to import.
 
-Open each tab and click the floppy icon to save the profile. You may have to pick a new name.
+Open each tab and click the floppy icon to save the profile. You may have to pick a new name. (you can type in the box that pops up!)
 - ![](Images/Saving.png) 
 
 # Start G-code
