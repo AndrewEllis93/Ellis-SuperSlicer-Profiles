@@ -3,7 +3,7 @@
 
 # Important Notes
 
-- Profiles updated for SuperSlicer beta [version **2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) as of **2022-04-11**.
+- Profiles updated for SuperSlicer beta [:page_facing_up:version **2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) as of **2022-04-11**.
     - **Use different SS versions at your own peril.**
         - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings.
 
@@ -189,6 +189,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - This doesn't actually do anything since "auto speed" is no longer used (only volumetric speed limiting), but the default value of 80 was confusing people.
     - ***thin_walls_speed*** to **80** (was 30)
     - ***support_material_contact_distance_type*** to "**from filament**" (default) (was "from plane")
+        - Cleaning up. I had changed this at one point and don't really know what it does, so default is probably better.
     - ***z_step*** to **0.04** (was default) 
         - This doesn't actually do much except affect the number of decimal places in Z moves. But some people were driving themselves nuts trying to find the "correct" value to put here, so... here.
     - ***duplicate_distance*** to **6** (default)
@@ -197,6 +198,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***support_material_interface_speed*** to **100** (was 150)
         - These fast speeds could occasionally knock over supports.
     - ***use_relative_e_distances*** to **disabled**.
+        - Absolute mode is theoretically more accurate, but it's probably negligible.
     - ***time_estimation_compensation*** to **100%** (default) (was 133%)
         - This was a bodge compensating for the old custom accel controls messing with time estimates, and is no longer needed.
     - ***retract_lift_above[0]*** to **0.25mm** (was 0.2mm).
