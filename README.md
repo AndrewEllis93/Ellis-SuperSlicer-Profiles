@@ -59,7 +59,7 @@ Open each tab and click the floppy icon to save the profile. You may have to pic
 **:warning: Replace everything in this box with just `PRINT_START`\* if you are not yet passing temperature variables to `PRINT_START`.**
 - *\* or the appropriate start g-code for your particular printer.*
 
-See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`" section](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md) for more information (rationale & instructions).
+See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md) section of my tuning guide for more information (rationale & instructions).
 
 - If you are new to this, don't worry about this yet - come back to it later on.
 
