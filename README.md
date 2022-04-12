@@ -125,6 +125,8 @@ I use BadNoob's AB-BN-30 duct with the Sunon 5015 fan, and my chamber temp is ar
 
 My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 degree angle.
 
+![](Images/45DegreePlate.png)  
+
 ## Differences
 | Setting | "45 Degree" Profile | Standard Profile |
 | --------------- | --------------- | --------------- |
@@ -153,16 +155,6 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 - Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
 
 Manual seam placement will **always** have the best results. This method is a compromise to save myself a lot of manual work for plates with large numbers of parts.
-
-## Config Differences
-
-The differences with the "45 degree" profile are:
-- **Print Settings > Perimeters & Shell > Seam:** \
-Rear *(rather than cost-based)*
-- **Print Settings > Infill > Angle > Fill:** \
-0 degrees *(rather than 45 degrees)*
-
-![](Images/45DegreePlate.png)  
 
 ## Rotating All Parts
 
