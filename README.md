@@ -203,24 +203,24 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - Set to match first layer height.
 
 - **2022-02-19:**  
-    - Set accel_to_decel values to half of accel values in ***feature_gcode***.
-        - Previously accel and accel_to_decel were the same value.
-        - (Sorry, changed this multiple times now, keep flip-flopping on it)
+    - ~~Set accel_to_decel values to half of accel values in ***feature_gcode***.~~
+        - ~~Previously accel and accel_to_decel were the same value.~~
+        - ~~(Sorry, changed this multiple times now, keep flip-flopping on it)~~
     - Disable ***external_perimeter_cut_corners***
         - This could contribute VERY minorly to gapping between perimeters on corners. You would probably never notice without a magnifying glass.
 - **2022-02-10:** 
-    - Change ***infill_speed*** to **300** and set **max_print_speed** back to default.
+    - Change ***infill_speed*** to **300** ~~and set **max_print_speed** back to default.~~
         - ***infill_speed*** was previously **0**. 
             - This was not always reaching maximum volumetric speed, due to a misunderstanding on my part of [how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
             - Setting it to a maximum speed value (instead of 0) better accomplishes my intended goal (maxing out the hotend's capability for infill). 
                 - See the [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
-        - **max_print_speed** was previously 300.
-            - This setting does not universally limit in the same way that the volumetric speed limit does (for some reason), so it's redundant and confusing to leave it on.
+        - ~~**max_print_speed** was previously 300.~~
+            - ~~This setting does not universally limit in the same way that the volumetric speed limit does (for some reason), so it's redundant and confusing to leave it on.~~
     - Change ***support_material_speed*** to **150**.
         - Was previously **240**. This could cause supports to not adhere properly or get knocked over (though supports are disabled by default in this profile).
-- **2022-01-02:** 
-    - Change ***first_layer_height*** to **0.24**.
-        - SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯
+- ~~**2022-01-02:**~~
+    - ~~Change ***first_layer_height*** to **0.24**.~~
+        - ~~SuperSlicer currently has a weird bug causing slicing to give up part way through. Setting first layer height to something that's not 0.25 fixes it for me. ¯\\\_(ツ)_/¯~~
 - **2021-12-29:** 
     - Change ***resolution*** to **0.0125** (new SS default) and update formatting of ***feature_gcode***
         - Some have reported "move out of range" errors with the old resolution setting of 0.002, likely a bug in SS.
@@ -241,8 +241,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
 - **2021-11-07:** 
     - Fix various support material settings.
         - Supports are disabled in this profile, but the disabled settings had some unnecessary leftovers.
-    - Added quotes around ***post_process*** paths.
-        - This fixes an issue where it would error if trying to use a path with a space.
+    - ~~Added quotes around ***post_process*** paths.~~
+        - ~~This fixes an issue where it would error if trying to use a path with a space.~~
 - **2021-10-31:** 
     - Reduce ***retract_length[0]*** to **0.5mm**
         - Previously set to 1mm, which was a bit too aggressive to start with.
@@ -253,6 +253,6 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - Disable ***only_one_perimeter_first_layer***.
         - This was causing SS to crash when slicing first layer test patches.
         - I also just changed my mind about the aesthetics.
-    - Change ***time_estimation_compensation*** to  **133%.**
-        - Previously set to 87%. 
-        - This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.
+    - ~~Change ***time_estimation_compensation*** to  **133%.**~~
+        - ~~Previously set to 87%.~~
+        - ~~This should make the time estimates a *bit* closer to reality, at least with Voron parts. As mentioned above, they will still only be so accurate with the custom acceleration controls, however.~~
