@@ -1,4 +1,4 @@
-## **Please <ins>read each section</ins>**, especially anything bolded and marked with ":warning:".
+## **Please <ins>read each section</ins>**, especially anything marked with ":warning:".
 ### **These are important warnings that may cause you issues if missed.**
 
 # Important Notes
@@ -189,9 +189,6 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - Profiles updated for new beta SuperSlicer version 2.4.58.2.
     - Acceleration controls were moved to the *print settings > speed* tab and ***feature_gcode*** and ***post_process*** were **cleared**. Some accelerations were tweaked.
         - Fine-grained acceleration controls are now natively supported. The old custom g-code method and python scripts are no longer needed! :tada::tada::tada:
-    - ***solid_fill_pattern*** to **"monotonic (filled)"** (was "monotonic")
-        - "Filled" variants just enable gap fill. 
-        - This just wasn't available for solid_fill_pattern previously for some reason.
     - ***first_layer_size_compensation_layers*** to **3** (was 2)
         - Greater fade distance for elephant's foot compensation, to help prevent some perimeter separation on chamfered parts.
     - ***first_layer_height*** to **0.25** (was 0.24)
