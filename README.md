@@ -69,9 +69,9 @@ See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`" section](ht
 
 ![](Images/VolumetricSpeed.png)  
 
-## What is a volumetric flow limit?
+## What is a volumetric speed limit?
 
-The volumetric speed setting serves as a universal "flow limit". 
+The volumetric speed limit controls the maximum rate that your hotend is allowed to extrude. 
 
 No matter how much you push speeds, layer heights, or line widths, **it will never allow you to outrun your hotend.**
 
