@@ -177,6 +177,9 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-04-14:**
+    - ***use_relative_e_distances*** back to **enabled**.
+        - Some people had `M83` in their PRINT_START macros which didn't agree with this. 
 - **2022-04-11:**
     - Profiles updated for new beta SuperSlicer version 2.4.58.2.
     - Acceleration controls were moved to the *print settings > speed* tab and ***feature_gcode*** and ***post_process*** were **cleared**. Some accelerations were tweaked.
@@ -197,8 +200,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***support_material_angle*** to **45** (only on 45 degree profile)
     - ***support_material_interface_speed*** to **100** (was 150)
         - These fast speeds could occasionally knock over supports.
-    - ***use_relative_e_distances*** to **disabled**.
-        - Absolute mode is theoretically more accurate, but it's probably negligible.
+    - ~~***use_relative_e_distances*** to **disabled**.~~
+        - ~~Absolute mode is theoretically more accurate, but it's probably negligible.~~
     - ***time_estimation_compensation*** to **100%** (default) (was 133%)
         - This was a bodge compensating for the old custom accel controls messing with time estimates, and is no longer needed.
     - ***retract_lift_above[0]*** to **0.25mm** (was 0.2mm).
