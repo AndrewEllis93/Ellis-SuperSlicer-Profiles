@@ -9,7 +9,7 @@
 
         - I will update this as I test newer versions.
 
-        - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now - it does not affect anything.
+        - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
 
             - ![](/Images/bug.png)
 
