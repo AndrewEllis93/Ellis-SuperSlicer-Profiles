@@ -9,6 +9,10 @@
 
         - I will update this as I test newer versions.
 
+        - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now - it does not affect anything.
+
+            - ![](/Images/bug.png)
+
 - This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. 
 
 - **:warning: This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
