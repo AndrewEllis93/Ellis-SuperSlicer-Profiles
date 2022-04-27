@@ -122,10 +122,22 @@ If you want to get more scientific, test with a specific nozzle or setup, or you
 
 # Accelerations
 
-**:warning: If you have not yet tuned input shaper, consider reducing these accelerations to 5000 and below.** You may get skipping otherwise (or just very violent toolhead movements).
+## :warning: You will likely need to change the accelerations for your printer.
 
 ![](Images/AccelControls.png)  
 
+## If you are using input shaper:
+
+Set all of the **non-travel** accelerations to the max recommended acceleration for your shaper type or below (from the upper right area of your ADXL graph).
+
+**Travels can exceed the max recommended value**, however. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels. Or you can play it on the safe side and just use the same max accel.
+
+The max recommended acceleration from input shaper tuning is actually the point where **excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.**
+## If you are NOT using input shaper: 
+
+You will need to reduce these accelerations. 
+
+You may get skipping otherwise (or just very violent toolhead movements). For CoreXY, maybe around 4-5k max.
 # Cooling
 
 This profile uses **static fan speeds**. The community has found that varying fan speeds, particularly with high-shrinkage materials, can cause layer inconsistencies.
