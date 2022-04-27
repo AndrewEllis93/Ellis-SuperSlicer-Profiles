@@ -159,6 +159,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 | **seam_position** | Rear | Corners |
 | **fill_angle** | 0 | 45 |
 | **support_material_angle** | 45 | 0 |
+| **init_z_rotate** | 45 | 0 |
 
 ## Pros
 - The **main** reason I do this: easier seam placement for large numbers of parts using "rear" seams.
