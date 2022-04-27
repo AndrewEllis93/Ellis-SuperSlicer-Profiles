@@ -241,6 +241,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***thin_perimeters*** to 80% (default)
     - ***thin_perimeters_all*** to 20% (default)
         - Both of these settings are new defaults that got didn't come over properly with the update (came over as 100% / 0%)
+    - Fixed my maximum speeds in the machine limits. For some reason I thought they were in mm/min rather than mm/s... surprised nobody caught this before now.
 - **2022-04-14:**
     - ***use_relative_e_distances*** back to **enabled**.
         - Some people had `M83` in their PRINT_START macros which didn't agree with this. 
