@@ -5,7 +5,7 @@
 
 - :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2)
 
-    - You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.
+    - **You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.**
 
     - Last version update: **2022-04-11**.
 
@@ -95,7 +95,7 @@ Even when not pushing for speeds, I highly recommend putting an appropriate valu
 
 I keep my infill speed set to **300mm/s**. This is the absolute max I want my infill to ever print - but in reality, it will usually print more slowly due to this limit. 
 
-This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**.
+This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**
 
 ## Approximate Values
 
