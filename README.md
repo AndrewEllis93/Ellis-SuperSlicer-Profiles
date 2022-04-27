@@ -128,7 +128,8 @@ If you want to get more scientific, test with a specific nozzle or setup, or you
 
 ## If you are using input shaper:
 
-Set all of the **non-travel** accelerations to the max recommended acceleration for your shaper type or below (from the upper right area of your ADXL graph).
+Set all of the **non-travel** accelerations to the max recommended acceleration for your shaper type and below (from the upper right area of your ADXL graph).
+- I would still personally recommend keeping low accelerations for things like perimeters. Your IS tune can drift over time with belt tensions and ringing can start to come back. I've also had some bulging issues when pushing perim accels.
 
 **Travels can exceed the max recommended value**, however. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels. Or you can play it on the safe side and just use the same max accel.
 
