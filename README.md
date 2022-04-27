@@ -215,13 +215,13 @@ The infill line widths are set to a high value in my profile (180%) to save some
 
 If you need greater top layer support, or are printing decorative / low infill parts, you may want to reduce this value for for greater line density.
 
-## 180% Line Width @ 40% Infill
+## 40% Infill - 180% Line Width
 - ![](Images/infill-180.png) 
 
-## 140% Line Width @ 40% Infill
+## 40% Infill - 140% Line Width
 - ![](Images/infill-140.png) 
 
-## 110% Line Width @ 40% Infill
+## 40% Infill - 110% Line Width
 - ![](Images/infill-110.png) 
 
 # Tips and Tricks
