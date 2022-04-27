@@ -154,7 +154,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 - With CoreXY, 45 degree motions only use one motor. 
 
-    - This can sometimes lead to better surface quality on straight walls. Patterns can sometimes occur when both motors are in use.
+    - This can sometimes lead to better surface quality on straight walls. Patterns (VFAs) can sometimes occur when both motors are in use (with certain motor models).
 
 - Can *sometimes* result in better overhangs. It seems that airflow sometimes prefers 45 degree prints.
 
