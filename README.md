@@ -162,7 +162,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
     - You can see bands where the seam has hopped to a different edge of the print.
 
-    - *(This example is from Discord and the pressure advance is a bit too low, but it helps to better demonstrate the effect)*
+    - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
 
     - ![](/Images/seamjump.png)
 
