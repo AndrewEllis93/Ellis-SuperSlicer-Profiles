@@ -3,9 +3,13 @@
 
 # Important Notes
 
-- Profiles updated for SuperSlicer beta [:page_facing_up:version **2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) as of **2022-04-11**.
+- :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2)
+
+    - Last version update: **2022-04-11**.
+
     - **Use different SS versions at your own peril.**
-        - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings.
+
+        - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
 
         - I will update this as I test newer versions.
 
@@ -16,14 +20,16 @@
 - This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. 
 
 - **:warning: This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
+
     - I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down.
 
-See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
+- See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
 
-You can find the bed models and textures I am using in [:page_facing_up:Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer).
+- You can find the bed models and textures I am using in [:page_facing_up:Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer).
 
-Support my drinking habits:
+- Support my drinking habits:
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/paypalme/AndrewEllis93)
+
 # Table of Contents
 **:warning:** = has important warning
 - [How to Download](#how-to-download)
@@ -33,8 +39,10 @@ Support my drinking habits:
 - [**:warning:** Accelerations](#accelerations)
 - [Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
+- [Infill Line Widths](#infill-line-widths)
 - [Tips and Tricks](#tips-and-tricks)
 - [Profile Change Log](#profile-change-log)
+
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -162,10 +170,31 @@ Manual seam placement will **always** have the best results. This method is a co
 
 ## Rotating All Parts
 
-Press **ctrl+a** to select all objects. \
+NEW: SuperSlicer allows you to set auto rotation when importing models in your printer profile:
+- ![](Images/auto-rotation.png) 
+
+To manually rotate, press **ctrl+a** to select all objects. \
 Type the rotation amount in "Z" the box at the bottom right:
 
-![](Images/Rotation.png) 
+- ![](Images/Rotation.png) 
+
+# Infill Line Widths
+
+The infill line widths are set to a high value in my profile (180%) to save some print time, and to help with infill layer adhesion strength. 
+
+**This proportionally reduces the amount of lines to be printed.** The overall coverage area is still 40%.
+
+If you need greater top layer support, or are printing decorative / low infill parts, you may want to reduce this value for for greater line density.
+
+## 180% Line Width @ 40% Infill
+- ![](Images/infill-180.png) 
+
+## 140% Line Width @ 40% Infill
+- ![](Images/infill-140.png) 
+
+## 110% Line Width @ 40% Infill
+- ![](Images/infill-110.png) 
+
 # Tips and Tricks
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
@@ -181,6 +210,10 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-04-27:**
+    - ***thin_perimeters*** to 80% (default)
+    - ***thin_perimeters_all*** to 20% (default)
+        - Both of these settings are new defaults that got didn't come over properly with the update (came over as 100%/0%)
 - **2022-04-14:**
     - ***use_relative_e_distances*** back to **enabled**.
         - Some people had `M83` in their PRINT_START macros which didn't agree with this. 
