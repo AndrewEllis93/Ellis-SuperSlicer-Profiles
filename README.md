@@ -5,6 +5,8 @@
 
 - :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2)
 
+    - You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.
+
     - Last version update: **2022-04-11**.
 
     - **Use different SS versions at your own peril.**
