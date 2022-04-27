@@ -181,7 +181,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 Manual seam placement will **always** have the best results. This method is a compromise to save myself a lot of manual work for plates with large numbers of parts.
 
-## Rotating All Parts
+## Rotating Parts
 
 NEW: SuperSlicer allows you to set auto rotation when importing models in your printer profile:
 - ![](Images/auto-rotation.png) 
@@ -226,7 +226,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
 - **2022-04-27:**
     - ***thin_perimeters*** to 80% (default)
     - ***thin_perimeters_all*** to 20% (default)
-        - Both of these settings are new defaults that got didn't come over properly with the update (came over as 100%/0%)
+        - Both of these settings are new defaults that got didn't come over properly with the update (came over as 100% / 0%)
 - **2022-04-14:**
     - ***use_relative_e_distances*** back to **enabled**.
         - Some people had `M83` in their PRINT_START macros which didn't agree with this. 
