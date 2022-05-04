@@ -198,7 +198,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
     - ![](Images/ScatteredSeam-2.png) 
 
     - Previously:\
-    *(there was no seam preview before)*:
+    *(there was no seam preview feature at the time either)*:
     - ![](Images/ScatteredSeam.png)  
 
         - I usually try to orient the sharpest corner to the rear of the place. 
