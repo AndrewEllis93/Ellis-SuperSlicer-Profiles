@@ -193,6 +193,7 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 
 ## Cons
+- It can sometimes be harder to fit as many parts this way.
 - ~~Rear seams don't always align nicely on rounded corners.~~
     - **UPDATE: The newer versions of SS seem to have improved this quite a bit!**
     - ![](Images/ScatteredSeam-2.png) 
