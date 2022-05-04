@@ -168,30 +168,44 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
     - The alternative is "cost-based" *(similar to "sharpest corner" in Cura)*. Cost-based does a good job of placing the seams in corners, but crucially it does not align them. They tend to be scattered around the print at random corners.
 
+    - Rear seams:
+        - :heart_eyes:
+        - ![](/Images/seams-rear.png)
+
+    - Vs "corners" seams:
+        - (ehhhhh)
+        - ![](/Images/seams-corners.png)
+
+    - Force-aligning the seams can help with layer consistency. The other options ("Aligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
+
+        - You can see bands where the seam has hopped to a different edge of the print.
+
+        - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
+
+        - ![](/Images/seamjump.png)
+
 - With CoreXY, 45 degree motions only use one motor. 
 
     - This can sometimes lead to better surface quality on straight walls. Patterns (VFAs) can sometimes occur when both motors are in use (with certain motor models).
 
 - Can *sometimes* result in better overhangs. It seems that airflow sometimes prefers 45 degree prints.
 
-- Aligning the seams to one area of the print can help with layer consistency. The other options ("Aligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
 
-    - You can see bands where the seam has hopped to a different edge of the print.
-
-    - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
-
-    - ![](/Images/seamjump.png)
 
 ## Cons
-- Rear seams don't tend to align nicely on rounded corners.
+- ~~Rear seams don't always align nicely on rounded corners.~~
+    - **UPDATE: The newer versions of SS seem to have improved this quite a bit!**
+    - ![](Images/ScatteredSeam-2.png) 
 
+    - Previously:\
+    *(there was no seam preview before)*:
     - ![](Images/ScatteredSeam.png)  
 
-    - I usually try to orient the sharpest corner to the rear of the place. 
+        - I usually try to orient the sharpest corner to the rear of the place. 
 
-    - For objects with only rounded corners, I will sometimes manually place the seam.
+        - For objects with only rounded corners, I will sometimes manually place the seam.
 
-    - For some plates, I may also set the seam to "cost-based" or "corners" for certain objects.
+        - For some plates, I may also set the seam to "cost-based" or "corners" for certain objects.
 
 - Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
 
