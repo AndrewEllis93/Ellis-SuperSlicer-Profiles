@@ -254,6 +254,13 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-05-25:**
+    - ***perimeter_extrusion_width*** to 120%
+        - For more strength.
+    - ***bridge_speed_internal*** to 100% (was 150%)
+        - This will match your normal bridge speed. 150% was causing the internal bridges to not always attach.
+    - ***curve_smoothing_angle_convex*** and ***curve_smoothing_angle_concaver*** to default.
+        - These were just a leftover from an old SS upgrade.
 - **2022-04-27:**
     - ***thin_perimeters*** to 80% (default)
     - ***thin_perimeters_all*** to 20% (default)
