@@ -258,7 +258,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***perimeter_extrusion_width*** to 120%
         - For more strength.
     - ***bridge_speed_internal*** to 100% (was 180mm/s)
-        - This will match your normal bridge speed. 150% was causing the internal bridges to not always attach.
+        - This will match your normal bridge speed. 180mm/s was causing the internal bridges to not always attach.
     - ***curve_smoothing_angle_convex*** and ***curve_smoothing_angle_concaver*** to default.
         - These were just a leftover from an old SS upgrade.
 - **2022-04-27:**
