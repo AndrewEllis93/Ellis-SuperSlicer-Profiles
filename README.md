@@ -254,6 +254,9 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-07-18:**
+    - **extra_perimeters_overhangs** enabled.
+        - This being disabled could cause gapping issues when this profile is used for decorative parts with fewer walls (or extreme overhangs). It should not kick in for most Voron parts.
 - **2022-05-25:**
     - ***perimeter_extrusion_width*** to 120%
         - For more strength.
