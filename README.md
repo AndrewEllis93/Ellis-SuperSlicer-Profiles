@@ -121,7 +121,7 @@ Nozzle properties may affect these numbers. For example:
 If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the [:page_facing_up:"Determining Max Volumetric Flow Rate"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md) section in my print tuning guide.
 
 # Accelerations
-### :warning: You *must* reduce these accelerations if you aren't using input shaper, or for other printer types.
+### :warning: You *must* reduce these accelerations if you aren't using input shaper, or for most other printer types.
 
 - These accelerations are tuned for my v2 with input shaper.
 
