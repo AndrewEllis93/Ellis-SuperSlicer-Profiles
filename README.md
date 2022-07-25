@@ -252,8 +252,12 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-07-25:**
+    - ***support_material_contact_distance*** set to 0.1mm (was 0.2mm).
+        - I found the default of 0.2mm was giving really messy surfaces when supports are used. 
+    - ***support_material_bottom_contact_distance*** set to "same as top" (was 0.2mm)
 - **2022-07-18:**
-    - **extra_perimeters_overhangs** enabled.
+    - ***extra_perimeters_overhangs*** enabled.
         - This being disabled could cause gapping issues when this profile is used for decorative parts with fewer walls (or extreme overhangs). It should not kick in for most Voron parts.
 - **2022-05-25:**
     - ***perimeter_extrusion_width*** to 120%
