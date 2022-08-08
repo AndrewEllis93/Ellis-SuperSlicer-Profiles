@@ -34,6 +34,7 @@
 
 # Table of Contents
 **:warning:** = has important warning
+- [Profile Differences](#profile-differences)
 - [How to Download](#how-to-download)
 - [How to Import](#how-to-import)
 - [**:warning:** Start G-code](#start-g-code)
@@ -44,6 +45,22 @@
 - [Infill Line Widths](#infill-line-widths)
 - [Tips and Tricks](#tips-and-tricks)
 - [Profile Change Log](#profile-change-log)
+
+# Profile Differences
+The decorative profile should not be used for Voron parts.
+| Setting | Standard PIF Profile | "45 Degree" PIF Profile |  "45 Degree" Decorative Profile |
+| --------------- | --------------- | --------------- | --------------- |
+| **seam_position** | Corners | Rear | Rear |
+| **fill_angle** | 45 | 0 | 0 |
+| **support_material_angle** | 0 | 45 | 45 |
+| **init_z_rotate** | 0 | 45 | 45 | 
+| **perimeters** | 4 | 4 | 3 | 
+| **perimeter_extrusion_width** | 100% | 100% | 120% | 
+| **infill_extrusion_width** | 180% | 180% | 120% | 
+| **fill_pattern** | Grid | Grid | Support Cubic |
+| **fill_density** | 40% | 40% | 20% |
+| **support_material** | false | false | true |
+| **support_material_speed** | 150mm/s | 150mm/s | 120mm/s |
 
 # How to Download
 **1)** Navigate to the .ini file.
@@ -155,14 +172,6 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 ![](Images/45DegreePlate.png)  
 
-## Differences
-| Setting | "45 Degree" Profile | Standard Profile |
-| --------------- | --------------- | --------------- |
-| **seam_position** | Rear | Corners |
-| **fill_angle** | 0 | 45 |
-| **support_material_angle** | 45 | 0 |
-| **init_z_rotate** | 45 | 0 |
-
 ## Pros
 - The **main** reason I do this: easier seam placement for large numbers of parts using "rear" seams.
     - Orient the desired seam edge towards the rear of the plate (preferably the sharpest edge).
@@ -222,7 +231,6 @@ To manually rotate, press **ctrl+a** to select all objects. \
 Type the rotation amount in "Z" the box at the bottom right:
 
 - ![](Images/Rotation.png) 
-
 # Infill Line Widths
 
 The infill line widths are set to a high value in my profile (180%) to save some print time, and to help with infill layer adhesion strength. 
