@@ -48,7 +48,7 @@
 
 # Profile Differences
 The decorative profile should not be used for Voron parts.
-| Setting | PIF-Standard.ini | PIF-45_Degree.ini |  Decorative-45_Degree.ini |
+| Setting | PIF_Standard.ini | PIF_45_Degree.ini |  Decorative_45_Degree.ini |
 | --------------- | --------------- | --------------- | --------------- |
 | **seam_position** | Corners | Rear | Rear |
 | **fill_angle** | 45 | 0 | 0 |
