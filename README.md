@@ -55,8 +55,8 @@ The decorative profile should not be used for Voron parts.
 | **support_material_angle** | 0 | 45 | 45 |
 | **init_z_rotate** | 0 | 45 | 45 | 
 | **perimeters** | 4 | 4 | 3 | 
-| **perimeter_extrusion_width** | 100% | 100% | 120% | 
-| **infill_extrusion_width** | 180% | 180% | 120% | 
+| **perimeter_extrusion_width** | 100% | 100% | 125% | 
+| **infill_extrusion_width** | 180% | 180% | 125% | 
 | **fill_pattern** | Grid | Grid | Support Cubic |
 | **fill_density** | 40% | 40% | 20% |
 | **support_material** | false | false | true |
@@ -272,7 +272,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***extra_perimeters_overhangs*** enabled.
         - This being disabled could cause gapping issues when this profile is used for decorative parts with fewer walls (or extreme overhangs). It should not kick in for most Voron parts.
 - **2022-05-25:**
-    - ***perimeter_extrusion_width*** to 120%
+    - ***perimeter_extrusion_width*** to ~~120%~~ 125%
         - For more strength.
     - ***bridge_speed_internal*** to 100% (was 180mm/s)
         - This will match your normal bridge speed. 180mm/s was causing the internal bridges to not always attach.
