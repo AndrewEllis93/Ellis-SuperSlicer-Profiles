@@ -260,6 +260,10 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-08-09:**
+    - Set default line width to 125% and change all 120% values to 0 so that they use default (just for rounder numbers, i.e 0.5mm widths instead of 0.48)
+- **2022-08-08:**
+    - Add decorative 45 degree profile.
 - **2022-07-25:**
     - ***support_material_contact_distance*** set to 0.1mm (was 0.2mm).
         - I found the default of 0.2mm was giving really messy surfaces when supports are used. 
