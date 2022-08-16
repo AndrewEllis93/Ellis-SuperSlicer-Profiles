@@ -260,6 +260,9 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-08-16:**
+    - ***solid_over_perimeters*** to 0 (was 2 / default)
+        - This could cause pillowing issues on internal slopes.
 - **2022-08-09:**
     - Set default line width to 125% and change all 120% values to 0 so that they use default (just for rounder numbers, i.e 0.5mm widths instead of 0.48)
 - **2022-08-08:**
