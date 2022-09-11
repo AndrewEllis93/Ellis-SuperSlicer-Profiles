@@ -254,6 +254,20 @@ Right click the "arrange" button to change part spacing.
 Then click the arrange button (or press A), to automatically arrange everything.
 
 Too close can introduce cooling issues. I tend to spread parts out when I can.
+## Advanced bridging over holes
+To avoid the need to add tapered screw holes over countersinks, your best bet is to use a special setting in superslicer that allow to use brige over holes.
+
+It is not a magic bullet and still need to be use on a case basis but usually work on countersinks for screws.
+
+The Superslicer option is in 'Perimeters and Shell', under the Advanced part. It is called `No perimeters on bridge areas`.
+
+SuperSlicer Option :
+![](Images/void_with_bridges_04.png)
+
+Results:
+![](Images/void_with_bridges_01.png)
+![](Images/void_with_bridges_02.png)
+![](Images/void_with_bridges_03.png)
 # Profile Change Log
 
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
