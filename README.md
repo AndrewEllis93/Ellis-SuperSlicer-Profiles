@@ -27,7 +27,7 @@
 
 - See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
 
-- You can find the bed models and textures I am using in [:page_facing_up:Hartk's GitHub repo](https://github.com/hartk1213/MISC/tree/main/Voron%20Mods/SuperSlicer).
+- You can find the bed models and textures I am using in [:page_facing_up:here](https://github.com/VoronDesign/Voron-Extras/tree/main/Bed_Models).
 
 - Support my drinking habits:
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/paypalme/AndrewEllis93)
