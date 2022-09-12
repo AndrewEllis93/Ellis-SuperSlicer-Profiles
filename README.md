@@ -254,20 +254,30 @@ Right click the "arrange" button to change part spacing.
 Then click the arrange button (or press A), to automatically arrange everything.
 
 Too close can introduce cooling issues. I tend to spread parts out when I can.
-## Advanced bridging over holes
-To avoid the need to add tapered screw holes over countersinks, your best bet is to use a special setting in superslicer that allow to use brige over holes.
+## Advanced Bridging Over Holes (Sacrificial Bridges)
+*This section was contributed by [akhamar](https://github.com/akhamar). Thanks!*
 
-It is not a magic bullet and still need to be use on a case basis but usually work on countersinks for screws.
+To avoid the need to add tapered screw holes over countersinks, you can instead use a setting in SuperSlicer that allows for bridging over holes.
 
-The Superslicer option is in 'Perimeters and Shell', under the Advanced part. It is called `No perimeters on bridge areas`.
+It is not a magic bullet, and still need to be used on a case basis, but usually works on countersinks for screws.
 
-SuperSlicer Option :
-![](Images/void_with_bridges_04.png)
+### SuperSlicer Option
+The SuperSlicer option is called `"No perimeters on bridge areas"`, located in the advanced section of "Perimeters and Shell".
+- The internal setting name is `no_perimeter_unsupported_algo`.
 
-Results:
-![](Images/void_with_bridges_01.png)
-![](Images/void_with_bridges_02.png)
-![](Images/void_with_bridges_03.png)
+- ![](Images/void_with_bridges_04.png)
+
+### Results
+- Previously, this example part would have had **no bridging layer**, which could cause the layer over the void/hole to attempt to print midair.
+    - The perimeter circles (yellow/orange) would be printed midair and fall. 
+    - The ends of the infill lines (purple) around the hole would be partially printed midair and fall.
+
+- With this setting, a sacrificial bridge is printed for support, which can then be broken through with the screw.
+
+- ![](Images/void_with_bridges_02.png)
+- ![](Images/void_with_bridges_01.png)
+- ![](Images/void_with_bridges_03.png)
+
 # Profile Change Log
 
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
