@@ -27,6 +27,7 @@
 - [**:warning:** Accelerations](#accelerations)
 - [**:warning:** Extrusion Multiplier](#extrusion-multiplier)
 - [**:warning:** Cooling](#cooling)
+- [**:warning:** Nozzle Flats](#nozzle-flats)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Infill Line Widths](#infill-line-widths)
 - [Tips and Tricks](#tips-and-tricks)
@@ -58,7 +59,7 @@ Open each tab and click the floppy icon to save the profile. You may have to pic
 - ![](Images/Saving.png) 
 
 # Start G-code
-**:warning: Replace everything in this box with just `PRINT_START`\* if you are not yet passing temperature variables to `PRINT_START`.**
+### **:warning: If you are not yet passing temperature variables to `PRINT_START`, replace everything in this box with just `PRINT_START`\***
 - *\* or the appropriate start g-code for your particular printer.*
 
 See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md) section of my tuning guide for more information (rationale & instructions).
@@ -67,7 +68,7 @@ See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://gi
 
 ![](Images/StartGcode.png)  
 # Volumetric Speed Limiting
-**:warning: It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or filament grinding.**
+### **:warning: It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or filament grinding.**
 
 ![](Images/VolumetricSpeed.png)  
 
@@ -126,7 +127,7 @@ Set all of the **non-travel*** accelerations to the max recommended acceleration
 - The max recommended acceleration from input shaper tuning is actually the point where **excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.**
 
 # Extrusion Multiplier
-:warning: **The extrusion multiplier (EM) is tuned for my particular filament brand/batch. You will have to tune yours for your particular filament.**
+### :warning: **The extrusion multiplier (EM) is tuned for my particular filament brand/batch. You will have to tune yours for your particular filament.**
 
 See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/extrusion_multiplier.md) for tuning instructions.
 
@@ -135,13 +136,31 @@ See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/b
 # Cooling
 This profile uses **static fan speeds**. The community has found that varying fan speeds, particularly with high-shrinkage materials, can cause layer inconsistencies.
 
-**:warning:Your fan speed will vary based on your fan, material, layer times, and chamber temps.** You will need to play with this. See my the [:page_facing_up:"cooling and layer times"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/cooling_and_layer_times.md) section of my tuning guide.
+### **:warning:Your optimal fan speed will vary based on your fan, material, layer times, and chamber temps.**
+**My fans speeds may be too high for you, especially if your chamber is cooler than mine (~65C).**
 
-I use Stealthburner with a Sunon 5015 fan, and my chamber temp is around 65C. Your setup will likely vary.
+See my the [:page_facing_up:"cooling and layer times"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/cooling_and_layer_times.md) section of my tuning guide.
+
+I use Stealthburner with a Sunon 5015 fan.
 
 ![](Images/FanSpeeds.png)  
-# "45 Degree" Profile vs Standard Profile
 
+# Nozzle Flats
+### **:warning: My profiles use some aggressive line widths (180% infill, 140% solid infill), which may not work well with some pointier nozzles.**
+
+You will only get good results **if your nozzle flat is wide enough to support the requested line width.** You can get a rough measurement of your nozzle flat with calipers.
+
+This can cause thicker extrusion lines to curl up around the nozzle - and even occasionally cause gapping issues with the 125% perimeters, if it's pointy enough.
+
+## May cause issues.
+
+![](/Images/nozzle-pointy.png) 
+
+## Better.
+
+![](/Images/nozzle-flat.png)
+
+# "45 Degree" Profile vs Standard Profile
 My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 degree angle.
 
 ![](Images/45DegreePlate.png)  
@@ -156,15 +175,13 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
     - vs. "corners" seams:
         - (ehhhhh)
         - ![](/Images/seams-corners.png)
-    - Force-aligning the seams can help with layer consistency. The other options ("Aligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
+    - Force-aligning the seams can help with layer consistency. The other options ("ligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
         - You can see bands where the seam has hopped to a different edge of the print.
         - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
         - ![](/Images/seamjump.png)
 - With CoreXY, 45 degree motions only use one motor. 
     - This can sometimes lead to better surface quality on straight walls. Patterns (VFAs) can sometimes occur when both motors are in use (with certain motor models).
 - Can *sometimes* result in better overhangs. It seems that airflow sometimes prefers 45 degree prints.
-
-
 
 ## Cons
 - It can sometimes be harder to fit as many parts this way.
