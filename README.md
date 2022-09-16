@@ -3,64 +3,36 @@
 
 # Important Notes
 
-- :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2)
-
+- :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) (last update: 2022-04-11)
     - **You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.**
-
-    - Last version update: **2022-04-11**.
-
     - **Use different SS versions at your own peril.**
-
         - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
-
         - I will update this as I test newer versions.
-
         - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
-
             - ![](/Images/bug.png)
-
-- This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething. 
-
-- **:warning: This profile's speeds/accels are tuned for linear rail CoreXY (V2/V1/Trident/V0)**. For other printer types (Switchwire, Legacy, others), you will likely need to turn down some speeds and accelerations. 
-
-    - I actually use the same print settings on my Ender 3, just with speeds and accelerations toned down.
-
+- **:warning:This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething.**
+    - **:warning:This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2). YOUR RESULTS MAY VARY.** Your own printer, and especially other printer types (Switchwire, Legacy, others), will likely need lower speeds and accelerations. 
+    - I actually use the same profiles on my Ender 3, just with speeds and accelerations turned down.
 - See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
-
 - You can find the bed models and textures I am using in [:page_facing_up:here](https://github.com/VoronDesign/Voron-Extras/tree/main/Bed_Models).
-
 - Support my drinking habits:
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/paypalme/AndrewEllis93)
 
 # Table of Contents
-**:warning:** = has important warning
-- [Profile Differences](#profile-differences)
+**:warning: = HAS IMPORTANT WARNING / POTENTIAL HEADACHE**
 - [How to Download](#how-to-download)
 - [How to Import](#how-to-import)
 - [**:warning:** Start G-code](#start-g-code)
 - [**:warning:** Volumetric Speed Limiting](#volumetric-speed-limiting)
 - [**:warning:** Accelerations](#accelerations)
-- [Cooling](#cooling)
+- [**:warning:** Extrusion Multiplier](#extrusion-multiplier)
+- [**:warning:** Cooling](#cooling)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Infill Line Widths](#infill-line-widths)
 - [Tips and Tricks](#tips-and-tricks)
-- [Profile Change Log](#profile-change-log)
-
-# Profile Differences
-The decorative profile should not be used for Voron parts.
-| Setting | PIF_Standard.ini | PIF_45_Degree.ini |  Decorative_45_Degree.ini |
-| --------------- | --------------- | --------------- | --------------- |
-| **seam_position** | Corners | Rear | Rear |
-| **fill_angle** | 45 | 0 | 0 |
-| **support_material_angle** | 0 | 45 | 45 |
-| **init_z_rotate** | 0 | 45 | 45 | 
-| **perimeters** | 4 | 4 | 3 | 
-| **perimeter_extrusion_width** | 100% | 100% | 125% | 
-| **infill_extrusion_width** | 180% | 180% | 125% | 
-| **fill_pattern** | Grid | Grid | Support Cubic |
-| **fill_density** | 40% | 40% | 20% |
-| **support_material** | false | false | true |
-| **support_material_speed** | 150mm/s | 150mm/s | 120mm/s |
+    - [Part Spacing / Plating](#part-spacing--plating)
+    - [Advanced Bridging Over Holes (Sacrificial Bridges)](#advanced-bridging-over-holes-sacrificial-bridges)
+- [**Profile Change Log**](#profile-change-log)
 
 # How to Download
 **1)** Navigate to the .ini file.
@@ -78,7 +50,6 @@ Alternatively, download the whole repository as .zip:
 If you downloaded the whole repository as .zip, extract it.
 
 Select **file -> import -> import config** or press ctrl+L.
-
 - ![](Images/Import.png)  
 
 Select the **\.ini** file of the profile you want to import.
@@ -100,34 +71,30 @@ See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://gi
 
 ![](Images/VolumetricSpeed.png)  
 
-## What is a volumetric speed limit?
+## What is a Volumetric Speed Limit?
 
-The volumetric speed limit controls the maximum rate that your hotend is allowed to extrude. 
-
-No matter how much you push speeds, layer heights, or line widths, **it will never allow you to outrun your hotend.**
+The volumetric speed limit controls the maximum rate that your hotend is allowed to extrude. No matter how much you push speeds, layer heights, or line widths, **it will never allow you to outrun your hotend.**
 
 Even when not pushing for speeds, I highly recommend putting an appropriate value for your hotend. It's a great failsafe.
 
-## How is it used here?
-
-I keep my infill speed set to **300mm/s**. This is the absolute max I want my infill to ever print - but in reality, it will usually print more slowly due to this limit. 
-
-This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**
+I keep my infill speed set to **300mm/s**. This is the absolute max I want my infill to ever print - but in reality, it will usually print more slowly due to this limit. This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**
 
 ## Approximate Values
 
-| Hotend     | Flow Rate (mm<sup>3</sup>/sec) |
-| :---        |    :----:   |
-| E3D V6            | 11
-| E3D Revo            | 15
-| Dragon SF| 15
-| Dragon HF| 24
-| Mosquito| 20
-| Mosquito Magnum| 30
+These approximate values **assume a standard 0.4mm brass nozzle.** 
+| Hotend | Flow Rate (mm<sup>3</sup>/sec) |
+| --- | :---: |
+| E3D V6 | 11 |
+| E3D Revo | 15 |
+| Dragon SF | 15 |
+| Dragon HF | 24 |
+| Dragonfly BMO | 13 |
+| Rapido HF | 24 |
+| Rapido UHF | 30 |
+| Mosquito | 20 |
+| Mosquito Magnum | 30 |
 
-You should be okay using an approximate value and just lowering it if you have any issues. 
-
-These are approximate values **assuming a standard brass 0.4mm nozzle.** 
+You will *usually* be okay using an approximate value from above and just lowering it if you have any issues. But - keep in mind that **there is also no guarantee that you will reach them.** There are many factors and variables that can cause your actual performance to vary.
 
 Nozzle properties may affect these numbers. For example:
 - Larger diameter nozzles will have higher flow rates
@@ -135,35 +102,42 @@ Nozzle properties may affect these numbers. For example:
 - Plated copper and tungsten carbide have higher thermal conductivity and might allow a bit higher flow rate. 
 - Bondtech CHT nozzles use a different internal geometry that allows higher flow rates.
 
-If you want to get more scientific, test with a specific nozzle or setup, or your hotend just isn't listed, see the [:page_facing_up:"Determining Max Volumetric Flow Rate"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md) section in my print tuning guide.
+To test your own flow rate, see the [:page_facing_up:Determining Max Volumetric Flow Rate](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md).
+
+You may also want to have a look at [:page_facing_up:Flow Dropoff](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md#flow-dropoff).
 
 # Accelerations
-### :warning: You *must* reduce these accelerations if you aren't using input shaper, or for most other printer types.
-
-- These accelerations are tuned for my v2 with input shaper.
+**These accelerations are tuned for my personal V2 with input shaper.**
 
 ![](Images/AccelControls.png)  
 
-## If you are using input shaper:
+## Without Input Shaper
+### **:warning: You must reduce these accelerations if you aren't using input shaper, or for most other printer types.**
 
-Set all of the **non-travel** accelerations to the max recommended acceleration for your shaper type and below (from the upper right area of your ADXL graph).
-- I would still personally recommend keeping low accelerations for things like perimeters. Your IS tune can drift over time with belt tensions and ringing can start to come back. I've also had some bulging issues when pushing perim accels.
+You may get skipping otherwise (or just very violent toolhead movements). 
 
-**Travels can exceed the max recommended value**, however. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels. Or you can play it on the safe side and just use the same max accel.
+For CoreXY, maybe around 4-5k max.
 
-The max recommended acceleration from input shaper tuning is actually the point where **excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.**
-## If you are NOT using input shaper: 
+## With Input Shaper
+Set all of the **non-travel*** accelerations to the max recommended acceleration for your shaper type and below (from the upper right area of your ADXL graph).
+- I would still personally recommend keeping low accelerations for things like perimeters. Your IS tune can drift over time with belt tensions and ringing can start to come back. I've also had some bulging issues when pushing perim accels. Set it and forget it.
 
-You will need to reduce these accelerations. 
+\* Travels can usually **exceed** the max recommended value if you wish. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels.
+- The max recommended acceleration from input shaper tuning is actually the point where **excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.**
 
-You may get skipping otherwise (or just very violent toolhead movements). For CoreXY, maybe around 4-5k max.
+# Extrusion Multiplier
+:warning: **The extrusion multiplier (EM) is tuned for my particular filament brand/batch. You will have to tune yours for your particular filament.**
+
+See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/extrusion_multiplier.md) for tuning instructions.
+
+![](/Images/em.png)
+
 # Cooling
-
 This profile uses **static fan speeds**. The community has found that varying fan speeds, particularly with high-shrinkage materials, can cause layer inconsistencies.
 
-:warning:Your fan speed will vary based on your fan, material, layer times, and chamber temps. You will need to play with this. See my the [:page_facing_up:"cooling and layer times"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/cooling_and_layer_times.md) section of my tuning guide.
+**:warning:Your fan speed will vary based on your fan, material, layer times, and chamber temps.** You will need to play with this. See my the [:page_facing_up:"cooling and layer times"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/cooling_and_layer_times.md) section of my tuning guide.
 
-I use BadNoob's AB-BN-30 duct with the Sunon 5015 fan, and my chamber temp is around 63C. Your setup will likely vary.
+I use Stealthburner with a Sunon 5015 fan, and my chamber temp is around 65C. Your setup will likely vary.
 
 ![](Images/FanSpeeds.png)  
 # "45 Degree" Profile vs Standard Profile
@@ -173,31 +147,21 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 ![](Images/45DegreePlate.png)  
 
 ## Pros
-- The **main** reason I do this: easier seam placement for large numbers of parts using "rear" seams.
+- **The main reason I do this** is simply for easier seam placement for large numbers of parts using "rear" seams.
     - Orient the desired seam edge towards the rear of the plate (preferably the sharpest edge).
-
     - The alternative is "cost-based" *(similar to "sharpest corner" in Cura)*. Cost-based does a good job of placing the seams in corners, but crucially it does not align them. They tend to be scattered around the print at random corners.
-
     - Rear seams:
         - :heart_eyes:
         - ![](/Images/seams-rear.png)
-
-    - Vs "corners" seams:
+    - vs. "corners" seams:
         - (ehhhhh)
         - ![](/Images/seams-corners.png)
-
     - Force-aligning the seams can help with layer consistency. The other options ("Aligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
-
         - You can see bands where the seam has hopped to a different edge of the print.
-
         - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
-
         - ![](/Images/seamjump.png)
-
 - With CoreXY, 45 degree motions only use one motor. 
-
     - This can sometimes lead to better surface quality on straight walls. Patterns (VFAs) can sometimes occur when both motors are in use (with certain motor models).
-
 - Can *sometimes* result in better overhangs. It seems that airflow sometimes prefers 45 degree prints.
 
 
@@ -207,15 +171,11 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 - ~~Rear seams don't always align nicely on rounded corners.~~
     - **UPDATE: The newer versions of SS seem to have improved this quite a bit!**
     - ![](Images/ScatteredSeam-2.png) 
-
     - Previously:\
     *(there was no seam preview feature at the time either)*:
     - ![](Images/ScatteredSeam.png)  
-
         - I usually try to orient the sharpest corner to the rear of the place. 
-
         - For objects with only rounded corners, I will sometimes manually place the seam.
-
         - For some plates, I may also set the seam to "cost-based" or "corners" for certain objects.
 
 - Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
@@ -271,9 +231,7 @@ The SuperSlicer option is called `"No perimeters on bridge areas"`, located in t
 - Previously, this example part would have had **no bridging layer**, which could cause the layer over the void/hole to attempt to print midair.
     - The perimeter circles (yellow/orange) would be printed midair and fall. 
     - The ends of the infill lines (purple) around the hole would be partially printed midair and fall.
-
 - With this setting, a sacrificial bridge is printed for support, which can then be broken through with the screw.
-
 - ![](Images/void_with_bridges_02.png)
 - ![](Images/void_with_bridges_01.png)
 - ![](Images/void_with_bridges_03.png)
@@ -339,7 +297,6 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - This was a bodge compensating for the old custom accel controls messing with time estimates, and is no longer needed.
     - ***retract_lift_above[0]*** to **0.25mm** (was 0.2mm).
         - Set to match first layer height.
-
 - **2022-02-19:**  
     - ~~Set accel_to_decel values to half of accel values in ***feature_gcode***.~~
         - ~~Previously accel and accel_to_decel were the same value.~~
