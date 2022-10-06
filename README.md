@@ -273,6 +273,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - Some people were having layer shifting and infill gouging issues at 180%.
     - ***support_material_speed*** to 120 (was 150)
         - Less likely to knock over supports in PIF profiles if enabled. It was already 120 in the decorative profile.
+    - ***skirts*** to 1 (was 0)
+        - For those without a nozzle brush and/or purge line.
     - ***filament gcode*** 
         - Added example logic for nozzle-dependent PA.
     - ***z_step*** to 0.01 (was 0.04).
