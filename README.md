@@ -259,11 +259,32 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-10-06**
+    - ***extrusion_width*** to 115% (was 125%)
+        - This sets the default extrusion width. Any other widths set to 0 will use this default.
+        - Some people had perimeter gapping issues at 125%.
+    - ***bridged_infill_margin*** to 5mm (was 200%)
+        - Can help edge pillowing in features floating on infill, especially with lower infill densities.
+    - ***external_infill_margin*** to 4mm (was 150%)
+        - Can help edge pillowing in features floating on infill, especially with lower infill densities.
+    - ***first_layer_extrusion_width*** to 125% (was 0 / equal to default)
+        - Still the same width as before, but the default width changed so I had to make it static.
+    - ***infill_extrusion_width*** to 160% (was 180%)
+        - Some people were having layer shifting and infill gouging issues at 180%.
+    - ***support_material_speed*** to 120 (was 150)
+        - Less likely to knock over supports in PIF profiles if enabled. It was already 120 in the decorative profile.
+    - ***filament gcode*** 
+        - Added example logic for nozzle-dependent PA.
+    - ***z_step*** to 0.01 (was 0.04).
+        - This setting rounds layer heights to even multiples of this value.
+        - Setting it to 0.01 allows for finer layer height control.
+        - The *actual* "full step distance" is **0.04mm** on a V2 w/ 1.8 degree Z motors. 0.01 still keeps it at quarter-stepping, which is more than good enough. 
+            - In reality, though, a number of factors keep the motors from actually sitting at perfect full/half/quarter steps (QGL, Z offset, mesh, etc). This setting is of arguable importance for most printers. There's an argument to be made for stopping at the same position WITHIN each full step, but I haven't tested this and haven't noticed much difference.
 - **2022-08-16:**
     - ***solid_over_perimeters*** to 0 (was 2 / default)
         - This could cause pillowing issues on internal slopes, particularly with small layer heights.
 - **2022-08-09:**
-    - Set default line width to 125% and change all 120% values to 0 so that they use default (just for rounder numbers, e.g. 0.5mm widths instead of 0.48)
+    - Set default line width to ~~125%~~  *115% (see 2022-10-06)* and change all 120% values to 0 so that they use default (just for rounder numbers, e.g. 0.5mm widths instead of 0.48)
 - **2022-08-08:**
     - Add decorative 45 degree profile.
 - **2022-07-25:**
@@ -274,8 +295,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - ***extra_perimeters_overhangs*** enabled.
         - This being disabled could cause gapping issues when this profile is used for decorative parts with fewer walls (or extreme overhangs). It should not kick in for most Voron parts.
 - **2022-05-25:**
-    - ***perimeter_extrusion_width*** to ~~120%~~ 125%
-        - For more strength.
+    - ~~***perimeter_extrusion_width*** to ~~120%~~ 125%~~
+        - ~~For more strength.~~
     - ***bridge_speed_internal*** to 100% (was 180mm/s)
         - This will match your normal bridge speed. 180mm/s was causing the internal bridges to not always attach.
     - ***curve_smoothing_angle_convex*** and ***curve_smoothing_angle_concaver*** to default.
