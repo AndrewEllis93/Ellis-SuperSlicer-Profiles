@@ -146,11 +146,11 @@ I use Stealthburner with a Sunon 5015 fan.
 ![](Images/FanSpeeds.png)  
 
 # Nozzle Flats
-### **:warning: My profiles use some aggressive line widths (180% infill, 140% solid infill), which may not work well with some pointier nozzles.**
+### **:warning: My profiles use some aggressive line widths, which may not work well with some pointier nozzles.**
 
 You will only get good results **if your nozzle flat is wide enough to support the requested line width.** You can get a rough measurement of your nozzle flat with calipers.
 
-This can cause thicker extrusion lines to curl up around the nozzle - and even occasionally cause gapping issues with the 125% perimeters, if it's pointy enough.
+This can cause thicker extrusion lines (like the infill) to curl up around the nozzle - and even occasionally cause gapping issues with the thinner perimeters, if it's pointy enough.
 
 ## May cause issues.
 
