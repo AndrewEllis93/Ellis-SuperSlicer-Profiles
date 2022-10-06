@@ -9,6 +9,7 @@ The decorative profile should not be used for Voron parts.
 | **support_material_angle** | 0 | 45 | 45 |
 | **init_z_rotate** | 0 | 45 | 45 | 
 | **perimeters** | 4 | 4 | 3 | 
+| **bottom_solid_layers** | 5 | 5 | 3 | 
 | **perimeter_extrusion_width** | 100% | 100% | 115% | 
 | **infill_extrusion_width** | 160% | 160% | 115% | 
 | **fill_pattern** | Grid | Grid | Support Cubic |

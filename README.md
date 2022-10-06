@@ -280,6 +280,7 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - Setting it to 0.01 allows for finer layer height control.
         - The *actual* "full step distance" is **0.04mm** on a V2 w/ 1.8 degree Z motors. 0.01 still keeps it at quarter-stepping, which is more than good enough. 
             - In reality, though, a number of factors keep the motors from actually sitting at perfect full/half/quarter steps (QGL, Z offset, mesh, etc). This setting is of arguable importance for most printers. There's an argument to be made for stopping at the same position WITHIN each full step, but I haven't tested this and haven't noticed much difference.
+    - Decorative profile: ***bottom_solid_layers*** to 3 (was 5)
 - **2022-08-16:**
     - ***solid_over_perimeters*** to 0 (was 2 / default)
         - This could cause pillowing issues on internal slopes, particularly with small layer heights.
