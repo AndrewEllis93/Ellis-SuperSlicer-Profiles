@@ -22,7 +22,7 @@
 **:warning: = HAS IMPORTANT WARNING / POTENTIAL HEADACHE**
 - [How to Download](#how-to-download)
 - [How to Import](#how-to-import)
-- [**:warning:** Start G-code](#start-g-code)
+- [Start G-Code](#start-g-code)
 - [**:warning:** Volumetric Speed Limiting](#volumetric-speed-limiting)
 - [**:warning:** Accelerations](#accelerations)
 - [**:warning:** Extrusion Multiplier](#extrusion-multiplier)
@@ -59,15 +59,14 @@ Select the **\.ini** file of the profile you want to import.
 Open each tab and click the floppy icon to save the profile. You may have to pick a new name. (you can type in the box that pops up!)
 - ![](Images/Saving.png) 
 
-# Start G-code
-### **:warning: If you are not yet passing temperature variables to `PRINT_START`, replace everything in this box with just `PRINT_START`\***
-- *\* or the appropriate start g-code for your particular printer.*
+# Start G-Code
 
-See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md) section of my tuning guide for more information (rationale & instructions).
+If you are passing temperatures to your PRINT_START macro, make sure to uncomment/modify the start gcode appropriately.
 
-- If you are new to this, don't worry about this yet - come back to it later on.
+See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md) section of my tuning guide for more information.
 
 ![](Images/StartGcode.png)  
+
 # Volumetric Speed Limiting
 ### **:warning: It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or filament grinding.**
 
