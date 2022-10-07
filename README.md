@@ -31,6 +31,7 @@
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Infill Line Widths](#infill-line-widths)
 - [Tips and Tricks](#tips-and-tricks)
+    - [Changing PA Based on Nozzle Size](#changing-pa-based-on-nozzle-size)
     - [Part Spacing / Plating](#part-spacing--plating)
     - [Advanced Bridging Over Holes (Sacrificial Bridges)](#advanced-bridging-over-holes-sacrificial-bridges)
 - [**Profile Change Log**](#profile-change-log)
@@ -223,6 +224,27 @@ If you need greater top layer support, or are printing decorative / low infill p
 - ![](Images/infill-110.png) 
 
 # Tips and Tricks
+## Changing PA Based on Nozzle Size
+
+You can add the below code snippet to your filament's **custom g-code** section in order to have different PA values for different nozzle sizes. Wider nozzles need lower PA. (Of course - modify it appropriately and replace the zeroes with the actual PA values.)
+
+```
+{if printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.4}SET_PRESSURE_ADVANCE ADVANCE=0
+{elsif printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.6}SET_PRESSURE_ADVANCE ADVANCE=0
+{elsif printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.8}SET_PRESSURE_ADVANCE ADVANCE=0
+{endif}
+```
+
+This logic says:
+- IF printer settings profile name contains "Voron" (using regex)
+- AND nozzle size equals *\<value>*
+- THEN insert the gcode (SET_ PRESSURE ADVANCE ADVANCE=*\<value>*).
+
+Macro syntax: https://help.prusa3d.com/article/macros_1775
+- The "=\~" operator uses regex enlosed by forward slashes (=\~/regex/).
+- The "==" operator can be used for an exact match instead if you wish (=="string").
+
+
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
 
