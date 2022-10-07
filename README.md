@@ -254,7 +254,7 @@ Then click the arrange button (or press A), to automatically arrange everything.
 
 Too close can introduce cooling issues. I tend to spread parts out when I can.
 ## Advanced Bridging Over Holes (Sacrificial Bridges)
-*This section was contributed by [akhamar](https://github.com/akhamar). Thanks!*
+*This section was contributed by [:page_facing_up:akhamar](https://github.com/akhamar). Thanks!*
 
 To avoid the need to add tapered screw holes over countersinks, you can instead use a setting in SuperSlicer that allows for bridging over holes.
 
@@ -369,9 +369,9 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
 - **2022-02-10:** 
     - Change ***infill_speed*** to **300** ~~and set **max_print_speed** back to default.~~
         - ***infill_speed*** was previously **0**. 
-            - This was not always reaching maximum volumetric speed, due to a misunderstanding on my part of [how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
+            - This was not always reaching maximum volumetric speed, due to a misunderstanding on my part of [:page_facing_up:how auto-speed works](https://github.com/supermerill/SuperSlicer/issues/1629#issuecomment-1013791149). 
             - Setting it to a maximum speed value (instead of 0) better accomplishes my intended goal (maxing out the hotend's capability for infill). 
-                - See the [Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
+                - See the [:pushpin:Volumetric Speed / Auto Speed](#volumetric-speed--auto-speed) section for an updated (corrected) explanation.
         - ~~**max_print_speed** was previously 300.~~
             - ~~This setting does not universally limit in the same way that the volumetric speed limit does (for some reason), so it's redundant and confusing to leave it on.~~
     - Change ***support_material_speed*** to **150**.
