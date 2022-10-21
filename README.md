@@ -280,12 +280,15 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
 
+- **2022-10-21**
+    - ***bridged_infill_margin*** - revert to default (200%).
+        - This was changed in the the previous update and was causing excess bridging in some STLs.
 - **2022-10-06**
     - ***extrusion_width*** to 115% (was 125%)
         - This sets the default extrusion width. Any other widths set to 0 will use this default.
         - Some people had perimeter gapping issues at 125%.
-    - ***bridged_infill_margin*** to 5mm (was 200%)
-        - Can help edge pillowing in features floating on infill, especially with lower infill densities.
+    - ~~***bridged_infill_margin*** to 5mm (was 200%)~~
+        - ~~Can help edge pillowing in features floating on infill, especially with lower infill densities.~~
     - ***external_infill_margin*** to 4mm (was 150%)
         - Can help edge pillowing in features floating on infill, especially with lower infill densities.
     - ***first_layer_extrusion_width*** to 125% (was 0 / equal to default)
