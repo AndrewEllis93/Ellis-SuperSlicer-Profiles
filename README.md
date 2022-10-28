@@ -11,8 +11,8 @@
         - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
             - ![](/Images/bug.png)
 - **:warning:This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething.**
-    - **:warning:This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2). YOUR RESULTS MAY VARY.** Your own printer, and especially other printer types (Switchwire, Legacy, others), will likely need lower speeds and accelerations. 
-    - I actually use the same profiles on my Ender 3, just with speeds and accelerations turned down.
+    - **:warning:This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2). YOUR RESULTS MAY VARY.** Your own printer, and especially other printer types (Switchwire, Legacy, others), may need lower speeds and accelerations. 
+    - I actually use the same profiles on my Ender 3, just with speeds, accelerations, and volumetric flow rate turned down.
 - See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
 - You can find the bed models and textures I am using in [:page_facing_up:here](https://github.com/VoronDesign/Voron-Extras/tree/main/Bed_Models).
 - Support my drinking habits:
@@ -23,8 +23,8 @@
 - [How to Download](#how-to-download)
 - [How to Import](#how-to-import)
 - [Start G-Code](#start-g-code)
-- [**:warning:** Volumetric Speed Limiting](#volumetric-speed-limiting)
-- [**:warning:** Accelerations](#accelerations)
+- [Volumetric Speed Limiting](#volumetric-speed-limiting)
+- [Accelerations](#accelerations)
 - [**:warning:** Extrusion Multiplier](#extrusion-multiplier)
 - [**:warning:** Cooling](#cooling)
 - [**:warning:** Nozzle Flats](#nozzle-flats)
@@ -68,7 +68,10 @@ See the [:page_facing_up:"Passing Slicer Variables to `PRINT_START`"](https://gi
 ![](Images/StartGcode.png)  
 
 # Volumetric Speed Limiting
-### **:warning: It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or filament grinding.**
+
+The profiles folder contains profiles with this set to 11, 15, 24, and 30mm<sup>3</sup>/sec. Choose the appropriate value for your specific hotend (see below).
+
+**If you set this too high for your hotend, you may have extruder skipping and/or filament grinding.**
 
 ![](Images/VolumetricSpeed.png)  
 
@@ -86,7 +89,7 @@ These approximate values **assume a standard 0.4mm brass nozzle.**
 | Hotend | Flow Rate (mm<sup>3</sup>/sec) |
 | --- | :---: |
 | E3D V6 | 11 |
-| E3D Revo | 15 |
+| E3D Revo | 11 |
 | Dragon SF | 15 |
 | Dragon HF | 24 |
 | Dragonfly BMO | 13 |
@@ -108,23 +111,25 @@ To test your own flow rate, see the [:page_facing_up:Determining Max Volumetric 
 You may also want to have a look at [:page_facing_up:Flow Dropoff](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md#flow-dropoff).
 
 # Accelerations
-**These accelerations are tuned for my personal V2 with input shaper.**
+These accelerations are tuned with my personal V2. As always, your results may vary.
 
 ![](Images/AccelControls.png)  
 
 ## Without Input Shaper
-### **:warning: You must reduce these accelerations if you aren't using input shaper, or for most other printer types.**
-
-You may get skipping otherwise (or just very violent toolhead movements). 
-
-For CoreXY, maybe around 4-5k max.
+Choose a profile fom a "No Input Shaper" folder.
 
 ## With Input Shaper
-Set all of the **non-travel*** accelerations to the max recommended acceleration for your shaper type and below (from the upper right area of your ADXL graph).
-- I would still personally recommend keeping low accelerations for things like perimeters. Your IS tune can drift over time with belt tensions and ringing can start to come back. I've also had some bulging issues when pushing perim accels. Set it and forget it.
+Choose a profile fom an "Input Shaper" folder.
 
-\* Travels can usually **exceed** the max recommended value if you wish. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels.
-- The max recommended acceleration from input shaper tuning is actually the point where **excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.**
+Find the max recommended acceleration from the upper right area of your resonance graph.
+
+If any of the profile's accelerations (*excluding* travel acceleration*) exceed your maximum, lower them down to that maximum value.
+
+- \*Travels can usually **exceed** the max if you wish. See [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_speeds_accels.md) to determine your max travel accels.
+
+    - The max is the approximate point where excessive rounding/smoothing may occur, NOT your absolute maximum movement acceleration.
+
+I would still personally recommend keeping low accelerations for things like perimeters. Your IS tune can drift over time with belt tensions. I've also had some bulging issues when pushing perimeter accelerations. Set it and forget it.
 
 # Extrusion Multiplier
 ### :warning: **The extrusion multiplier (EM) is tuned for my particular filament brand/batch. You will have to tune yours for your particular filament.**
