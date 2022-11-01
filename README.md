@@ -284,10 +284,10 @@ The SuperSlicer option is called `"No perimeters on bridge areas"`, located in t
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
-
-- **2022-10-21**
-    - ***bridged_infill_margin*** - revert to default (200%).
-        - This was changed in the the previous update and was causing excess bridging in some STLs.
+ 
+-**2022-11-01**
+    - ***bridged_infill_margin*** - set to 300%.
+        - This can help prevent some bridges detaching at the ends. The previous value of 5mm was too high and causing excessive bridging.
 - **2022-10-06**
     - ***extrusion_width*** to 115% (was 125%)
         - This sets the default extrusion width. Any other widths set to 0 will use this default.
