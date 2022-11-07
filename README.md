@@ -1,22 +1,42 @@
-## **Please <ins>read each section</ins>**, especially anything marked with ":warning:".
-### **These are important warnings that may cause you issues if missed.**
+## **Please <ins>read each section</ins>**, especially anything marked with ":warning:". **These are important warnings that may cause you issues if missed.**
 
 # Important Notes
 
-- :warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) (last update: 2022-04-11)
-    - **You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.**
-    - **Use different SS versions at your own peril.**
-        - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
-        - I will update this as I test newer versions.
-        - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
-            - ![](/Images/bug.png)
-- **:warning:This profile is more aggressive than most stock profiles, and some things may also need turning down if your printer is still teething.**
-    - **:warning:This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2). YOUR RESULTS MAY VARY.** Your own printer, and especially other printer types (Switchwire, Legacy, others), may need lower speeds and accelerations. 
-    - I actually use the same profiles on my Ender 3, just with speeds, accelerations, and volumetric flow rate turned down.
-- See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide)! (primarily written for Klipper printers)
-- You can find the bed models and textures I am using in [:page_facing_up:here](https://github.com/VoronDesign/Voron-Extras/tree/main/Bed_Models).
-- Support my drinking habits:
+:warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) (last update: 2022-04-11)
+
+(I am currently testing 2.4.58.5. no major issues yet. Only change so far is disabling `wipe_inside_end`.)
+- **You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.**
+- **Use different SS versions at your own peril.**
+    - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
+    - I will update this as I test newer versions.
+    - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
+        - ![](/Images/bug.png)
+
+
+**:warning: This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2).**
+- Your own printer, and especially other printer types, may need lower speeds and accelerations. 
+- That said, these speeds are perfectly achievable on any well-built stock V2/Trident/V0.
+
+---
+
+# Introduction
+
+**See my [:page_facing_up:tuning guide](https://github.com/AndrewEllis93/Print-Tuning-Guide) too!**
+
+Originally this repo was set up to share my own profiles as-is, plastered with warnings of what to turn down. Over time, however, they have become more and more tailored for sharing and for the community at large.
+
+SuperSlicer can be tricky. There are a few problematic "landmine" defaults. These profiles try to remove as many of those headaches as possible, to hopefully ease your transition. I have spent a lot of time experimenting with different settings to hopefully save others from having to repeat the same troubleshooting. The [:pushpin:change log](#profile-change-log) tells a story.
+
+These profiles can work well on **any printer**, provided you adjust the speeds, accels, machine limits/dimensions, and volumetric flow limit accordingly. I actually use the same profiles on my Ender 3.
+
+These profiles are constantly evolving. Please check the [:pushpin:change log](#profile-change-log) occasionally to grab the new settings/findings, so you don't have to reimport the entire profile.
+
+You can find the bed models and textures I am using in [:page_facing_up:here](https://github.com/VoronDesign/Voron-Extras/tree/main/Bed_Models).
+
+Support my drinking habits:
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/paypalme/AndrewEllis93)
+
+---
 
 # Table of Contents
 **:warning: = HAS IMPORTANT WARNING / POTENTIAL HEADACHE**
@@ -30,12 +50,15 @@
 - [**:warning:** Nozzle Flats](#nozzle-flats)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Infill Line Widths](#infill-line-widths)
-- [Tips and Tricks](#tips-and-tricks)
+---
+- [Miscellaneous Tips and Tricks](#miscellaneous-tips-and-tricks)
     - [Changing PA Based on Nozzle Size](#changing-pa-based-on-nozzle-size)
     - [Part Spacing / Plating](#part-spacing--plating)
     - [Advanced Bridging Over Holes (Sacrificial Bridges)](#advanced-bridging-over-holes-sacrificial-bridges)
+---
 - [**Profile Change Log**](#profile-change-log)
 
+---
 # How to Download
 **1)** Navigate to the .ini file.
 
@@ -83,32 +106,7 @@ Even when not pushing for speeds, I highly recommend putting an appropriate valu
 
 I keep my infill speed set to **300mm/s**. This is the absolute max I want my infill to ever print - but in reality, it will usually print more slowly due to this limit. This essentially prints infill **as fast as the hotend will allow, up to 300mm/s.**
 
-## Approximate Values
-
-These approximate values **assume a standard 0.4mm brass nozzle.** 
-| Hotend | Flow Rate (mm<sup>3</sup>/sec) |
-| --- | :---: |
-| E3D V6 | 11 |
-| E3D Revo | 11 |
-| Dragon SF | 15 |
-| Dragon HF | 24 |
-| Dragonfly BMO | 13 |
-| Rapido HF | 24 |
-| Rapido UHF | 30 |
-| Mosquito | 20 |
-| Mosquito Magnum | 30 |
-
-You will *usually* be okay using an approximate value from above and just lowering it if you have any issues. But - keep in mind that **there is also no guarantee that you will reach them.** There are many factors and variables that can cause your actual performance to vary.
-
-Nozzle properties may affect these numbers. For example:
-- Larger diameter nozzles will have higher flow rates
-- Hardened steel has a lower thermal conductivity and you may get lower flow rates unless you compensate with higher temperatures. 
-- Plated copper and tungsten carbide have higher thermal conductivity and might allow a bit higher flow rate. 
-- Bondtech CHT nozzles use a different internal geometry that allows higher flow rates.
-
-To test your own flow rate, see the [:page_facing_up:Determining Max Volumetric Flow Rate](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md).
-
-You may also want to have a look at [:page_facing_up:Flow Dropoff](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md#flow-dropoff).
+For more reading, formulas, and methods to test your own max flow rate, see [:page_facing_up:Determining Max Volumetric Flow Rate](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md).
 
 # Accelerations
 These accelerations are tuned with my personal V2. As always, your results may vary.
@@ -173,16 +171,16 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 ## Pros
 - **The main reason I do this** is simply for easier seam placement for large numbers of parts using "rear" seams.
     - Orient the desired seam edge towards the rear of the plate (preferably the sharpest edge).
-    - The alternative is "cost-based" *(similar to "sharpest corner" in Cura)*. Cost-based does a good job of placing the seams in corners, but crucially it does not align them. They tend to be scattered around the print at random corners.
+    - The alternative is "cost-based", which does a good job of placing the seams in corners, but crucially it does not align them. They tend to be scattered around the print at different corners.
     - Rear seams:
         - :heart_eyes:
         - ![](/Images/seams-rear.png)
     - vs. "corners" seams:
         - (ehhhhh)
         - ![](/Images/seams-corners.png)
-    - Force-aligning the seams can help with layer consistency. The other options ("ligned", "Cost-Based", and "Corners") can all allow the seam to jump around. That can cause artifacts like this:
+    - Force-aligning the seams can help with layer consistency. The other options can all allow the seam to jump around. That can cause artifacts like this:
         - You can see bands where the seam has hopped to a different edge of the print.
-        - *(This example is from Discord. The pressure advance is a bit too low, but it helps to better demonstrate the effect)*
+        - *(This example is has the pressure advance a bit too low, but it helps to better demonstrate the effect)*
         - ![](/Images/seamjump.png)
 - With CoreXY, 45 degree motions only use one motor. 
     - This can sometimes lead to better surface quality on straight walls. Patterns (VFAs) can sometimes occur when both motors are in use (with certain motor models).
@@ -190,23 +188,13 @@ My primary profile is the "45 degree" profile. I orient the STLs to be at a 45 d
 
 ## Cons
 - It can sometimes be harder to fit as many parts this way.
-- ~~Rear seams don't always align nicely on rounded corners.~~
-    - **UPDATE: The newer versions of SS seem to have improved this quite a bit!**
-    - ![](Images/ScatteredSeam-2.png) 
-    - Previously:\
-    *(there was no seam preview feature at the time either)*:
-    - ![](Images/ScatteredSeam.png)  
-        - I usually try to orient the sharpest corner to the rear of the place. 
-        - For objects with only rounded corners, I will sometimes manually place the seam.
-        - For some plates, I may also set the seam to "cost-based" or "corners" for certain objects.
-
 - Sometimes the seams can still be placed oddly. Have a quick look at the gcode preview before printing.
 
 Manual seam placement will **always** have the best results. This method is a compromise to save myself a lot of manual work for plates with large numbers of parts.
 
 ## Rotating Parts
 
-NEW: SuperSlicer allows you to set auto rotation when importing models in your printer profile:
+SuperSlicer allows you to set auto rotation when importing models in your printer profile:
 - ![](Images/auto-rotation.png) 
 
 To manually rotate, press **ctrl+a** to select all objects. \
@@ -215,7 +203,7 @@ Type the rotation amount in "Z" the box at the bottom right:
 - ![](Images/Rotation.png) 
 # Infill Line Widths
 
-The infill line widths are set to a high value in my profile (180%) to save some print time, and to help with infill layer adhesion strength. 
+The infill line widths are set to a high value in my profile (160%) to save some print time, and to help with infill layer adhesion strength. 
 
 **This proportionally reduces the amount of lines to be printed.** The overall coverage area is still 40%.
 
@@ -227,7 +215,8 @@ If you need greater top layer support, or are printing decorative / low infill p
 ## 40% Infill @ 110% Line Width
 - ![](Images/infill-110.png) 
 
-# Tips and Tricks
+---
+# Miscellaneous Tips and Tricks
 ## Changing PA Based on Nozzle Size
 
 You can add the below code snippet to your filament's **custom g-code** section in order to have different PA values for different nozzle sizes. Wider nozzles need lower PA. (Of course - modify it appropriately and replace the zeroes with the actual PA values.)
@@ -279,6 +268,7 @@ The SuperSlicer option is called `"No perimeters on bridge areas"`, located in t
 - ![](Images/void_with_bridges_01.png)
 - ![](Images/void_with_bridges_03.png)
 
+---
 # Profile Change Log
 
 Rather than having to re-import the profiles when updates are made, please check the change log occasionally to grab important settings changes / bug fixes.
