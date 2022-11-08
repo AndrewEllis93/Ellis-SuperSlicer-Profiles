@@ -281,13 +281,14 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - ***infill_connection_solid*** - set to "not connected"
         - ***infill_connection_top*** - set to "not connected"
         - ***infill_connection_bottom*** - set to "not connected"
-        - ***infill_overlap*** - set to 20%
+        - ***infill_overlap*** - set to 25%
         - ***retract_lift_top*** - set to "Not on top"
         - ***retract_before_travel*** - set to 0 (was default / 2)
     - New defaults modified:
         - ***enforce_retract_first_layer*** - set to 0
             - Stops Z hopping on first layer (this was the previous behavior)
-        - ***wipe_inside_end*** - set to 0
+        - ~~***wipe_inside_end*** - set to 0~~
+            - Reverted. Was causing some seam gaps.
 - **2022-11-01**
     - ***bridged_infill_margin*** - set to 300%.
         - This can help prevent some bridges detaching at the ends. The previous value of 5mm was too high and causing excessive bridging.
