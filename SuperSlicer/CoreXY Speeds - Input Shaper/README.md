@@ -1,0 +1,1 @@
+## See [:page_facing_up:Determining Maximum Volumetric Flow Rate](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md) for guidance on choosing the right flowrate for your hotend.
