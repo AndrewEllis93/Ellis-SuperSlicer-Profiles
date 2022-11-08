@@ -8,9 +8,6 @@
 - **Use different SS versions at your own peril.**
     - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
     - I will update this as I test newer versions.
-    - There is a [:page_facing_up:known bug](https://github.com/AndrewEllis93/Ellis-PIF-Profile/issues/7#issuecomment-1098462899) in this version with the new wall thickess setting, causing it to show crazy values. Just ignore this setting for now (or click "expert" to hide it) - it does not affect anything.
-        - ![](/Images/bug.png)
-
 
 **:warning: This profile's speeds/accels are tuned for linear rail CoreXY (specifically MY personal V2).**
 - Your own printer, and especially other printer types, may need lower speeds and accelerations. 
