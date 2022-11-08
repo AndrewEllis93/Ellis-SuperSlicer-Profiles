@@ -2,9 +2,8 @@
 
 # Important Notes
 
-:warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.2**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.2) (last update: 2022-04-11)
+:warning: **Required SuperSlicer version:** [:page_facing_up:**2.4.58.5**](https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5) (last update: 2022-11-07)
 
-(I am currently testing 2.4.58.5. no major issues yet. Only change so far is disabling `wipe_inside_end`.)
 - **You may want to back up your `%appdata%\SuperSlicer` folder before updating, just in case.**
 - **Use different SS versions at your own peril.**
     - Newer versions often introduce new bugs or defaults, and older versions may not be compatible with certain settings (or will just error when importing the profile)
@@ -275,7 +274,21 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
  
--**2022-11-01**
+- **2022-11-17**
+    - **Update profiles for SuperSlicer version 2.4.58.5.**
+    - These settings all come as a group. They were found to have a fairly significant improvement in small solid infill areas. Explanation [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/troubleshooting/small_infill_areas_overextruded.md#not-connected-top-infill-superslicer) and demonstration [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/troubleshooting/small_infill_areas_overextruded.md#demonstration).\
+    They may also have a positive effect on bulging perimeters around external features, but I am still testing this theory.
+        - ***infill_connection_solid*** - set to "not connected"
+        - ***infill_connection_top*** - set to "not connected"
+        - ***infill_connection_bottom*** - set to "not connected"
+        - ***infill_overlap*** - set to 20%
+        - ***retract_lift_top*** - set to "Not on top"
+        - ***retract_before_travel*** - set to 0 (was default / 2)
+    - New defaults modified:
+        - ***enforce_retract_first_layer*** - set to 0
+            - Stops Z hopping on first layer (this was the previous behavior)
+        - ***wipe_inside_end*** - set to 0
+- **2022-11-01**
     - ***bridged_infill_margin*** - set to 300%.
         - This can help prevent some bridges detaching at the ends. The previous value of 5mm was too high and causing excessive bridging.
 - **2022-10-06**
