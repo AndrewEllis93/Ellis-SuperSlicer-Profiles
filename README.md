@@ -271,7 +271,17 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
  
-- **2022-11-17**
+- **2022-11-08**
+    - Add "Decorative Standard" profiles
+    - Rename .ini files
+    - ***wall_thickness_lines*** - set to 0.
+        - This was in my profiles but this setting apparently doesn't always export properly.
+    - Decorative profiles:
+        - ***fill_pattern*** - set to monotonic
+        - ***fill_density*** - set to 10%
+    - ***resolution_internal*** - set to default (0.1mm)
+        - Cleanup, just resetting to new default. Shouldn't make any major difference
+- **2022-11-07**
     - **Update profiles for SuperSlicer version 2.4.58.5.**
     - These settings all come as a group. They were found to have a fairly significant improvement in small solid infill areas. Explanation [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/troubleshooting/small_infill_areas_overextruded.md#not-connected-top-infill-superslicer) and demonstration [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/troubleshooting/small_infill_areas_overextruded.md#demonstration).\
     They may also have a positive effect on bulging perimeters around external features, but I am still testing this theory.
