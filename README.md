@@ -53,7 +53,7 @@ Support my drinking habits:
     - [Part Spacing / Plating](#part-spacing--plating)
     - [Advanced Bridging Over Holes (Sacrificial Bridges)](#advanced-bridging-over-holes-sacrificial-bridges)
 ---
-- [**Profile Change Log**](#profile-change-log)
+- [**:bulb:Profile Change Log**](#profile-change-log)
 
 ---
 # How to Download
@@ -216,11 +216,12 @@ If you need greater top layer support, or are printing decorative / low infill p
 
 These profiles should largely work **as-is** for PLA. You will just need to set up another filament profile.
 
-There is only one actual print setting I would recommend changing.
+There is only one actual print setting that may need changing.
 
 ## Print Settings
-- If using supports, consider a larger **support z-offset** (`support_material_contact_distance`/`support_material_bottom_contact_distance`)
+- If using supports, you *may* need a larger **support z-offset** (`support_material_contact_distance`/`support_material_bottom_contact_distance`)
     - PLA has better layer adhesion than ABS, so supports are harder to remove. 
+    - The current value of 0.1mm still reportedly works fine for PLA for some people, however. You just need to print some support tests on your own machine. 
 
 ## Filament Profile
 You can just duplicate the provided ABS profile and make these changes to it:
@@ -316,8 +317,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - ***infill_connection_top*** - set to "not connected"
         - ***infill_connection_bottom*** - set to "not connected"
         - ***infill_overlap*** - set to 25%
-        - ~~***retract_lift_top*** - set to "Not on top"~~
-        - ~~***retract_before_travel*** - set to 0 (was default / 2)~~
+        - ~~***retract_lift_top*** - set to "Not on top"~~ *(Reverted in 2022-11-09's flip-flopping editon, sorry)*
+        - ~~***retract_before_travel*** - set to 0 (was default / 2)~~ *(Reverted in 2022-11-09's flip-flopping editon, sorry)*
     - New defaults modified:
         - ***enforce_retract_first_layer*** - set to 0
             - Stops Z hopping on first layer (this was the previous behavior)
