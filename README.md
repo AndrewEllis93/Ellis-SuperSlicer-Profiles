@@ -243,25 +243,15 @@ You can just duplicate the provided ABS profile and make these changes to it:
 # Miscellaneous Tips and Tricks
 ## Changing PA Based on Nozzle Size
 
-You can add the below code snippet to your filament's **custom g-code** section in order to have different PA values for different nozzle sizes. Wider nozzles need lower PA. (Of course - modify it appropriately and replace the zeroes with the actual PA values.)
+You can add the below code snippet to your filament's **custom g-code** section in order to have different PA values for different nozzle sizes. Wider nozzles need lower PA.
 
 ```
-{if printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.4}SET_PRESSURE_ADVANCE ADVANCE=0
-{elsif printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.6}SET_PRESSURE_ADVANCE ADVANCE=0
-{elsif printer_settings_id =~/.*Voron.*/ and nozzle_diameter[0]==0.8}SET_PRESSURE_ADVANCE ADVANCE=0
+; Set pressure advance per-filament for different nozzle sizes
+{if nozzle_diameter[0]==0.4}SET_PRESSURE_ADVANCE ADVANCE=0.0x
+{elsif nozzle_diameter[0]==0.6}SET_PRESSURE_ADVANCE ADVANCE=0.0x
 {endif}
 ```
-
-This logic says:
-- IF printer settings profile name contains "Voron" (using regex)
-- AND nozzle size equals *\<value>*
-- THEN insert the gcode (SET_ PRESSURE ADVANCE ADVANCE=*\<value>*).
-
 Macro syntax: https://help.prusa3d.com/article/macros_1775
-- The "=\~" operator uses regex enlosed by forward slashes (=\~/regex/).
-- The "==" operator can be used for an exact match instead if you wish (=="string").
-
-
 ## Part Spacing / Plating
 Right click the "arrange" button to change part spacing. 
 
@@ -299,6 +289,14 @@ Rather than having to re-import the profiles when updates are made, please check
 
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
  
+- **2022-11-09** (flip flopping edition!)
+    - ***retract_lift_top*** and ***retract_before_travel*** - revert to defaults *(from the 2022-11-07 changes)*.
+        - These brought an additional minor improvement to small infill areas, but I eventually decided that the potential top surface scarring wasn't worth it. 
+        - If you are having small infill overextrusion issues, it may be worth trying still.
+        - Again, more reading on this subject is documented [:page_facing_up:here](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/troubleshooting/small_infill_areas_overextruded.md#not-connected-top-infill-superslicer).
+    - ***support_material_interface_layers*** - set to 2 (standard) - was 3 (heavy)
+        - The new default of 3 interface layers is a bit excessive in most cases.
+    - Minor rewording of comments in custom g-code sections
 - **2022-11-08**
     - Add "Decorative Standard" profiles
     - Rename .ini files
@@ -317,8 +315,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
         - ***infill_connection_top*** - set to "not connected"
         - ***infill_connection_bottom*** - set to "not connected"
         - ***infill_overlap*** - set to 25%
-        - ***retract_lift_top*** - set to "Not on top"
-        - ***retract_before_travel*** - set to 0 (was default / 2)
+        - ~~***retract_lift_top*** - set to "Not on top"~~
+        - ~~***retract_before_travel*** - set to 0 (was default / 2)~~
     - New defaults modified:
         - ***enforce_retract_first_layer*** - set to 0
             - Stops Z hopping on first layer (this was the previous behavior)
