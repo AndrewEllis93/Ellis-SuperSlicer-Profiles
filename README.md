@@ -301,7 +301,8 @@ Use **ctrl + f** in SuperSlicer to find these settings by their internal names b
     - Add "Decorative Standard" profiles
     - Rename .ini files
     - ***wall_thickness_lines*** - set to 0.
-        - This was in my profiles but this setting apparently doesn't always export properly.
+        - This was in my profiles but this setting apparently doesn't always export properly. It just disables the feature that tries to automatically change line thicknesses to match your desired overall line width.
+        - This setting is an oddball. For some reason it saves to `print_custom_variables` instead (paste `wall_thickness_lines = 0`)
     - Decorative profiles:
         - ***fill_pattern*** - set to monotonic
         - ***fill_density*** - set to 10%
