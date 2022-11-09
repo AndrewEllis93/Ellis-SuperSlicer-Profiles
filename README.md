@@ -68,6 +68,8 @@ Support my drinking habits:
 Alternatively, download the whole repository as .zip:
 
 - ![](Images/DownloadRepo.png) 
+
+- Or, if you have git installed, just `git clone https://github.com/AndrewEllis93/Ellis-SuperSlicer-Profiles.git` from your directory of choice.
 # How to Import
 If you downloaded the whole repository as .zip, extract it.
 
