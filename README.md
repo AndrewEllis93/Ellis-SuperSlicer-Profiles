@@ -46,6 +46,7 @@ Support my drinking habits:
 - [**:warning:** Nozzle Flats](#nozzle-flats)
 - ["45 Degree" Profile vs Standard Profile](#45-degree-profile-vs-standard-profile)
 - [Infill Line Widths](#infill-line-widths)
+- [Suggested Changes for PLA](#suggested-changes-for-pla)
 ---
 - [Miscellaneous Tips and Tricks](#miscellaneous-tips-and-tricks)
     - [Changing PA Based on Nozzle Size](#changing-pa-based-on-nozzle-size)
@@ -210,6 +211,33 @@ If you need greater top layer support, or are printing decorative / low infill p
 
 ## 40% Infill @ 110% Line Width
 - ![](Images/infill-110.png) 
+
+# Suggested Changes for PLA
+
+These profiles should largely work **as-is** for PLA. You will just need to set up another filament profile.
+
+There is only one actual print setting I would recommend changing.
+
+## Print Settings
+- If using supports, consider a larger **support z-offset** (`support_material_contact_distance`/`support_material_bottom_contact_distance`)
+    - PLA has better layer adhesion than ABS, so supports are harder to remove. 
+
+## Filament Profile
+You can just duplicate the provided ABS profile and make these changes to it:
+- Increase **fan speed** to 100% (`min_fan_speed`)
+- Set **layer time goal** to 5-10 seconds (`slowdown_below_layer_time`)
+- Set **chamber temperature** to 0
+    - This only actually does anything if you're [:page_facing_up:passing it to your PRINT_START macro](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/passing_slicer_variables.md).
+- You may need to set the filament profile's [:page_facing_up:**max volumetric speed**](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/determining_max_volumetric_flow_rate.md) (`filament_max_volumetric_speed`) a bit lower. 
+    - PLA doesn't always achieve the same flow rates that ABS can. 
+    - The filament profile settings **take precedence over the print settings profile**.
+        - This means you can have a "default" set in the print settings profile, and then tweak it here for individual filaments.
+- Set/calibrate the usual filament-specific parameters:
+    - **Temperatures**
+    - [:page_facing_up:**Pressure advance**](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/pressure_advance.md)
+        - (not actually a setting in SS, has to be set in printer.cfg or done with custom filament g-code)
+    - [:page_facing_up:**Extrusion multiplier**](https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/extrusion_multiplier.md)
+
 
 ---
 # Miscellaneous Tips and Tricks
