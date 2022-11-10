@@ -293,6 +293,8 @@ Rather than having to re-import the profiles when updates are made, please check
 Use **ctrl + f** in SuperSlicer to find these settings by their internal names below.
  
 - **2022-11-09** (flip flopping edition!)
+    - ***ensure_vertical_shell_thickness*** - disable.
+        - Just saving some print time / material. 
     - ***retract_lift_top*** and ***retract_before_travel*** - revert to defaults *(from the 2022-11-07 changes)*.
         - These brought an additional minor improvement to small infill areas, but I eventually decided that the potential top surface scarring wasn't worth it. 
         - If you are having small infill overextrusion issues, it may be worth trying still.
